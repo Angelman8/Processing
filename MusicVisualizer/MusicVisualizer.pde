@@ -17,6 +17,7 @@ int numDots;
 int minDist = 0;
 int maxDist = 130;
 float distMod = 150;
+float connectionMod = 0;
 float modifier = .3;
 int border = 0;
 

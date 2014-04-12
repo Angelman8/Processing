@@ -71,6 +71,9 @@ class Dot {
 
   void randomBeatColor()
   {
+    float red = red(dotcolor);
+    float green = green(dotcolor);
+    float blue = blue(dotcolor);
     if (AUDIO_REACTIVE) {
       if (beat.isKick())
       {
@@ -82,9 +85,6 @@ class Dot {
         }
       } 
       else {
-        float red = red(dotcolor);
-        float green = green(dotcolor);
-        float blue = blue(dotcolor);
         dotcolor = color(red-1, green-1, blue-1);
         if (red < 0) {
           dotcolor = color(0, green, blue);
@@ -95,16 +95,17 @@ class Dot {
         if (blue < 0) {
           dotcolor = color(red, green, 0);
         }
+        dotcolor = color(red + connections.size()*connectionMod,green + connections.size()*connectionMod,blue + connections.size()*connectionMod);
       }
-    } else {
-      
+    } 
+    else {
+
       if (RANDOM_COLORS) {
-          dotcolor = color(random(255), random(255), random(255));
-        } 
-        else {
-          dotcolor = color(255, 255, 255);
-        }
-      
+        dotcolor = color(random(255), random(255), random(255));
+      } 
+      else {
+        dotcolor = color(255, 255, 255);
+      }
     }
   }
 
