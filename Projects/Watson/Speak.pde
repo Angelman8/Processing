@@ -1,8 +1,13 @@
 void Say(String phrase)
 {
+  phrase = phrase.replace("(", "");
+  phrase = phrase.replace(")", "");
+  phrase = phrase.replace("\'", "\\'");
+  print(phrase);
+  
   speaking = true;
   ArrayList tempSongVolume = shellExec("osascript -e \"tell application \\\"iTunes\\\" to set currentVolume to sound volume\"");
-  shellExec("osascript -e \"tell application \\\"iTunes\\\" to set sound volume to 40\"");
+  shellExec("osascript -e \"tell application \\\"iTunes\\\" to set sound volume to 70\"");
   shellExec("say " + phrase);
   shellExec("osascript -e \"tell application \\\"iTunes\\\" to set sound volume to " + (String)tempSongVolume.get(0) + "\"");
   speaking = false;
@@ -10,17 +15,7 @@ void Say(String phrase)
 
 void Affirm()
 {
-  ArrayList affirmations = new ArrayList();
-  affirmations.add("Alright.");
-  affirmations.add("Sure.");
-  affirmations.add("Of course.");
-  affirmations.add("Course.");
-  affirmations.add("Right away.");
-  affirmations.add("On it.");
-  affirmations.add("Okay.");
-  affirmations.add("Yes sir.");
-  affirmations.add("Kay.");
-  affirmations.add("");
+  ArrayList affirmations = new ArrayList(){{ add("Alright."); add("Sure."); add("Of course."); add("Right away."); add("On it."); add("Okay."); add("Yes sir."); add("Kay."); add(""); }};
   
   int index = (int)random(0, affirmations.size()-1);
   String affirm = (String)affirmations.get(index);

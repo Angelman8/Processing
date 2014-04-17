@@ -7,6 +7,8 @@ String result, displayedResult;
 boolean speaking = false;
 String keyword = "John";
 
+ArrayList<Command> commands = new ArrayList<Command>();
+
 void setup ()
 {
   size(600, 200);
@@ -21,6 +23,7 @@ void setup ()
   // Some text to display the result
   textFont(createFont("Arial", 14));
   displayedResult = "Say something!";
+  CreateCommands();
 }
 
 void draw ()
@@ -28,17 +31,19 @@ void draw ()
   background(0);
   stt.setThreshold(3.0);
   text(displayedResult, 20, 20);
+  
 }
 
 // Method is called if transcription was successfull 
 void transcribe (String utterance, float confidence) 
 {
-  println(utterance);
+  //println(utterance);
   if (!utterance.equals(""))
   {
     result = utterance;
     displayedResult = result;
     ListenForKeyword(result);
+
     result = "";
   }
 }
@@ -51,7 +56,7 @@ void ListenForKeyword(String phrase)
   }
   else if (phrase.contains("thank you") || phrase.contains("thanks"))
   {
-    Say ("You\\\'re welcome.");
+    Say ("You\'re welcome.");
   }
   else if (phrase.contains("volume") && phrase.contains("up"))
   {
@@ -59,7 +64,6 @@ void ListenForKeyword(String phrase)
     int volume = 10 + Integer.parseInt((String)tempSongVolume.get(0));
     shellExec("osascript -e \"tell application \\\"iTunes\\\" to set sound volume to " + volume + "\"");
     Affirm();
-    
   }
   else if (phrase.contains("volume") && phrase.contains("down"))
   {
@@ -67,16 +71,15 @@ void ListenForKeyword(String phrase)
     int volume = Integer.parseInt((String)tempSongVolume.get(0)) - 10;
     shellExec("osascript -e \"tell application \\\"iTunes\\\" to set sound volume to " + volume + "\"");
     Affirm();
-    
   }
   else if (phrase.contains("what song is this"))
   {
     ArrayList tempSongName = shellExec("osascript -e \"tell application \\\"iTunes\\\" to get name of current track\"");
     ArrayList tempArtistName = shellExec("osascript -e \"tell application \\\"iTunes\\\" to get artist of current track\"");
-    
+
     String songName = (String)tempSongName.get(0);
     String artistName = (String)tempArtistName.get(0);
-    Say("It\\\'s called " + songName + ", by " + artistName);
+    Say("It\'s called " + songName + ", by " + artistName);
   }
   else if (phrase.contains("stop"))
   {
@@ -112,9 +115,15 @@ void ListenForKeyword(String phrase)
     Affirm();
     shellExec("osascript -e \"tell application \\\"iTunes\\\" to previous track\"");
   }
+  else if (phrase.contains("goodbye") || phrase.contains("good bye") || phrase.contains("goodnight"))
+  {
+    Say("Good bye for now, sir.");
+    shellExec("osascript -e \"tell application \\\"MusicVisualizer\\\" to activate\"");
+    exit();
+  }
 }
 
 
 void LowerVolume() {
-  
 }
+
