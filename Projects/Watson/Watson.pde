@@ -118,6 +118,7 @@ void ListenForKeyword(String phrase)
   else if (phrase.contains("goodbye") || phrase.contains("good bye") || phrase.contains("goodnight"))
   {
     Say("Good bye for now, sir.");
+    shellExec("osascript -e \"tell application \\\"MusicVisualizer\\\" to run\"");
     shellExec("osascript -e \"tell application \\\"MusicVisualizer\\\" to activate\"");
     exit();
   }
