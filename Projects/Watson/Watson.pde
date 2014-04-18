@@ -1,24 +1,39 @@
 import com.getflourish.stt.*;
 import ddf.minim.*;
+import javax.sound.sampled.*;
 import java.io.*;
 
+//Create STT object
 STT stt;
 String result, displayedResult;
+
+//Environment Variables
 boolean speaking = false;
 String keyword = "John";
 
+int maxConnectWait = 240;
+int connectionCounter = 0;
+boolean headsetConnected = false;
+
 ArrayList<Command> commands = new ArrayList<Command>();
+
+//Minim
+
+
 
 void setup ()
 {
   size(600, 200);
-  // Init STT automatically starts listening
+  frameRate(60);
+
+  // Initialize STT
   stt = new STT(this);
   stt.enableDebug();
   stt.setLanguage("en"); 
   stt.setThreshold(3.0);
   stt.enableAutoRecord();
-  stt.setThreshold(3.0);
+
+  //Initialize Minim stuff
 
   // Some text to display the result
   textFont(createFont("Arial", 14));
@@ -31,7 +46,9 @@ void draw ()
   background(0);
   stt.setThreshold(3.0);
   text(displayedResult, 20, 20);
-  
+  if (isHeadsetConnected("Sony Headset")) {
+    ChangeSoundOutput("Soundflower (2ch)");
+  }
 }
 
 // Method is called if transcription was successfull 
@@ -124,7 +141,43 @@ void ListenForKeyword(String phrase)
   }
 }
 
-
-void LowerVolume() {
+boolean isHeadsetConnected(String headsetName)
+{
+  if (connectionCounter >= maxConnectWait) {
+    connectionCounter = 0;
+    ArrayList lines = shellExec("system_profiler SPBluetoothDataType");
+    for (int i = 0; i < lines.size()-1; i++) {
+      String line = (String)lines.get(i);
+      if (line.contains(headsetName)) {
+        String connected = (String)lines.get(i+7);
+        if (connected.contains("Yes")) {
+          //println(headsetName + " is Connected");
+          return true;
+        } 
+        else {
+          //println(headsetName + " is Disconnected");
+          return false;
+        }
+      } 
+      else {
+      }
+    }
+    println("Could not find " + headsetName);
+    return false;
+  }
+  connectionCounter++;
+  return false;
 }
 
+void ChangeSoundOutput(String output) {
+  
+  shellExec("osascript " + Parse(dataPath("ChangeAudioIO.scpt")) + " \"" + output + "\"");
+}
+
+String Parse(String string) {
+  string = string.replace(" ", "\\ ");
+  string = string.replace("(", "");
+  string = string.replace(")", "");
+  string = string.replace("\'", "\\'");
+  return string;
+}
