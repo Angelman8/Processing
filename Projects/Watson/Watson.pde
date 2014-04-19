@@ -9,17 +9,29 @@ String result, displayedResult;
 
 //Environment Variables
 boolean speaking = false;
-String keyword = "John";
+String voice = "Oliver";
 
-int maxConnectWait = 240;
+String name = "John";
+
+int maxConnectWait = 300;
 int connectionCounter = 0;
 boolean headsetConnected = false;
+int count = 0;
 
 ArrayList<Command> commands = new ArrayList<Command>();
 
-//Minim
+//Threads
 
-
+boolean counter(int max) {
+  if (count >= max) {
+    count = 0;
+    return true;
+  } else {
+    count++;
+    return false;
+  }
+  
+}
 
 void setup ()
 {
@@ -30,24 +42,32 @@ void setup ()
   stt = new STT(this);
   stt.enableDebug();
   stt.setLanguage("en"); 
-  stt.setThreshold(3.0);
   stt.enableAutoRecord();
+  stt.disableAutoThreshold();
+  stt.setThreshold(3.0);
 
-  //Initialize Minim stuff
 
   // Some text to display the result
   textFont(createFont("Arial", 14));
   displayedResult = "Say something!";
   CreateCommands();
+
+  DisplayNotification(name, "Launched");
+
+  if (isHeadsetConnected("Sony Headset")) {
+    ChangeSoundOutput("Headphones");
+    ChangeSoundInput("Wireless Headset");
+  }
 }
 
 void draw ()
 {
   background(0);
-  stt.setThreshold(3.0);
   text(displayedResult, 20, 20);
-  if (isHeadsetConnected("Sony Headset")) {
-    ChangeSoundOutput("Soundflower (2ch)");
+  if (counter(240)) {
+      
+    CheckForNotifications();
+    
   }
 }
 
@@ -58,16 +78,15 @@ void transcribe (String utterance, float confidence)
   if (!utterance.equals(""))
   {
     result = utterance;
-    displayedResult = result;
-    ListenForKeyword(result);
-
+    ListenForName(result);
+    println(result);
     result = "";
   }
 }
 
-void ListenForKeyword(String phrase)
+void ListenForName(String phrase)
 {
-  if (phrase.equals("John"))
+  if (phrase.equals(name))
   {
     Greet();
   }
@@ -96,7 +115,7 @@ void ListenForKeyword(String phrase)
 
     String songName = (String)tempSongName.get(0);
     String artistName = (String)tempArtistName.get(0);
-    Say("It\'s called " + songName + ", by " + artistName);
+    Say("It\'s called \"" + songName + ",\" by " + artistName);
   }
   else if (phrase.contains("stop"))
   {
@@ -122,62 +141,40 @@ void ListenForKeyword(String phrase)
     }
     Say("Here's what's connected.");
   }
-  else if (phrase.contains("next") && phrase.contains("song"))
+  else if (phrase.contains("next"))
   {
     Affirm();
     shellExec("osascript -e \"tell application \\\"iTunes\\\" to next track\"");
   }
-  else if (phrase.contains("back") && phrase.contains("song"))
+  else if (phrase.contains("back"))
   {
     Affirm();
     shellExec("osascript -e \"tell application \\\"iTunes\\\" to previous track\"");
   }
-  else if (phrase.contains("goodbye") || phrase.contains("good bye") || phrase.contains("goodnight"))
+  else if (phrase.contains("goodbye") || phrase.contains("good bye") || phrase.contains("goodnight") || phrase.contains("visualizer"))
   {
-    Say("Good bye for now, sir.");
     shellExec("osascript -e \"tell application \\\"MusicVisualizer\\\" to run\"");
     shellExec("osascript -e \"tell application \\\"MusicVisualizer\\\" to activate\"");
-    exit();
+    //exit();
   }
-}
-
-boolean isHeadsetConnected(String headsetName)
-{
-  if (connectionCounter >= maxConnectWait) {
-    connectionCounter = 0;
-    ArrayList lines = shellExec("system_profiler SPBluetoothDataType");
-    for (int i = 0; i < lines.size()-1; i++) {
-      String line = (String)lines.get(i);
-      if (line.contains(headsetName)) {
-        String connected = (String)lines.get(i+7);
-        if (connected.contains("Yes")) {
-          //println(headsetName + " is Connected");
-          return true;
-        } 
-        else {
-          //println(headsetName + " is Disconnected");
-          return false;
-        }
-      } 
-      else {
-      }
-    }
-    println("Could not find " + headsetName);
-    return false;
+    else if (phrase.contains("open") && phrase.contains("plex"))
+  {
+    Affirm();
+    shellExec("osascript -e \"tell application \\\"Plex Home Theater\\\" to run\"");
+    shellExec("osascript -e \"tell application \\\"Plex Home Theater\\\" to activate\"");
   }
-  connectionCounter++;
-  return false;
-}
-
-void ChangeSoundOutput(String output) {
-  
-  shellExec("osascript " + Parse(dataPath("ChangeAudioIO.scpt")) + " \"" + output + "\"");
+  else if (phrase.contains("close") && phrase.contains("plex"))
+  {
+    Affirm();
+    shellExec("osascript -e \"tell application \\\"Plex Home Theater\\\" to quit\"");
+  }
 }
 
 String Parse(String string) {
   string = string.replace(" ", "\\ ");
-  string = string.replace("(", "");
-  string = string.replace(")", "");
+  string = string.replace("(", "(");
+  string = string.replace(")", ")");
   string = string.replace("\'", "\\'");
   return string;
 }
+
