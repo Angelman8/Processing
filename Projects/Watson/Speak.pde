@@ -24,7 +24,7 @@ void Affirm()
       add("Okay."); 
       add("Yes sir."); 
       add("Okay sir."); 
-      add("");
+      add(" ");
     }
   };
 
