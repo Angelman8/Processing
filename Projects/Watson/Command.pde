@@ -7,7 +7,7 @@ class Command {
     actions = tempActions;
   }
 
-  boolean Check(String input) {
+  boolean isValid(String input) {
     for (int i = 0; i < keywords.size()-1; i++) {
       String keyword = (String)keywords.get(i);
       if (input.contains(keyword)) {
@@ -17,7 +17,7 @@ class Command {
     return false;
   }
 
-  ArrayList Run() {
+  ArrayList Handle() {
     ArrayList lines = new ArrayList();
     for (int i = 0; i < actions.size()-1; i++) {
       String action = (String)actions.get(i);

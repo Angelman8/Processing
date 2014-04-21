@@ -16,9 +16,9 @@ boolean FULLSCREEN = true;
 int numDots;
 int minDist = 0;
 int maxDist = 130;
-float distMod = 150;
-float connectionMod = .05;
-float modifier = .1;
+float distMod = 180;
+float connectionMod = .03;
+float modifier = 0;
 int border = 0;
 
 //SPEED
@@ -34,7 +34,7 @@ boolean sketchFullScreen() {
 
 void setup() 
 {
-  numDots = (int)(displayWidth*displayHeight*.000098);
+  numDots = (int)(displayWidth*displayHeight*.000096);
   boolean paused = false;
   if (FULLSCREEN) {
     size(displayWidth, displayHeight);
@@ -45,7 +45,7 @@ void setup()
   if (frame != null) {
     frame.setResizable(true);
   }
-  frameRate(30);
+  frameRate(24);
   background(0);
   noStroke();
   smooth();
@@ -75,17 +75,17 @@ void draw()
     if (AUDIO_REACTIVE) {
       beat.detect(input.left);
 
-      float beatKick = beat.isKick() ? 22 : 0;
+      float beatKick = beat.isKick() ? 30 : 0;
       if (beat.isKick())
       {
         //DrawDot();
       }
       float inputMod = abs(input.mix.get(100)* 200);
-      distMod = displayWidth*displayHeight*0.00004 + inputMod + beatKick;
+      distMod = displayWidth*displayHeight*0.00007 + inputMod + beatKick;
 
-      strokeWeight(map(inputMod, 0, 100, 0.2, 1.8));
-      velocity = map(inputMod, 0, 100, 1, 15.0);
-      acceleration = map(inputMod, 0, 100, .1, 2.4);
+      strokeWeight(map(inputMod, 0, 100, 0.2, 2));
+      velocity = map(inputMod, 0, 100, 1.3, 30.0);
+      acceleration = map(inputMod, 0, 100, .1, 5);
     }
 
     for (int i = 0; i < dots.size()-1; i++) {
@@ -99,7 +99,7 @@ void draw()
       distMod = 0;
     } 
     else { 
-      distMod -= 0.05;
+      distMod -= 0.01;
     }
   }
 }

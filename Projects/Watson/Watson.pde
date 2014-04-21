@@ -9,7 +9,7 @@ String result, displayedResult;
 
 //Environment Variables
 boolean speaking = false;
-String voice = "Oliver";
+String voice = "Daniel";
 
 String name = "John";
 
@@ -57,6 +57,8 @@ void setup ()
   if (isHeadsetConnected("Sony Headset")) {
     ChangeSoundOutput("Headphones");
     ChangeSoundInput("Wireless Headset");
+  } else {
+    ChangeSoundInput("Internal Microphone");
   }
 }
 
