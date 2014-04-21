@@ -1,0 +1,1218 @@
+LUXURIATES           L AH G ZH ER IY EY T S
+LYNCHPIN             L IH N CH P IH N
+MACHINEMADE          M AH SH IY N M EY D
+MACROCOSM            M AE K R OW K AA Z AH M
+MANICHEAN            M AE N IH K IY AH N
+MANOVICH'S           M AE N OW V IH CH Z
+MARTYRIC             M AA R T IH R IH K
+MASCULINIST          M AE S K Y AH L AH N IH S T
+MASCULINITIES        M AE S K Y AH L AH N IH T IY Z
+MASOCHISTICALLY      M AE S AH K IH S T IH K AH L IY
+MATERIALIZATION      M AH T IH R IY AH L AH Z EY SH AH N
+MATHEMATICA          M AE TH AH M AE T IH K AH
+MATRIXED             M EY T R IH K S T
+MAXIMALISM           M AE K S AH M AH L IH Z AH M
+MCASD                EH M S IY AH EH S D IY
+MCCLOUD'S            M AH K L AW D Z
+MCLUHANITE           M AH K L UW HH AH N AY T
+MCLUHAN              M AH K L UW HH AH N
+MDF                  EH M D IY EH F
+MEANDERINGS          M IY AE N D ER IH NG Z
+MEANINGFULNESS       M IY N IH NG F AH L N AH S
+MECHANISTICALLY      M EH K AH N IH S T IH K AH L IY
+MEDIALIZATION        M IY D IY AH L AH Z EY SH AH N
+MEDIATES             M IY D IY AH T Z
+MEDIUM'S             M IY D IY AH M Z
+MEGALOMANIACAL       M EH G AH L OW M AH N AY AH K AH L
+MEMEX'S              M EH M EH K S IH Z
+MEMORIALIZES         M AH M AO R IY AH L AY Z IH Z
+MEMORY'S             M EH M ER IY Z
+MENACED              M EH N AH S T
+MESO                 M EH Z AH
+
+
+ppl
+LYGIA                
+MAGRITTE
+MATTAES
+MEIRELES
+MELUSINA
+MERLEAU
+
+
+14:33:49.766 WARNING dictionary        Missing word: mempory
+14:33:49.766 WARNING jsgfGrammar       Can't find pronunciation for mempory
+14:33:49.766 WARNING dictionary        Missing word: menaced
+14:33:49.766 WARNING jsgfGrammar       Can't find pronunciation for menaced
+14:33:49.766 WARNING dictionary        Missing word: merleau
+14:33:49.766 WARNING jsgfGrammar       Can't find pronunciation for merleau
+14:33:49.766 WARNING dictionary        Missing word: meso
+14:33:49.766 WARNING jsgfGrammar       Can't find pronunciation for meso
+14:33:49.766 WARNING dictionary        Missing word: mesostics
+14:33:49.766 WARNING jsgfGrammar       Can't find pronunciation for mesostics
+14:33:49.766 WARNING dictionary        Missing word: metallurgist
+14:33:49.766 WARNING jsgfGrammar       Can't find pronunciation for metallurgist
+14:33:49.766 WARNING dictionary        Missing word: metamodel
+14:33:49.766 WARNING jsgfGrammar       Can't find pronunciation for metamodel
+14:33:49.766 WARNING dictionary        Missing word: metamodelization
+14:33:49.766 WARNING jsgfGrammar       Can't find pronunciation for metamodelization
+14:33:49.766 WARNING dictionary        Missing word: metamodels
+14:33:49.766 WARNING jsgfGrammar       Can't find pronunciation for metamodels
+14:33:49.766 WARNING dictionary        Missing word: metamorphosed
+14:33:49.766 WARNING jsgfGrammar       Can't find pronunciation for metamorphosed
+14:33:49.766 WARNING dictionary        Missing word: metaphoric
+14:33:49.766 WARNING jsgfGrammar       Can't find pronunciation for metaphoric
+14:33:49.766 WARNING dictionary        Missing word: metaphorphosis
+14:33:49.767 WARNING jsgfGrammar       Can't find pronunciation for metaphorphosis
+14:33:49.767 WARNING dictionary        Missing word: metaphysicians
+14:33:49.767 WARNING jsgfGrammar       Can't find pronunciation for metaphysicians
+14:33:49.767 WARNING dictionary        Missing word: metonym
+14:33:49.767 WARNING jsgfGrammar       Can't find pronunciation for metonym
+14:33:49.767 WARNING dictionary        Missing word: metre
+14:33:49.767 WARNING jsgfGrammar       Can't find pronunciation for metre
+14:33:49.767 WARNING dictionary        Missing word: microworlds
+14:33:49.767 WARNING jsgfGrammar       Can't find pronunciation for microworlds
+14:33:49.767 WARNING dictionary        Missing word: miki
+14:33:49.767 WARNING jsgfGrammar       Can't find pronunciation for miki
+14:33:49.767 WARNING dictionary        Missing word: minimalist'
+14:33:49.767 WARNING jsgfGrammar       Can't find pronunciation for minimalist'
+14:33:49.767 WARNING dictionary        Missing word: minimalists
+14:33:49.767 WARNING jsgfGrammar       Can't find pronunciation for minimalists
+14:33:49.767 WARNING dictionary        Missing word: minor'
+14:33:49.767 WARNING jsgfGrammar       Can't find pronunciation for minor'
+14:33:49.767 WARNING dictionary        Missing word: mins
+14:33:49.767 WARNING jsgfGrammar       Can't find pronunciation for mins
+14:33:49.767 WARNING dictionary        Missing word: miring
+14:33:49.767 WARNING jsgfGrammar       Can't find pronunciation for miring
+14:33:49.767 WARNING dictionary        Missing word: mischievously
+14:33:49.767 WARNING jsgfGrammar       Can't find pronunciation for mischievously
+14:33:49.768 WARNING dictionary        Missing word: mise
+14:33:49.768 WARNING jsgfGrammar       Can't find pronunciation for mise
+14:33:49.768 WARNING dictionary        Missing word: misprisions
+14:33:49.768 WARNING jsgfGrammar       Can't find pronunciation for misprisions
+14:33:49.768 WARNING dictionary        Missing word: misprizes
+14:33:49.768 WARNING jsgfGrammar       Can't find pronunciation for misprizes
+14:33:49.768 WARNING dictionary        Missing word: mller
+14:33:49.768 WARNING jsgfGrammar       Can't find pronunciation for mller
+14:33:49.768 WARNING dictionary        Missing word: modernism's
+14:33:49.768 WARNING jsgfGrammar       Can't find pronunciation for modernism's
+14:33:49.768 WARNING dictionary        Missing word: modifier
+14:33:49.768 WARNING jsgfGrammar       Can't find pronunciation for modifier
+14:33:49.768 WARNING dictionary        Missing word: modularity
+14:33:49.768 WARNING jsgfGrammar       Can't find pronunciation for modularity
+14:33:49.768 WARNING dictionary        Missing word: molotoch
+14:33:49.768 WARNING jsgfGrammar       Can't find pronunciation for molotoch
+14:33:49.768 WARNING dictionary        Missing word: momento
+14:33:49.768 WARNING jsgfGrammar       Can't find pronunciation for momento
+14:33:49.768 WARNING dictionary        Missing word: monochromatics
+14:33:49.768 WARNING jsgfGrammar       Can't find pronunciation for monochromatics
+14:33:49.768 WARNING dictionary        Missing word: monologic
+14:33:49.768 WARNING jsgfGrammar       Can't find pronunciation for monologic
+14:33:49.768 WARNING dictionary        Missing word: moonlight's
+14:33:49.768 WARNING jsgfGrammar       Can't find pronunciation for moonlight's
+14:33:49.769 WARNING dictionary        Missing word: moronic
+14:33:49.769 WARNING jsgfGrammar       Can't find pronunciation for moronic
+14:33:49.769 WARNING dictionary        Missing word: mortuum
+14:33:49.769 WARNING jsgfGrammar       Can't find pronunciation for mortuum
+14:33:49.769 WARNING dictionary        Missing word: mot
+14:33:49.769 WARNING jsgfGrammar       Can't find pronunciation for mot
+14:33:49.769 WARNING dictionary        Missing word: motif'
+14:33:49.769 WARNING jsgfGrammar       Can't find pronunciation for motif'
+14:33:49.769 WARNING dictionary        Missing word: mtv
+14:33:49.769 WARNING jsgfGrammar       Can't find pronunciation for mtv
+14:33:49.769 WARNING dictionary        Missing word: multicursal
+14:33:49.769 WARNING jsgfGrammar       Can't find pronunciation for multicursal
+14:33:49.769 WARNING dictionary        Missing word: multimediality
+14:33:49.769 WARNING jsgfGrammar       Can't find pronunciation for multimediality
+14:33:49.769 WARNING dictionary        Missing word: multiparadigmatic
+14:33:49.769 WARNING jsgfGrammar       Can't find pronunciation for multiparadigmatic
+14:33:49.769 WARNING dictionary        Missing word: multiplications
+14:33:49.769 WARNING jsgfGrammar       Can't find pronunciation for multiplications
+14:33:49.769 WARNING dictionary        Missing word: multiplicities
+14:33:49.769 WARNING jsgfGrammar       Can't find pronunciation for multiplicities
+14:33:49.769 WARNING dictionary        Missing word: munetate
+14:33:49.769 WARNING jsgfGrammar       Can't find pronunciation for munetate
+14:33:49.769 WARNING dictionary        Missing word: mutability
+14:33:49.769 WARNING jsgfGrammar       Can't find pronunciation for mutability
+14:33:49.769 WARNING dictionary        Missing word: mutable
+14:33:49.769 WARNING jsgfGrammar       Can't find pronunciation for mutable
+14:33:49.769 WARNING dictionary        Missing word: mutational
+14:33:49.769 WARNING jsgfGrammar       Can't find pronunciation for mutational
+14:33:49.770 WARNING dictionary        Missing word: myst
+14:33:49.770 WARNING jsgfGrammar       Can't find pronunciation for myst
+14:33:49.770 WARNING dictionary        Missing word: mythologizing
+14:33:49.770 WARNING jsgfGrammar       Can't find pronunciation for mythologizing
+14:33:49.770 WARNING dictionary        Missing word: mythos
+14:33:49.770 WARNING jsgfGrammar       Can't find pronunciation for mythos
+14:33:49.770 WARNING dictionary        Missing word: nakedly
+14:33:49.770 WARNING jsgfGrammar       Can't find pronunciation for nakedly
+14:33:49.770 WARNING dictionary        Missing word: namba
+14:33:49.770 WARNING jsgfGrammar       Can't find pronunciation for namba
+14:33:49.770 WARNING dictionary        Missing word: narrative'
+14:33:49.770 WARNING jsgfGrammar       Can't find pronunciation for narrative'
+14:33:49.770 WARNING dictionary        Missing word: naturalises
+14:33:49.770 WARNING jsgfGrammar       Can't find pronunciation for naturalises
+14:33:49.770 WARNING dictionary        Missing word: nd
+14:33:49.770 WARNING jsgfGrammar       Can't find pronunciation for nd
+14:33:49.770 WARNING dictionary        Missing word: nea's
+14:33:49.770 WARNING jsgfGrammar       Can't find pronunciation for nea's
+14:33:49.770 WARNING dictionary        Missing word: neidich's
+14:33:49.770 WARNING jsgfGrammar       Can't find pronunciation for neidich's
+14:33:49.770 WARNING dictionary        Missing word: neologism
+14:33:49.770 WARNING jsgfGrammar       Can't find pronunciation for neologism
+14:33:49.770 WARNING dictionary        Missing word: neologistic
+14:33:49.770 WARNING jsgfGrammar       Can't find pronunciation for neologistic
+14:33:49.770 WARNING dictionary        Missing word: neumann's
+14:33:49.770 WARNING jsgfGrammar       Can't find pronunciation for neumann's
+14:33:49.770 WARNING dictionary        Missing word: neuroscientists
+14:33:49.771 WARNING jsgfGrammar       Can't find pronunciation for neuroscientists
+14:33:49.771 WARNING dictionary        Missing word: neurotransmitters
+14:33:49.771 WARNING jsgfGrammar       Can't find pronunciation for neurotransmitters
+14:33:49.771 WARNING dictionary        Missing word: niggling
+14:33:49.771 WARNING jsgfGrammar       Can't find pronunciation for niggling
+14:33:49.771 WARNING dictionary        Missing word: nipponese
+14:33:49.771 WARNING jsgfGrammar       Can't find pronunciation for nipponese
+14:33:49.771 WARNING dictionary        Missing word: nipropeller
+14:33:49.771 WARNING jsgfGrammar       Can't find pronunciation for nipropeller
+14:33:49.771 WARNING dictionary        Missing word: nm
+14:33:49.771 WARNING jsgfGrammar       Can't find pronunciation for nm
+14:33:49.771 WARNING dictionary        Missing word: nonclosure
+14:33:49.771 WARNING jsgfGrammar       Can't find pronunciation for nonclosure
+14:33:49.771 WARNING dictionary        Missing word: nonflammable
+14:33:49.771 WARNING jsgfGrammar       Can't find pronunciation for nonflammable
+14:33:49.771 WARNING dictionary        Missing word: nonlinguistic
+14:33:49.771 WARNING jsgfGrammar       Can't find pronunciation for nonlinguistic
+14:33:49.771 WARNING dictionary        Missing word: nonliving
+14:33:49.771 WARNING jsgfGrammar       Can't find pronunciation for nonliving
+14:33:49.771 WARNING dictionary        Missing word: nonrational
+14:33:49.771 WARNING jsgfGrammar       Can't find pronunciation for nonrational
+14:33:49.771 WARNING dictionary        Missing word: nonreferential
+14:33:49.771 WARNING jsgfGrammar       Can't find pronunciation for nonreferential
+14:33:49.771 WARNING dictionary        Missing word: nontotalizing
+14:33:49.771 WARNING jsgfGrammar       Can't find pronunciation for nontotalizing
+14:33:49.771 WARNING dictionary        Missing word: nontransparency
+14:33:49.771 WARNING jsgfGrammar       Can't find pronunciation for nontransparency
+14:33:49.771 WARNING dictionary        Missing word: nontrivial
+14:33:49.771 WARNING jsgfGrammar       Can't find pronunciation for nontrivial
+14:33:49.771 WARNING dictionary        Missing word: noran
+14:33:49.771 WARNING jsgfGrammar       Can't find pronunciation for noran
+14:33:49.772 WARNING dictionary        Missing word: notate
+14:33:49.772 WARNING jsgfGrammar       Can't find pronunciation for notate
+14:33:49.772 WARNING dictionary        Missing word: notching
+14:33:49.772 WARNING jsgfGrammar       Can't find pronunciation for notching
+14:33:49.772 WARNING dictionary        Missing word: notepads
+14:33:49.772 WARNING jsgfGrammar       Can't find pronunciation for notepads
+14:33:49.772 WARNING dictionary        Missing word: novelist's
+14:33:49.772 WARNING jsgfGrammar       Can't find pronunciation for novelist's
+14:33:49.772 WARNING dictionary        Missing word: npc
+14:33:49.772 WARNING jsgfGrammar       Can't find pronunciation for npc
+14:33:49.772 WARNING dictionary        Missing word: npcs
+14:33:49.772 WARNING jsgfGrammar       Can't find pronunciation for npcs
+14:33:49.772 WARNING dictionary        Missing word: nymphalidae
+14:33:49.772 WARNING jsgfGrammar       Can't find pronunciation for nymphalidae
+14:33:49.772 WARNING dictionary        Missing word: objecthood
+14:33:49.772 WARNING jsgfGrammar       Can't find pronunciation for objecthood
+14:33:49.772 WARNING dictionary        Missing word: objecthood'
+14:33:49.772 WARNING jsgfGrammar       Can't find pronunciation for objecthood'
+14:33:49.772 WARNING dictionary        Missing word: objectless
+14:33:49.772 WARNING jsgfGrammar       Can't find pronunciation for objectless
+14:33:49.772 WARNING dictionary        Missing word: objects'
+14:33:49.772 WARNING jsgfGrammar       Can't find pronunciation for objects'
+14:33:49.772 WARNING dictionary        Missing word: objet
+14:33:49.772 WARNING jsgfGrammar       Can't find pronunciation for objet
+14:33:49.772 WARNING dictionary        Missing word: obliteration
+14:33:49.772 WARNING jsgfGrammar       Can't find pronunciation for obliteration
+14:33:49.772 WARNING dictionary        Missing word: obselete
+14:33:49.772 WARNING jsgfGrammar       Can't find pronunciation for obselete
+14:33:49.772 WARNING dictionary        Missing word: observational
+14:33:49.772 WARNING jsgfGrammar       Can't find pronunciation for observational
+14:33:49.772 WARNING dictionary        Missing word: observer's
+14:33:49.772 WARNING jsgfGrammar       Can't find pronunciation for observer's
+14:33:49.773 WARNING dictionary        Missing word: obviated
+14:33:49.796 WARNING jsgfGrammar       Can't find pronunciation for obviated
+14:33:49.796 WARNING dictionary        Missing word: occam's
+14:33:49.796 WARNING jsgfGrammar       Can't find pronunciation for occam's
+14:33:49.796 WARNING dictionary        Missing word: occluded
+14:33:49.796 WARNING jsgfGrammar       Can't find pronunciation for occluded
+14:33:49.797 WARNING dictionary        Missing word: oe
+14:33:49.797 WARNING jsgfGrammar       Can't find pronunciation for oe
+14:33:49.797 WARNING dictionary        Missing word: offray
+14:33:49.797 WARNING jsgfGrammar       Can't find pronunciation for offray
+14:33:49.797 WARNING dictionary        Missing word: offscreen
+14:33:49.797 WARNING jsgfGrammar       Can't find pronunciation for offscreen
+14:33:49.797 WARNING dictionary        Missing word: oir
+14:33:49.797 WARNING jsgfGrammar       Can't find pronunciation for oir
+14:33:49.797 WARNING dictionary        Missing word: on'
+14:33:49.797 WARNING jsgfGrammar       Can't find pronunciation for on'
+14:33:49.797 WARNING dictionary        Missing word: onanistic
+14:33:49.798 WARNING jsgfGrammar       Can't find pronunciation for onanistic
+14:33:49.798 WARNING dictionary        Missing word: onstended
+14:33:49.798 WARNING jsgfGrammar       Can't find pronunciation for onstended
+14:33:49.798 WARNING dictionary        Missing word: operands
+14:33:49.798 WARNING jsgfGrammar       Can't find pronunciation for operands
+14:33:49.798 WARNING dictionary        Missing word: operationalized
+14:33:49.798 WARNING jsgfGrammar       Can't find pronunciation for operationalized
+14:33:49.798 WARNING dictionary        Missing word: oppehnheim
+14:33:49.798 WARNING jsgfGrammar       Can't find pronunciation for oppehnheim
+14:33:49.799 WARNING dictionary        Missing word: oppenheim's
+14:33:49.799 WARNING jsgfGrammar       Can't find pronunciation for oppenheim's
+14:33:49.799 WARNING dictionary        Missing word: oppositionally
+14:33:49.799 WARNING jsgfGrammar       Can't find pronunciation for oppositionally
+14:33:49.799 WARNING dictionary        Missing word: optimizing
+14:33:49.799 WARNING jsgfGrammar       Can't find pronunciation for optimizing
+14:33:49.799 WARNING dictionary        Missing word: ordinariness
+14:33:49.799 WARNING jsgfGrammar       Can't find pronunciation for ordinariness
+14:33:49.799 WARNING dictionary        Missing word: originary
+14:33:49.799 WARNING jsgfGrammar       Can't find pronunciation for originary
+14:33:49.799 WARNING dictionary        Missing word: orrdered
+14:33:49.800 WARNING jsgfGrammar       Can't find pronunciation for orrdered
+14:33:49.800 WARNING dictionary        Missing word: osculate
+14:33:49.800 WARNING jsgfGrammar       Can't find pronunciation for osculate
+14:33:49.801 WARNING dictionary        Missing word: ottico
+14:33:49.801 WARNING jsgfGrammar       Can't find pronunciation for ottico
+14:33:49.801 WARNING dictionary        Missing word: oulipo
+14:33:49.801 WARNING jsgfGrammar       Can't find pronunciation for oulipo
+14:33:49.801 WARNING dictionary        Missing word: outisde
+14:33:49.801 WARNING jsgfGrammar       Can't find pronunciation for outisde
+14:33:49.801 WARNING dictionary        Missing word: overdetermined
+14:33:49.801 WARNING jsgfGrammar       Can't find pronunciation for overdetermined
+14:33:49.801 WARNING dictionary        Missing word: overfamiliarize
+14:33:49.801 WARNING jsgfGrammar       Can't find pronunciation for overfamiliarize
+14:33:49.801 WARNING dictionary        Missing word: overgeneralizing
+14:33:49.801 WARNING jsgfGrammar       Can't find pronunciation for overgeneralizing
+14:33:49.802 WARNING dictionary        Missing word: overnarrative
+14:33:49.802 WARNING jsgfGrammar       Can't find pronunciation for overnarrative
+14:33:49.802 WARNING dictionary        Missing word: overtakes
+14:33:49.802 WARNING jsgfGrammar       Can't find pronunciation for overtakes
+14:33:49.802 WARNING dictionary        Missing word: overwriting
+14:33:49.802 WARNING jsgfGrammar       Can't find pronunciation for overwriting
+14:33:49.802 WARNING dictionary        Missing word: painting'
+14:33:49.802 WARNING jsgfGrammar       Can't find pronunciation for painting'
+14:33:49.802 WARNING dictionary        Missing word: pairwise
+14:33:49.803 WARNING jsgfGrammar       Can't find pronunciation for pairwise
+14:33:49.803 WARNING dictionary        Missing word: paj
+14:33:49.803 WARNING jsgfGrammar       Can't find pronunciation for paj
+14:33:49.803 WARNING dictionary        Missing word: palpability
+14:33:49.803 WARNING jsgfGrammar       Can't find pronunciation for palpability
+14:33:49.803 WARNING dictionary        Missing word: palying
+14:33:49.803 WARNING jsgfGrammar       Can't find pronunciation for palying
+14:33:49.803 WARNING dictionary        Missing word: paradises
+14:33:49.803 WARNING jsgfGrammar       Can't find pronunciation for paradises
+14:33:49.803 WARNING dictionary        Missing word: paradoxicallhy
+14:33:49.803 WARNING jsgfGrammar       Can't find pronunciation for paradoxicallhy
+14:33:49.804 WARNING dictionary        Missing word: particularization
+14:33:49.804 WARNING jsgfGrammar       Can't find pronunciation for particularization
+14:33:49.804 WARNING dictionary        Missing word: partium
+14:33:49.804 WARNING jsgfGrammar       Can't find pronunciation for partium
+14:33:49.804 WARNING dictionary        Missing word: passageways
+14:33:49.804 WARNING jsgfGrammar       Can't find pronunciation for passageways
+14:33:49.804 WARNING dictionary        Missing word: pc
+14:33:49.804 WARNING jsgfGrammar       Can't find pronunciation for pc
+14:33:49.804 WARNING dictionary        Missing word: pedagogics
+14:33:49.805 WARNING jsgfGrammar       Can't find pronunciation for pedagogics
+14:33:49.805 WARNING dictionary        Missing word: perception'
+14:33:49.805 WARNING jsgfGrammar       Can't find pronunciation for perception'
+14:33:49.805 WARNING dictionary        Missing word: perceptrons
+14:33:49.805 WARNING jsgfGrammar       Can't find pronunciation for perceptrons
+14:33:49.805 WARNING dictionary        Missing word: perceptualized
+14:33:49.805 WARNING jsgfGrammar       Can't find pronunciation for perceptualized
+14:33:49.805 WARNING dictionary        Missing word: perfections
+14:33:49.805 WARNING jsgfGrammar       Can't find pronunciation for perfections
+14:33:49.805 WARNING dictionary        Missing word: performativity
+14:33:49.805 WARNING jsgfGrammar       Can't find pronunciation for performativity
+14:33:49.806 WARNING dictionary        Missing word: perishes
+14:33:49.806 WARNING jsgfGrammar       Can't find pronunciation for perishes
+14:33:49.806 WARNING dictionary        Missing word: permissable
+14:33:49.806 WARNING jsgfGrammar       Can't find pronunciation for permissable
+14:33:49.806 WARNING dictionary        Missing word: permissibility
+14:33:49.806 WARNING jsgfGrammar       Can't find pronunciation for permissibility
+14:33:49.806 WARNING dictionary        Missing word: phaillisism
+14:33:49.806 WARNING jsgfGrammar       Can't find pronunciation for phaillisism
+14:33:49.806 WARNING dictionary        Missing word: phallus's
+14:33:49.806 WARNING jsgfGrammar       Can't find pronunciation for phallus's
+14:33:49.806 WARNING dictionary        Missing word: phalluses
+14:33:49.807 WARNING jsgfGrammar       Can't find pronunciation for phalluses
+14:33:49.807 WARNING dictionary        Missing word: pheno'
+14:33:49.807 WARNING jsgfGrammar       Can't find pronunciation for pheno'
+14:33:49.807 WARNING dictionary        Missing word: phenome
+14:33:49.807 WARNING jsgfGrammar       Can't find pronunciation for phenome
+14:33:49.807 WARNING dictionary        Missing word: phenomenological
+14:33:49.807 WARNING jsgfGrammar       Can't find pronunciation for phenomenological
+14:33:49.807 WARNING dictionary        Missing word: phenomenology
+14:33:49.807 WARNING jsgfGrammar       Can't find pronunciation for phenomenology
+14:33:49.807 WARNING dictionary        Missing word: phillippus
+14:33:49.807 WARNING jsgfGrammar       Can't find pronunciation for phillippus
+14:33:49.807 WARNING dictionary        Missing word: philosophiae
+14:33:49.807 WARNING jsgfGrammar       Can't find pronunciation for philosophiae
+14:33:49.808 WARNING dictionary        Missing word: philosophy's
+14:33:49.808 WARNING jsgfGrammar       Can't find pronunciation for philosophy's
+14:33:49.808 WARNING dictionary        Missing word: photograms
+14:33:49.808 WARNING jsgfGrammar       Can't find pronunciation for photograms
+14:33:49.808 WARNING dictionary        Missing word: photographies
+14:33:49.808 WARNING jsgfGrammar       Can't find pronunciation for photographies
+14:33:49.808 WARNING dictionary        Missing word: photography's
+14:33:49.808 WARNING jsgfGrammar       Can't find pronunciation for photography's
+14:33:49.808 WARNING dictionary        Missing word: phys
+14:33:49.808 WARNING jsgfGrammar       Can't find pronunciation for phys
+14:33:49.808 WARNING dictionary        Missing word: pianola
+14:33:49.808 WARNING jsgfGrammar       Can't find pronunciation for pianola
+14:33:49.809 WARNING dictionary        Missing word: picabia
+14:33:49.809 WARNING jsgfGrammar       Can't find pronunciation for picabia
+14:33:49.809 WARNING dictionary        Missing word: pinballing
+14:33:49.809 WARNING jsgfGrammar       Can't find pronunciation for pinballing
+14:33:49.809 WARNING dictionary        Missing word: planboxes
+14:33:49.809 WARNING jsgfGrammar       Can't find pronunciation for planboxes
+14:33:49.809 WARNING dictionary        Missing word: plateaus
+14:33:49.809 WARNING jsgfGrammar       Can't find pronunciation for plateaus
+14:33:49.809 WARNING dictionary        Missing word: pleasevote
+14:33:49.809 WARNING jsgfGrammar       Can't find pronunciation for pleasevote
+14:33:49.810 WARNING dictionary        Missing word: poesie
+14:33:49.810 WARNING jsgfGrammar       Can't find pronunciation for poesie
+14:33:49.810 WARNING dictionary        Missing word: poetical
+14:33:49.810 WARNING jsgfGrammar       Can't find pronunciation for poetical
+14:33:49.810 WARNING dictionary        Missing word: poeticized
+14:33:49.810 WARNING jsgfGrammar       Can't find pronunciation for poeticized
+14:33:49.810 WARNING dictionary        Missing word: poincare's
+14:33:49.810 WARNING jsgfGrammar       Can't find pronunciation for poincare's
+14:33:49.810 WARNING dictionary        Missing word: pokers
+14:33:49.811 WARNING jsgfGrammar       Can't find pronunciation for pokers
+14:33:49.811 WARNING dictionary        Missing word: polymorphous
+14:33:49.811 WARNING jsgfGrammar       Can't find pronunciation for polymorphous
+14:33:49.811 WARNING dictionary        Missing word: polyvalence
+14:33:49.811 WARNING jsgfGrammar       Can't find pronunciation for polyvalence
+14:33:49.811 WARNING dictionary        Missing word: polyvalent
+14:33:49.811 WARNING jsgfGrammar       Can't find pronunciation for polyvalent
+14:33:49.811 WARNING dictionary        Missing word: ponty
+14:33:49.811 WARNING jsgfGrammar       Can't find pronunciation for ponty
+14:33:49.811 WARNING dictionary        Missing word: popost
+14:33:49.811 WARNING jsgfGrammar       Can't find pronunciation for popost
+14:33:49.812 WARNING dictionary        Missing word: portholes
+14:33:49.812 WARNING jsgfGrammar       Can't find pronunciation for portholes
+14:33:49.812 WARNING dictionary        Missing word: portraiture
+14:33:49.812 WARNING jsgfGrammar       Can't find pronunciation for portraiture
+14:33:49.812 WARNING dictionary        Missing word: positing
+14:33:49.812 WARNING jsgfGrammar       Can't find pronunciation for positing
+14:33:49.812 WARNING dictionary        Missing word: positivistic
+14:33:49.812 WARNING jsgfGrammar       Can't find pronunciation for positivistic
+14:33:49.812 WARNING dictionary        Missing word: postdisciplinary
+14:33:49.812 WARNING jsgfGrammar       Can't find pronunciation for postdisciplinary
+14:33:49.812 WARNING dictionary        Missing word: posthumanism
+14:33:49.812 WARNING jsgfGrammar       Can't find pronunciation for posthumanism
+14:33:49.813 WARNING dictionary        Missing word: postimperialism
+14:33:49.813 WARNING jsgfGrammar       Can't find pronunciation for postimperialism
+14:33:49.813 WARNING dictionary        Missing word: postindustrial
+14:33:49.813 WARNING jsgfGrammar       Can't find pronunciation for postindustrial
+14:33:49.813 WARNING dictionary        Missing word: postmedium
+14:33:49.813 WARNING jsgfGrammar       Can't find pronunciation for postmedium
+14:33:49.813 WARNING dictionary        Missing word: postulation
+14:33:49.813 WARNING jsgfGrammar       Can't find pronunciation for postulation
+14:33:49.813 WARNING dictionary        Missing word: potentiality
+14:33:49.813 WARNING jsgfGrammar       Can't find pronunciation for potentiality
+14:33:49.813 WARNING dictionary        Missing word: powderized
+14:33:49.813 WARNING jsgfGrammar       Can't find pronunciation for powderized
+14:33:49.814 WARNING dictionary        Missing word: pp
+14:33:49.814 WARNING jsgfGrammar       Can't find pronunciation for pp
+14:33:49.814 WARNING dictionary        Missing word: practicioners
+14:33:49.814 WARNING jsgfGrammar       Can't find pronunciation for practicioners
+14:33:49.814 WARNING dictionary        Missing word: practiquer
+14:33:49.814 WARNING jsgfGrammar       Can't find pronunciation for practiquer
+14:33:49.814 WARNING dictionary        Missing word: preciosity
+14:33:49.814 WARNING jsgfGrammar       Can't find pronunciation for preciosity
+14:33:49.814 WARNING dictionary        Missing word: preexistent
+14:33:49.815 WARNING jsgfGrammar       Can't find pronunciation for preexistent
+14:33:49.815 WARNING dictionary        Missing word: prefigures
+14:33:49.815 WARNING jsgfGrammar       Can't find pronunciation for prefigures
+14:33:49.815 WARNING dictionary        Missing word: preintellectual
+14:33:49.815 WARNING jsgfGrammar       Can't find pronunciation for preintellectual
+14:33:49.815 WARNING dictionary        Missing word: preparators
+14:33:49.815 WARNING jsgfGrammar       Can't find pronunciation for preparators
+14:33:49.815 WARNING dictionary        Missing word: presupposed
+14:33:49.815 WARNING jsgfGrammar       Can't find pronunciation for presupposed
+14:33:49.816 WARNING dictionary        Missing word: primping
+14:33:49.816 WARNING jsgfGrammar       Can't find pronunciation for primping
+14:33:49.816 WARNING dictionary        Missing word: primps
+14:33:49.816 WARNING jsgfGrammar       Can't find pronunciation for primps
+14:33:49.816 WARNING dictionary        Missing word: prisitine
+14:33:49.816 WARNING jsgfGrammar       Can't find pronunciation for prisitine
+14:33:49.816 WARNING dictionary        Missing word: priveleges
+14:33:49.816 WARNING jsgfGrammar       Can't find pronunciation for priveleges
+14:33:49.816 WARNING dictionary        Missing word: privileging
+14:33:49.816 WARNING jsgfGrammar       Can't find pronunciation for privileging
+14:33:49.817 WARNING dictionary        Missing word: priviliges
+14:33:49.817 WARNING jsgfGrammar       Can't find pronunciation for priviliges
+14:33:49.817 WARNING dictionary        Missing word: prizeworthy
+14:33:49.817 WARNING jsgfGrammar       Can't find pronunciation for prizeworthy
+14:33:49.817 WARNING dictionary        Missing word: problematize
+14:33:49.817 WARNING jsgfGrammar       Can't find pronunciation for problematize
+14:33:49.817 WARNING dictionary        Missing word: process'
+14:33:49.817 WARNING jsgfGrammar       Can't find pronunciation for process'
+14:33:49.817 WARNING dictionary        Missing word: prodigy'
+14:33:49.817 WARNING jsgfGrammar       Can't find pronunciation for prodigy'
+14:33:49.817 WARNING dictionary        Missing word: productivism
+14:33:49.818 WARNING jsgfGrammar       Can't find pronunciation for productivism
+14:33:49.818 WARNING dictionary        Missing word: profundity
+14:33:49.818 WARNING jsgfGrammar       Can't find pronunciation for profundity
+14:33:49.818 WARNING dictionary        Missing word: programmer'
+14:33:49.818 WARNING jsgfGrammar       Can't find pronunciation for programmer'
+14:33:49.818 WARNING dictionary        Missing word: programming'
+14:33:49.818 WARNING jsgfGrammar       Can't find pronunciation for programming'
+14:33:49.818 WARNING dictionary        Missing word: propagator
+14:33:49.819 WARNING jsgfGrammar       Can't find pronunciation for propagator
+14:33:49.823 WARNING dictionary        Missing word: provisos
+14:33:49.823 WARNING jsgfGrammar       Can't find pronunciation for provisos
+14:33:49.823 WARNING dictionary        Missing word: provocatives
+14:33:49.823 WARNING jsgfGrammar       Can't find pronunciation for provocatives
+14:33:49.827 WARNING dictionary        Missing word: pshchologizes
+14:33:49.827 WARNING jsgfGrammar       Can't find pronunciation for pshchologizes
+14:33:49.827 WARNING dictionary        Missing word: psychopomp
+14:33:49.827 WARNING jsgfGrammar       Can't find pronunciation for psychopomp
+14:33:49.827 WARNING dictionary        Missing word: psychoses
+14:33:49.827 WARNING jsgfGrammar       Can't find pronunciation for psychoses
+14:33:49.827 WARNING dictionary        Missing word: psychotics
+14:33:49.827 WARNING jsgfGrammar       Can't find pronunciation for psychotics
+14:33:49.827 WARNING dictionary        Missing word: publicness
+14:33:49.827 WARNING jsgfGrammar       Can't find pronunciation for publicness
+14:33:49.828 WARNING dictionary        Missing word: puissante
+14:33:49.828 WARNING jsgfGrammar       Can't find pronunciation for puissante
+14:33:49.828 WARNING dictionary        Missing word: pulpy
+14:33:49.828 WARNING jsgfGrammar       Can't find pronunciation for pulpy
+14:33:49.828 WARNING dictionary        Missing word: purism
+14:33:49.828 WARNING jsgfGrammar       Can't find pronunciation for purism
+14:33:49.828 WARNING dictionary        Missing word: purposelessness
+14:33:49.828 WARNING jsgfGrammar       Can't find pronunciation for purposelessness
+14:33:49.828 WARNING dictionary        Missing word: purveyed
+14:33:49.828 WARNING jsgfGrammar       Can't find pronunciation for purveyed
+14:33:49.828 WARNING dictionary        Missing word: putrefactio
+14:33:49.828 WARNING jsgfGrammar       Can't find pronunciation for putrefactio
+14:33:49.828 WARNING dictionary        Missing word: putrefaction
+14:33:49.828 WARNING jsgfGrammar       Can't find pronunciation for putrefaction
+14:33:49.828 WARNING dictionary        Missing word: pynchon's
+14:33:49.828 WARNING jsgfGrammar       Can't find pronunciation for pynchon's
+14:33:49.828 WARNING dictionary        Missing word: pyschidae
+14:33:49.828 WARNING jsgfGrammar       Can't find pronunciation for pyschidae
+14:33:49.828 WARNING dictionary        Missing word: pythagorean
+14:33:49.828 WARNING jsgfGrammar       Can't find pronunciation for pythagorean
+14:33:49.828 WARNING dictionary        Missing word: quality'
+14:33:49.828 WARNING jsgfGrammar       Can't find pronunciation for quality'
+14:33:49.828 WARNING dictionary        Missing word: quanta
+14:33:49.828 WARNING jsgfGrammar       Can't find pronunciation for quanta
+14:33:49.829 WARNING dictionary        Missing word: quois
+14:33:49.829 WARNING jsgfGrammar       Can't find pronunciation for quois
+14:33:49.829 WARNING dictionary        Missing word: radiantly
+14:33:49.829 WARNING jsgfGrammar       Can't find pronunciation for radiantly
+14:33:49.829 WARNING dictionary        Missing word: raes
+14:33:49.829 WARNING jsgfGrammar       Can't find pronunciation for raes
+14:33:49.829 WARNING dictionary        Missing word: ragnarok
+14:33:49.829 WARNING jsgfGrammar       Can't find pronunciation for ragnarok
+14:33:49.829 WARNING dictionary        Missing word: randomizers
+14:33:49.829 WARNING jsgfGrammar       Can't find pronunciation for randomizers
+14:33:49.829 WARNING dictionary        Missing word: randomizing
+14:33:49.829 WARNING jsgfGrammar       Can't find pronunciation for randomizing
+14:33:49.829 WARNING dictionary        Missing word: raphaelite
+14:33:49.829 WARNING jsgfGrammar       Can't find pronunciation for raphaelite
+14:33:49.829 WARNING dictionary        Missing word: rasa
+14:33:49.829 WARNING jsgfGrammar       Can't find pronunciation for rasa
+14:33:49.829 WARNING dictionary        Missing word: rationalism
+14:33:49.829 WARNING jsgfGrammar       Can't find pronunciation for rationalism
+14:33:49.829 WARNING dictionary        Missing word: rayograph
+14:33:49.829 WARNING jsgfGrammar       Can't find pronunciation for rayograph
+14:33:49.829 WARNING dictionary        Missing word: rayographs
+14:33:49.829 WARNING jsgfGrammar       Can't find pronunciation for rayographs
+14:33:49.829 WARNING dictionary        Missing word: rd
+14:33:49.829 WARNING jsgfGrammar       Can't find pronunciation for rd
+14:33:49.829 WARNING dictionary        Missing word: reactively
+14:33:49.829 WARNING jsgfGrammar       Can't find pronunciation for reactively
+14:33:49.829 WARNING dictionary        Missing word: readymade's
+14:33:49.829 WARNING jsgfGrammar       Can't find pronunciation for readymade's
+14:33:49.830 WARNING dictionary        Missing word: real'
+14:33:49.830 WARNING jsgfGrammar       Can't find pronunciation for real'
+14:33:49.830 WARNING dictionary        Missing word: realization'
+14:33:49.830 WARNING jsgfGrammar       Can't find pronunciation for realization'
+14:33:49.830 WARNING dictionary        Missing word: realizing'
+14:33:49.830 WARNING jsgfGrammar       Can't find pronunciation for realizing'
+14:33:49.830 WARNING dictionary        Missing word: rearrangements
+14:33:49.830 WARNING jsgfGrammar       Can't find pronunciation for rearrangements
+14:33:49.830 WARNING dictionary        Missing word: rebeleis
+14:33:49.830 WARNING jsgfGrammar       Can't find pronunciation for rebeleis
+14:33:49.830 WARNING dictionary        Missing word: recoding
+14:33:49.830 WARNING jsgfGrammar       Can't find pronunciation for recoding
+14:33:49.830 WARNING dictionary        Missing word: recombined
+14:33:49.830 WARNING jsgfGrammar       Can't find pronunciation for recombined
+14:33:49.830 WARNING dictionary        Missing word: reconfiguring
+14:33:49.830 WARNING jsgfGrammar       Can't find pronunciation for reconfiguring
+14:33:49.830 WARNING dictionary        Missing word: reconnection
+14:33:49.830 WARNING jsgfGrammar       Can't find pronunciation for reconnection
+14:33:49.830 WARNING dictionary        Missing word: reconsolidation
+14:33:49.830 WARNING jsgfGrammar       Can't find pronunciation for reconsolidation
+14:33:49.830 WARNING dictionary        Missing word: recontextualizing
+14:33:49.830 WARNING jsgfGrammar       Can't find pronunciation for recontextualizing
+14:33:49.830 WARNING dictionary        Missing word: recreations
+14:33:49.830 WARNING jsgfGrammar       Can't find pronunciation for recreations
+14:33:49.830 WARNING dictionary        Missing word: recto
+14:33:49.830 WARNING jsgfGrammar       Can't find pronunciation for recto
+14:33:49.831 WARNING dictionary        Missing word: recursive
+14:33:49.831 WARNING jsgfGrammar       Can't find pronunciation for recursive
+14:33:49.831 WARNING dictionary        Missing word: recut
+14:33:49.831 WARNING jsgfGrammar       Can't find pronunciation for recut
+14:33:49.831 WARNING dictionary        Missing word: redolent
+14:33:49.831 WARNING jsgfGrammar       Can't find pronunciation for redolent
+14:33:49.831 WARNING dictionary        Missing word: reductivism
+14:33:49.831 WARNING jsgfGrammar       Can't find pronunciation for reductivism
+14:33:49.831 WARNING dictionary        Missing word: reductivist
+14:33:49.831 WARNING jsgfGrammar       Can't find pronunciation for reductivist
+14:33:49.846 WARNING dictionary        Missing word: referentially
+14:33:49.846 WARNING jsgfGrammar       Can't find pronunciation for referentially
+14:33:49.846 WARNING dictionary        Missing word: referents
+14:33:49.846 WARNING jsgfGrammar       Can't find pronunciation for referents
+14:33:49.846 WARNING dictionary        Missing word: reformatting
+14:33:49.846 WARNING jsgfGrammar       Can't find pronunciation for reformatting
+14:33:49.846 WARNING dictionary        Missing word: regulability
+14:33:49.847 WARNING jsgfGrammar       Can't find pronunciation for regulability
+14:33:49.847 WARNING dictionary        Missing word: regularized
+14:33:49.847 WARNING jsgfGrammar       Can't find pronunciation for regularized
+14:33:49.847 WARNING dictionary        Missing word: reinvestments
+14:33:49.847 WARNING jsgfGrammar       Can't find pronunciation for reinvestments
+14:33:49.847 WARNING dictionary        Missing word: reiterative
+14:33:49.847 WARNING jsgfGrammar       Can't find pronunciation for reiterative
+14:33:49.847 WARNING dictionary        Missing word: reizschutz
+14:33:49.847 WARNING jsgfGrammar       Can't find pronunciation for reizschutz
+14:33:49.847 WARNING dictionary        Missing word: relatedness
+14:33:49.847 WARNING jsgfGrammar       Can't find pronunciation for relatedness
+14:33:49.847 WARNING dictionary        Missing word: relatinship
+14:33:49.847 WARNING jsgfGrammar       Can't find pronunciation for relatinship
+14:33:49.847 WARNING dictionary        Missing word: relationality
+14:33:49.847 WARNING jsgfGrammar       Can't find pronunciation for relationality
+14:33:49.847 WARNING dictionary        Missing word: relinquishment
+14:33:49.847 WARNING jsgfGrammar       Can't find pronunciation for relinquishment
+14:33:49.847 WARNING dictionary        Missing word: reliquary
+14:33:49.847 WARNING jsgfGrammar       Can't find pronunciation for reliquary
+14:33:49.847 WARNING dictionary        Missing word: remap
+14:33:49.847 WARNING jsgfGrammar       Can't find pronunciation for remap
+14:33:49.847 WARNING dictionary        Missing word: remorselessly
+14:33:49.847 WARNING jsgfGrammar       Can't find pronunciation for remorselessly
+14:33:49.847 WARNING dictionary        Missing word: reorientation
+14:33:49.847 WARNING jsgfGrammar       Can't find pronunciation for reorientation
+14:33:49.847 WARNING dictionary        Missing word: reorienting
+14:33:49.848 WARNING jsgfGrammar       Can't find pronunciation for reorienting
+14:33:49.848 WARNING dictionary        Missing word: repertoirs
+14:33:49.848 WARNING jsgfGrammar       Can't find pronunciation for repertoirs
+14:33:49.848 WARNING dictionary        Missing word: represetntation
+14:33:49.848 WARNING jsgfGrammar       Can't find pronunciation for represetntation
+14:33:49.848 WARNING dictionary        Missing word: repressively
+14:33:49.848 WARNING jsgfGrammar       Can't find pronunciation for repressively
+14:33:49.848 WARNING dictionary        Missing word: repugnance
+14:33:49.848 WARNING jsgfGrammar       Can't find pronunciation for repugnance
+14:33:49.848 WARNING dictionary        Missing word: rescinds
+14:33:49.848 WARNING jsgfGrammar       Can't find pronunciation for rescinds
+14:33:49.848 WARNING dictionary        Missing word: resits
+14:33:49.848 WARNING jsgfGrammar       Can't find pronunciation for resits
+14:33:49.848 WARNING dictionary        Missing word: reskilling
+14:33:49.848 WARNING jsgfGrammar       Can't find pronunciation for reskilling
+14:33:49.848 WARNING dictionary        Missing word: resolvable
+14:33:49.848 WARNING jsgfGrammar       Can't find pronunciation for resolvable
+14:33:49.848 WARNING dictionary        Missing word: reterritorialization
+14:33:49.848 WARNING jsgfGrammar       Can't find pronunciation for reterritorialization
+14:33:49.849 WARNING dictionary        Missing word: retrival
+14:33:49.849 WARNING jsgfGrammar       Can't find pronunciation for retrival
+14:33:49.849 WARNING dictionary        Missing word: retype
+14:33:49.849 WARNING jsgfGrammar       Can't find pronunciation for retype
+14:33:49.849 WARNING dictionary        Missing word: reuplsion
+14:33:49.849 WARNING jsgfGrammar       Can't find pronunciation for reuplsion
+14:33:49.849 WARNING dictionary        Missing word: reveng
+14:33:49.849 WARNING jsgfGrammar       Can't find pronunciation for reveng
+14:33:49.849 WARNING dictionary        Missing word: reversions
+14:33:49.849 WARNING jsgfGrammar       Can't find pronunciation for reversions
+14:33:49.849 WARNING dictionary        Missing word: revisionary
+14:33:49.849 WARNING jsgfGrammar       Can't find pronunciation for revisionary
+14:33:49.849 WARNING dictionary        Missing word: revisualization
+14:33:49.849 WARNING jsgfGrammar       Can't find pronunciation for revisualization
+14:33:49.849 WARNING dictionary        Missing word: richteresque
+14:33:49.849 WARNING jsgfGrammar       Can't find pronunciation for richteresque
+14:33:49.849 WARNING dictionary        Missing word: riesbeck
+14:33:49.849 WARNING jsgfGrammar       Can't find pronunciation for riesbeck
+14:33:49.849 WARNING dictionary        Missing word: rimbaud
+14:33:49.849 WARNING jsgfGrammar       Can't find pronunciation for rimbaud
+14:33:49.849 WARNING dictionary        Missing word: roci
+14:33:49.849 WARNING jsgfGrammar       Can't find pronunciation for roci
+14:33:49.849 WARNING dictionary        Missing word: rokeby
+14:33:49.849 WARNING jsgfGrammar       Can't find pronunciation for rokeby
+14:33:49.850 WARNING dictionary        Missing word: rpg
+14:33:49.850 WARNING jsgfGrammar       Can't find pronunciation for rpg
+14:33:49.850 WARNING dictionary        Missing word: rufi
+14:33:49.850 WARNING jsgfGrammar       Can't find pronunciation for rufi
+14:33:49.850 WARNING dictionary        Missing word: sactually
+14:33:49.850 WARNING jsgfGrammar       Can't find pronunciation for sactually
+14:33:49.850 WARNING dictionary        Missing word: sadean
+14:33:49.850 WARNING jsgfGrammar       Can't find pronunciation for sadean
+14:33:49.850 WARNING dictionary        Missing word: sadomasochist
+14:33:49.850 WARNING jsgfGrammar       Can't find pronunciation for sadomasochist
+14:33:49.850 WARNING dictionary        Missing word: samedi
+14:33:49.850 WARNING jsgfGrammar       Can't find pronunciation for samedi
+14:33:49.850 WARNING dictionary        Missing word: satiated
+14:33:49.851 WARNING jsgfGrammar       Can't find pronunciation for satiated
+14:33:49.851 WARNING dictionary        Missing word: saturates
+14:33:49.851 WARNING jsgfGrammar       Can't find pronunciation for saturates
+14:33:49.851 WARNING dictionary        Missing word: saudek
+14:33:49.851 WARNING jsgfGrammar       Can't find pronunciation for saudek
+14:33:49.851 WARNING dictionary        Missing word: sausages'
+14:33:49.851 WARNING jsgfGrammar       Can't find pronunciation for sausages'
+14:33:49.851 WARNING dictionary        Missing word: saussure's
+14:33:49.851 WARNING jsgfGrammar       Can't find pronunciation for saussure's
+14:33:49.851 WARNING dictionary        Missing word: say'
+14:33:49.851 WARNING jsgfGrammar       Can't find pronunciation for say'
+14:33:49.851 WARNING dictionary        Missing word: scariness
+14:33:49.851 WARNING jsgfGrammar       Can't find pronunciation for scariness
+14:33:49.851 WARNING dictionary        Missing word: schank's
+14:33:49.851 WARNING jsgfGrammar       Can't find pronunciation for schank's
+14:33:49.851 WARNING dictionary        Missing word: schechner
+14:33:49.851 WARNING jsgfGrammar       Can't find pronunciation for schechner
+14:33:49.851 WARNING dictionary        Missing word: schemas
+14:33:49.851 WARNING jsgfGrammar       Can't find pronunciation for schemas
+14:33:49.851 WARNING dictionary        Missing word: schemes'
+14:33:49.851 WARNING jsgfGrammar       Can't find pronunciation for schemes'
+14:33:49.851 WARNING dictionary        Missing word: schismatic
+14:33:49.851 WARNING jsgfGrammar       Can't find pronunciation for schismatic
+14:33:49.851 WARNING dictionary        Missing word: schneeman's
+14:33:49.851 WARNING jsgfGrammar       Can't find pronunciation for schneeman's
+14:33:49.851 WARNING dictionary        Missing word: scholls
+14:33:49.851 WARNING jsgfGrammar       Can't find pronunciation for scholls
+14:33:49.851 WARNING dictionary        Missing word: schopenahuer
+14:33:49.851 WARNING jsgfGrammar       Can't find pronunciation for schopenahuer
+14:33:49.851 WARNING dictionary        Missing word: schopenhauerian
+14:33:49.851 WARNING jsgfGrammar       Can't find pronunciation for schopenhauerian
+14:33:49.880 WARNING dictionary        Missing word: schrodinger
+14:33:49.880 WARNING jsgfGrammar       Can't find pronunciation for schrodinger
+14:33:49.880 WARNING dictionary        Missing word: schwabsky
+14:33:49.880 WARNING jsgfGrammar       Can't find pronunciation for schwabsky
+14:33:49.880 WARNING dictionary        Missing word: screenal
+14:33:49.880 WARNING jsgfGrammar       Can't find pronunciation for screenal
+14:33:49.880 WARNING dictionary        Missing word: seaerching
+14:33:49.880 WARNING jsgfGrammar       Can't find pronunciation for seaerching
+14:33:49.880 WARNING dictionary        Missing word: searchable
+14:33:49.880 WARNING jsgfGrammar       Can't find pronunciation for searchable
+14:33:49.880 WARNING dictionary        Missing word: segregates
+14:33:49.880 WARNING jsgfGrammar       Can't find pronunciation for segregates
+14:33:49.880 WARNING dictionary        Missing word: seismographic
+14:33:49.880 WARNING jsgfGrammar       Can't find pronunciation for seismographic
+14:33:49.881 WARNING dictionary        Missing word: self'
+14:33:49.881 WARNING jsgfGrammar       Can't find pronunciation for self'
+14:33:49.881 WARNING dictionary        Missing word: semicinematic
+14:33:49.881 WARNING jsgfGrammar       Can't find pronunciation for semicinematic
+14:33:49.881 WARNING dictionary        Missing word: semiflexible
+14:33:49.881 WARNING jsgfGrammar       Can't find pronunciation for semiflexible
+14:33:49.881 WARNING dictionary        Missing word: semiology
+14:33:49.881 WARNING jsgfGrammar       Can't find pronunciation for semiology
+14:33:49.881 WARNING dictionary        Missing word: semisuccessful
+14:33:49.881 WARNING jsgfGrammar       Can't find pronunciation for semisuccessful
+14:33:49.881 WARNING dictionary        Missing word: sensate
+14:33:49.881 WARNING jsgfGrammar       Can't find pronunciation for sensate
+14:33:49.881 WARNING dictionary        Missing word: sensei
+14:33:49.881 WARNING jsgfGrammar       Can't find pronunciation for sensei
+14:33:49.881 WARNING dictionary        Missing word: sensorium
+14:33:49.881 WARNING jsgfGrammar       Can't find pronunciation for sensorium
+14:33:49.881 WARNING dictionary        Missing word: sensualized
+14:33:49.881 WARNING jsgfGrammar       Can't find pronunciation for sensualized
+14:33:49.881 WARNING dictionary        Missing word: senuous
+14:33:49.881 WARNING jsgfGrammar       Can't find pronunciation for senuous
+14:33:49.881 WARNING dictionary        Missing word: sepcializations
+14:33:49.881 WARNING jsgfGrammar       Can't find pronunciation for sepcializations
+14:33:49.881 WARNING dictionary        Missing word: serpents'
+14:33:49.881 WARNING jsgfGrammar       Can't find pronunciation for serpents'
+14:33:49.881 WARNING dictionary        Missing word: sesiidae
+14:33:49.882 WARNING jsgfGrammar       Can't find pronunciation for sesiidae
+14:33:49.882 WARNING dictionary        Missing word: seurat
+14:33:49.882 WARNING jsgfGrammar       Can't find pronunciation for seurat
+14:33:49.882 WARNING dictionary        Missing word: shadily
+14:33:49.882 WARNING jsgfGrammar       Can't find pronunciation for shadily
+14:33:49.882 WARNING dictionary        Missing word: shaman's
+14:33:49.882 WARNING jsgfGrammar       Can't find pronunciation for shaman's
+14:33:49.882 WARNING dictionary        Missing word: shamanize
+14:33:49.882 WARNING jsgfGrammar       Can't find pronunciation for shamanize
+14:33:49.882 WARNING dictionary        Missing word: shirelles'
+14:33:49.882 WARNING jsgfGrammar       Can't find pronunciation for shirelles'
+14:33:49.882 WARNING dictionary        Missing word: shoeboxes
+14:33:49.882 WARNING jsgfGrammar       Can't find pronunciation for shoeboxes
+14:33:49.882 WARNING dictionary        Missing word: shortcuts'
+14:33:49.882 WARNING jsgfGrammar       Can't find pronunciation for shortcuts'
+14:33:49.883 WARNING dictionary        Missing word: showebox
+14:33:49.883 WARNING jsgfGrammar       Can't find pronunciation for showebox
+14:33:49.883 WARNING dictionary        Missing word: shrewery
+14:33:49.883 WARNING jsgfGrammar       Can't find pronunciation for shrewery
+14:33:49.883 WARNING dictionary        Missing word: sideboard
+14:33:49.883 WARNING jsgfGrammar       Can't find pronunciation for sideboard
+14:33:49.883 WARNING dictionary        Missing word: sign'
+14:33:49.883 WARNING jsgfGrammar       Can't find pronunciation for sign'
+14:33:49.883 WARNING dictionary        Missing word: silkscreening
+14:33:49.883 WARNING jsgfGrammar       Can't find pronunciation for silkscreening
+14:33:49.883 WARNING dictionary        Missing word: silverfish
+14:33:49.883 WARNING jsgfGrammar       Can't find pronunciation for silverfish
+14:33:49.883 WARNING dictionary        Missing word: simcity
+14:33:49.883 WARNING jsgfGrammar       Can't find pronunciation for simcity
+14:33:49.883 WARNING dictionary        Missing word: similalry
+14:33:49.883 WARNING jsgfGrammar       Can't find pronunciation for similalry
+14:33:49.883 WARNING dictionary        Missing word: simile
+14:33:49.883 WARNING jsgfGrammar       Can't find pronunciation for simile
+14:33:49.883 WARNING dictionary        Missing word: simplec
+14:33:49.883 WARNING jsgfGrammar       Can't find pronunciation for simplec
+14:33:49.883 WARNING dictionary        Missing word: simpleminded
+14:33:49.883 WARNING jsgfGrammar       Can't find pronunciation for simpleminded
+14:33:49.883 WARNING dictionary        Missing word: simplifications
+14:33:49.883 WARNING jsgfGrammar       Can't find pronunciation for simplifications
+14:33:49.883 WARNING dictionary        Missing word: simultaneity
+14:33:49.883 WARNING jsgfGrammar       Can't find pronunciation for simultaneity
+14:33:49.883 WARNING dictionary        Missing word: singsong
+14:33:49.883 WARNING jsgfGrammar       Can't find pronunciation for singsong
+14:33:49.883 WARNING dictionary        Missing word: singularities
+14:33:49.883 WARNING jsgfGrammar       Can't find pronunciation for singularities
+14:33:49.884 WARNING dictionary        Missing word: situating
+14:33:49.884 WARNING jsgfGrammar       Can't find pronunciation for situating
+14:33:49.884 WARNING dictionary        Missing word: situationists
+14:33:49.884 WARNING jsgfGrammar       Can't find pronunciation for situationists
+14:33:49.884 WARNING dictionary        Missing word: skill'
+14:33:49.884 WARNING jsgfGrammar       Can't find pronunciation for skill'
+14:33:49.884 WARNING dictionary        Missing word: sloughed
+14:33:49.884 WARNING jsgfGrammar       Can't find pronunciation for sloughed
+14:33:49.884 WARNING dictionary        Missing word: slyce
+14:33:49.884 WARNING jsgfGrammar       Can't find pronunciation for slyce
+14:33:49.884 WARNING dictionary        Missing word: slye's
+14:33:49.884 WARNING jsgfGrammar       Can't find pronunciation for slye's
+14:33:49.884 WARNING dictionary        Missing word: sme
+14:33:49.884 WARNING jsgfGrammar       Can't find pronunciation for sme
+14:33:49.884 WARNING dictionary        Missing word: snobbism
+14:33:49.884 WARNING jsgfGrammar       Can't find pronunciation for snobbism
+14:33:49.884 WARNING dictionary        Missing word: sobchack
+14:33:49.884 WARNING jsgfGrammar       Can't find pronunciation for sobchack
+14:33:49.884 WARNING dictionary        Missing word: sociopolitical
+14:33:49.884 WARNING jsgfGrammar       Can't find pronunciation for sociopolitical
+14:33:49.884 WARNING dictionary        Missing word: sociotechnical
+14:33:49.884 WARNING jsgfGrammar       Can't find pronunciation for sociotechnical
+14:33:49.885 WARNING dictionary        Missing word: sofa'
+14:33:49.885 WARNING jsgfGrammar       Can't find pronunciation for sofa'
+14:33:49.885 WARNING dictionary        Missing word: software'
+14:33:49.885 WARNING jsgfGrammar       Can't find pronunciation for software'
+14:33:49.885 WARNING dictionary        Missing word: sollwert
+14:33:49.885 WARNING jsgfGrammar       Can't find pronunciation for sollwert
+14:33:49.885 WARNING dictionary        Missing word: somatic
+14:33:49.885 WARNING jsgfGrammar       Can't find pronunciation for somatic
+14:33:49.885 WARNING dictionary        Missing word: somberness
+14:33:49.885 WARNING jsgfGrammar       Can't find pronunciation for somberness
+14:33:49.885 WARNING dictionary        Missing word: sontagian
+14:33:49.885 WARNING jsgfGrammar       Can't find pronunciation for sontagian
+14:33:49.885 WARNING dictionary        Missing word: sound'
+14:33:49.885 WARNING jsgfGrammar       Can't find pronunciation for sound'
+14:33:49.885 WARNING dictionary        Missing word: specifices
+14:33:49.885 WARNING jsgfGrammar       Can't find pronunciation for specifices
+14:33:49.885 WARNING dictionary        Missing word: spectacularization
+14:33:49.885 WARNING jsgfGrammar       Can't find pronunciation for spectacularization
+14:33:49.885 WARNING dictionary        Missing word: specters
+14:33:49.885 WARNING jsgfGrammar       Can't find pronunciation for specters
+14:33:49.885 WARNING dictionary        Missing word: spectral
+14:33:49.885 WARNING jsgfGrammar       Can't find pronunciation for spectral
+14:33:49.886 WARNING dictionary        Missing word: spiritualized
+14:33:49.886 WARNING jsgfGrammar       Can't find pronunciation for spiritualized
+14:33:49.886 WARNING dictionary        Missing word: splaying
+14:33:49.886 WARNING jsgfGrammar       Can't find pronunciation for splaying
+14:33:49.886 WARNING dictionary        Missing word: squareness'
+14:33:49.886 WARNING jsgfGrammar       Can't find pronunciation for squareness'
+14:33:49.886 WARNING dictionary        Missing word: stadische
+14:33:49.886 WARNING jsgfGrammar       Can't find pronunciation for stadische
+14:33:49.886 WARNING dictionary        Missing word: stadtische
+14:33:49.886 WARNING jsgfGrammar       Can't find pronunciation for stadtische
+14:33:49.886 WARNING dictionary        Missing word: stags
+14:33:49.886 WARNING jsgfGrammar       Can't find pronunciation for stags
+14:33:49.886 WARNING dictionary        Missing word: stasis
+14:33:49.886 WARNING jsgfGrammar       Can't find pronunciation for stasis
+14:33:49.886 WARNING dictionary        Missing word: stengers
+14:33:49.886 WARNING jsgfGrammar       Can't find pronunciation for stengers
+14:33:49.886 WARNING dictionary        Missing word: stepfordesque
+14:33:49.886 WARNING jsgfGrammar       Can't find pronunciation for stepfordesque
+14:33:49.887 WARNING dictionary        Missing word: streetcars
+14:33:49.887 WARNING jsgfGrammar       Can't find pronunciation for streetcars
+14:33:49.887 WARNING dictionary        Missing word: stripy
+14:33:49.887 WARNING jsgfGrammar       Can't find pronunciation for stripy
+14:33:49.887 WARNING dictionary        Missing word: structuralist
+14:33:49.887 WARNING jsgfGrammar       Can't find pronunciation for structuralist
+14:33:49.887 WARNING dictionary        Missing word: structuredness
+14:33:49.887 WARNING jsgfGrammar       Can't find pronunciation for structuredness
+14:33:49.887 WARNING dictionary        Missing word: stuff'
+14:33:49.887 WARNING jsgfGrammar       Can't find pronunciation for stuff'
+14:33:49.887 WARNING dictionary        Missing word: subcritical
+14:33:49.887 WARNING jsgfGrammar       Can't find pronunciation for subcritical
+14:33:49.887 WARNING dictionary        Missing word: subjectification
+14:33:49.887 WARNING jsgfGrammar       Can't find pronunciation for subjectification
+14:33:49.887 WARNING dictionary        Missing word: subroutine
+14:33:49.887 WARNING jsgfGrammar       Can't find pronunciation for subroutine
+14:33:49.887 WARNING dictionary        Missing word: subspecies
+14:33:49.887 WARNING jsgfGrammar       Can't find pronunciation for subspecies
+14:33:49.887 WARNING dictionary        Missing word: substitues
+14:33:49.887 WARNING jsgfGrammar       Can't find pronunciation for substitues
+14:33:49.887 WARNING dictionary        Missing word: subsumes
+14:33:49.887 WARNING jsgfGrammar       Can't find pronunciation for subsumes
+14:33:49.887 WARNING dictionary        Missing word: subtypes
+14:33:49.888 WARNING jsgfGrammar       Can't find pronunciation for subtypes
+14:33:49.888 WARNING dictionary        Missing word: suchman
+14:33:49.888 WARNING jsgfGrammar       Can't find pronunciation for suchman
+14:33:49.888 WARNING dictionary        Missing word: suggestively
+14:33:49.888 WARNING jsgfGrammar       Can't find pronunciation for suggestively
+14:33:49.888 WARNING dictionary        Missing word: supertypes
+14:33:49.888 WARNING jsgfGrammar       Can't find pronunciation for supertypes
+14:33:49.888 WARNING dictionary        Missing word: surcease
+14:33:49.888 WARNING jsgfGrammar       Can't find pronunciation for surcease
+14:33:49.888 WARNING dictionary        Missing word: sureness
+14:33:49.888 WARNING jsgfGrammar       Can't find pronunciation for sureness
+14:33:49.888 WARNING dictionary        Missing word: surrealists
+14:33:49.888 WARNING jsgfGrammar       Can't find pronunciation for surrealists
+14:33:49.888 WARNING dictionary        Missing word: surve
+14:33:49.888 WARNING jsgfGrammar       Can't find pronunciation for surve
+14:33:49.888 WARNING dictionary        Missing word: surviging
+14:33:49.888 WARNING jsgfGrammar       Can't find pronunciation for surviging
+14:33:49.888 WARNING dictionary        Missing word: suspended'
+14:33:49.888 WARNING jsgfGrammar       Can't find pronunciation for suspended'
+14:33:49.889 WARNING dictionary        Missing word: swathes
+14:33:49.889 WARNING jsgfGrammar       Can't find pronunciation for swathes
+14:33:49.889 WARNING dictionary        Missing word: swp'
+14:33:49.889 WARNING jsgfGrammar       Can't find pronunciation for swp'
+14:33:49.889 WARNING dictionary        Missing word: symbol'
+14:33:49.889 WARNING jsgfGrammar       Can't find pronunciation for symbol'
+14:33:49.889 WARNING dictionary        Missing word: synapse
+14:33:49.889 WARNING jsgfGrammar       Can't find pronunciation for synapse
+14:33:49.889 WARNING dictionary        Missing word: synecdochal
+14:33:49.889 WARNING jsgfGrammar       Can't find pronunciation for synecdochal
+14:33:49.889 WARNING dictionary        Missing word: synechdochal
+14:33:49.889 WARNING jsgfGrammar       Can't find pronunciation for synechdochal
+14:33:49.889 WARNING dictionary        Missing word: synechdoche
+14:33:49.889 WARNING jsgfGrammar       Can't find pronunciation for synechdoche
+14:33:49.889 WARNING dictionary        Missing word: synechdoches
+14:33:49.889 WARNING jsgfGrammar       Can't find pronunciation for synechdoches
+14:33:49.889 WARNING dictionary        Missing word: syntactical
+14:33:49.889 WARNING jsgfGrammar       Can't find pronunciation for syntactical
+14:33:49.889 WARNING dictionary        Missing word: syntaxes
+14:33:49.889 WARNING jsgfGrammar       Can't find pronunciation for syntaxes
+14:33:49.889 WARNING dictionary        Missing word: synthesizes
+14:33:49.889 WARNING jsgfGrammar       Can't find pronunciation for synthesizes
+14:33:49.889 WARNING dictionary        Missing word: syphilitic
+14:33:49.889 WARNING jsgfGrammar       Can't find pronunciation for syphilitic
+14:33:49.889 WARNING dictionary        Missing word: systematized
+14:33:49.889 WARNING jsgfGrammar       Can't find pronunciation for systematized
+14:33:49.889 WARNING dictionary        Missing word: tabletops
+14:33:49.889 WARNING jsgfGrammar       Can't find pronunciation for tabletops
+14:33:49.889 WARNING dictionary        Missing word: tabula
+14:33:49.889 WARNING jsgfGrammar       Can't find pronunciation for tabula
+14:33:49.889 WARNING dictionary        Missing word: tabulates
+14:33:49.889 WARNING jsgfGrammar       Can't find pronunciation for tabulates
+14:33:49.889 WARNING dictionary        Missing word: tactility
+14:33:49.890 WARNING jsgfGrammar       Can't find pronunciation for tactility
+14:33:49.890 WARNING dictionary        Missing word: talent'
+14:33:49.890 WARNING jsgfGrammar       Can't find pronunciation for talent'
+14:33:49.890 WARNING dictionary        Missing word: tangibility
+14:33:49.890 WARNING jsgfGrammar       Can't find pronunciation for tangibility
+14:33:49.890 WARNING dictionary        Missing word: tangler
+14:33:49.890 WARNING jsgfGrammar       Can't find pronunciation for tangler
+14:33:49.890 WARNING dictionary        Missing word: tapeworm
+14:33:49.890 WARNING jsgfGrammar       Can't find pronunciation for tapeworm
+14:33:49.890 WARNING dictionary        Missing word: tation
+14:33:49.890 WARNING jsgfGrammar       Can't find pronunciation for tation
+14:33:49.890 WARNING dictionary        Missing word: taussig's
+14:33:49.890 WARNING jsgfGrammar       Can't find pronunciation for taussig's
+14:33:49.890 WARNING dictionary        Missing word: technician'
+14:33:49.890 WARNING jsgfGrammar       Can't find pronunciation for technician'
+14:33:49.890 WARNING dictionary        Missing word: technische
+14:33:49.890 WARNING jsgfGrammar       Can't find pronunciation for technische
+14:33:49.890 WARNING dictionary        Missing word: technocracy
+14:33:49.890 WARNING jsgfGrammar       Can't find pronunciation for technocracy
+14:33:49.890 WARNING dictionary        Missing word: technolization
+14:33:49.890 WARNING jsgfGrammar       Can't find pronunciation for technolization
+14:33:49.890 WARNING dictionary        Missing word: technologisation
+14:33:49.890 WARNING jsgfGrammar       Can't find pronunciation for technologisation
+14:33:49.890 WARNING dictionary        Missing word: teh
+14:33:49.890 WARNING jsgfGrammar       Can't find pronunciation for teh
+14:33:49.890 WARNING dictionary        Missing word: telepresence
+14:33:49.890 WARNING jsgfGrammar       Can't find pronunciation for telepresence
+14:33:49.890 WARNING dictionary        Missing word: tendrils
+14:33:49.890 WARNING jsgfGrammar       Can't find pronunciation for tendrils
+14:33:49.891 WARNING dictionary        Missing word: tenuousness
+14:33:49.891 WARNING jsgfGrammar       Can't find pronunciation for tenuousness
+14:33:49.891 WARNING dictionary        Missing word: testings
+14:33:49.891 WARNING jsgfGrammar       Can't find pronunciation for testings
+14:33:49.891 WARNING dictionary        Missing word: textuality
+14:33:49.891 WARNING jsgfGrammar       Can't find pronunciation for textuality
+14:33:49.891 WARNING dictionary        Missing word: textually
+14:33:49.891 WARNING jsgfGrammar       Can't find pronunciation for textually
+14:33:49.891 WARNING dictionary        Missing word: theophrastus
+14:33:49.891 WARNING jsgfGrammar       Can't find pronunciation for theophrastus
+14:33:49.891 WARNING dictionary        Missing word: therefor
+14:33:49.891 WARNING jsgfGrammar       Can't find pronunciation for therefor
+14:33:49.891 WARNING dictionary        Missing word: thereness
+14:33:49.891 WARNING jsgfGrammar       Can't find pronunciation for thereness
+14:33:49.891 WARNING dictionary        Missing word: thermodynamic
+14:33:49.891 WARNING jsgfGrammar       Can't find pronunciation for thermodynamic
+14:33:49.891 WARNING dictionary        Missing word: thinker'
+14:33:49.891 WARNING jsgfGrammar       Can't find pronunciation for thinker'
+14:33:49.892 WARNING dictionary        Missing word: thongs
+14:33:49.892 WARNING jsgfGrammar       Can't find pronunciation for thongs
+14:33:49.892 WARNING dictionary        Missing word: thumbprint
+14:33:49.892 WARNING jsgfGrammar       Can't find pronunciation for thumbprint
+14:33:49.897 WARNING dictionary        Missing word: thyself
+14:33:49.897 WARNING jsgfGrammar       Can't find pronunciation for thyself
+14:33:49.897 WARNING dictionary        Missing word: timekeeping
+14:33:49.897 WARNING jsgfGrammar       Can't find pronunciation for timekeeping
+14:33:49.897 WARNING dictionary        Missing word: tisdall
+14:33:49.897 WARNING jsgfGrammar       Can't find pronunciation for tisdall
+14:33:49.897 WARNING dictionary        Missing word: together'
+14:33:49.897 WARNING jsgfGrammar       Can't find pronunciation for together'
+14:33:49.898 WARNING dictionary        Missing word: topological
+14:33:49.898 WARNING jsgfGrammar       Can't find pronunciation for topological
+14:33:49.898 WARNING dictionary        Missing word: torn'
+14:33:49.898 WARNING jsgfGrammar       Can't find pronunciation for torn'
+14:33:49.898 WARNING dictionary        Missing word: toss'
+14:33:49.898 WARNING jsgfGrammar       Can't find pronunciation for toss'
+14:33:49.898 WARNING dictionary        Missing word: totality'
+14:33:49.898 WARNING jsgfGrammar       Can't find pronunciation for totality'
+14:33:49.898 WARNING dictionary        Missing word: tradition'
+14:33:49.898 WARNING jsgfGrammar       Can't find pronunciation for tradition'
+14:33:49.898 WARNING dictionary        Missing word: trajectories
+14:33:49.898 WARNING jsgfGrammar       Can't find pronunciation for trajectories
+14:33:49.898 WARNING dictionary        Missing word: transcoding
+14:33:49.898 WARNING jsgfGrammar       Can't find pronunciation for transcoding
+14:33:49.898 WARNING dictionary        Missing word: transfigured
+14:33:49.898 WARNING jsgfGrammar       Can't find pronunciation for transfigured
+14:33:49.898 WARNING dictionary        Missing word: transformance
+14:33:49.898 WARNING jsgfGrammar       Can't find pronunciation for transformance
+14:33:49.898 WARNING dictionary        Missing word: transmute
+14:33:49.898 WARNING jsgfGrammar       Can't find pronunciation for transmute
+14:33:49.898 WARNING dictionary        Missing word: transposition
+14:33:49.898 WARNING jsgfGrammar       Can't find pronunciation for transposition
+14:33:49.898 WARNING dictionary        Missing word: transrational
+14:33:49.899 WARNING jsgfGrammar       Can't find pronunciation for transrational
+14:33:49.899 WARNING dictionary        Missing word: traverses
+14:33:49.899 WARNING jsgfGrammar       Can't find pronunciation for traverses
+14:33:49.899 WARNING dictionary        Missing word: trinities
+14:33:49.899 WARNING jsgfGrammar       Can't find pronunciation for trinities
+14:33:49.899 WARNING dictionary        Missing word: trivialities
+14:33:49.899 WARNING jsgfGrammar       Can't find pronunciation for trivialities
+14:33:49.899 WARNING dictionary        Missing word: tsanati
+14:33:49.899 WARNING jsgfGrammar       Can't find pronunciation for tsanati
+14:33:49.899 WARNING dictionary        Missing word: tuan
+14:33:49.899 WARNING jsgfGrammar       Can't find pronunciation for tuan
+14:33:49.899 WARNING dictionary        Missing word: tubed
+14:33:49.899 WARNING jsgfGrammar       Can't find pronunciation for tubed
+14:33:49.899 WARNING dictionary        Missing word: tuche
+14:33:49.899 WARNING jsgfGrammar       Can't find pronunciation for tuche
+14:33:49.899 WARNING dictionary        Missing word: tugel
+14:33:49.899 WARNING jsgfGrammar       Can't find pronunciation for tugel
+14:33:49.899 WARNING dictionary        Missing word: turing's
+14:33:49.899 WARNING jsgfGrammar       Can't find pronunciation for turing's
+14:33:49.899 WARNING dictionary        Missing word: turkle
+14:33:49.899 WARNING jsgfGrammar       Can't find pronunciation for turkle
+14:33:49.899 WARNING dictionary        Missing word: tuymans'
+14:33:49.899 WARNING jsgfGrammar       Can't find pronunciation for tuymans'
+14:33:49.899 WARNING dictionary        Missing word: uc
+14:33:49.899 WARNING jsgfGrammar       Can't find pronunciation for uc
+14:33:49.899 WARNING dictionary        Missing word: ufo
+14:33:49.900 WARNING jsgfGrammar       Can't find pronunciation for ufo
+14:33:49.900 WARNING dictionary        Missing word: ufos
+14:33:49.900 WARNING jsgfGrammar       Can't find pronunciation for ufos
+14:33:49.900 WARNING dictionary        Missing word: ulrike
+14:33:49.900 WARNING jsgfGrammar       Can't find pronunciation for ulrike
+14:33:49.900 WARNING dictionary        Missing word: uncodable
+14:33:49.900 WARNING jsgfGrammar       Can't find pronunciation for uncodable
+14:33:49.900 WARNING dictionary        Missing word: uncommentaried
+14:33:49.900 WARNING jsgfGrammar       Can't find pronunciation for uncommentaried
+14:33:49.900 WARNING dictionary        Missing word: uncommodifiable
+14:33:49.900 WARNING jsgfGrammar       Can't find pronunciation for uncommodifiable
+14:33:49.900 WARNING dictionary        Missing word: uncontainable
+14:33:49.900 WARNING jsgfGrammar       Can't find pronunciation for uncontainable
+14:33:49.900 WARNING dictionary        Missing word: undecidable
+14:33:49.900 WARNING jsgfGrammar       Can't find pronunciation for undecidable
+14:33:49.901 WARNING dictionary        Missing word: undefinable
+14:33:49.901 WARNING jsgfGrammar       Can't find pronunciation for undefinable
+14:33:49.901 WARNING dictionary        Missing word: undisputable
+14:33:49.901 WARNING jsgfGrammar       Can't find pronunciation for undisputable
+14:33:49.901 WARNING dictionary        Missing word: unflaggigly
+14:33:49.901 WARNING jsgfGrammar       Can't find pronunciation for unflaggigly
+14:33:49.901 WARNING dictionary        Missing word: unimportance
+14:33:49.901 WARNING jsgfGrammar       Can't find pronunciation for unimportance
+14:33:49.901 WARNING dictionary        Missing word: uninflected
+14:33:49.901 WARNING jsgfGrammar       Can't find pronunciation for uninflected
+14:33:49.901 WARNING dictionary        Missing word: univ
+14:33:49.901 WARNING jsgfGrammar       Can't find pronunciation for univ
+14:33:49.901 WARNING dictionary        Missing word: universalism
+14:33:49.901 WARNING jsgfGrammar       Can't find pronunciation for universalism
+14:33:49.901 WARNING dictionary        Missing word: universalize
+14:33:49.901 WARNING jsgfGrammar       Can't find pronunciation for universalize
+14:33:49.901 WARNING dictionary        Missing word: unkindly
+14:33:49.901 WARNING jsgfGrammar       Can't find pronunciation for unkindly
+14:33:49.901 WARNING dictionary        Missing word: unknotted
+14:33:49.901 WARNING jsgfGrammar       Can't find pronunciation for unknotted
+14:33:49.902 WARNING dictionary        Missing word: unknowably
+14:33:49.902 WARNING jsgfGrammar       Can't find pronunciation for unknowably
+14:33:49.902 WARNING dictionary        Missing word: unlocalisable
+14:33:49.902 WARNING jsgfGrammar       Can't find pronunciation for unlocalisable
+14:33:49.902 WARNING dictionary        Missing word: unmaking
+14:33:49.902 WARNING jsgfGrammar       Can't find pronunciation for unmaking
+14:33:49.902 WARNING dictionary        Missing word: unmotivated
+14:33:49.902 WARNING jsgfGrammar       Can't find pronunciation for unmotivated
+14:33:49.902 WARNING dictionary        Missing word: unnervingly
+14:33:49.902 WARNING jsgfGrammar       Can't find pronunciation for unnervingly
+14:33:49.902 WARNING dictionary        Missing word: unnoticeable
+14:33:49.902 WARNING jsgfGrammar       Can't find pronunciation for unnoticeable
+14:33:49.902 WARNING dictionary        Missing word: unreason
+14:33:49.902 WARNING jsgfGrammar       Can't find pronunciation for unreason
+14:33:49.902 WARNING dictionary        Missing word: unreflective
+14:33:49.902 WARNING jsgfGrammar       Can't find pronunciation for unreflective
+14:33:49.902 WARNING dictionary        Missing word: unreflexive
+14:33:49.902 WARNING jsgfGrammar       Can't find pronunciation for unreflexive
+14:33:49.902 WARNING dictionary        Missing word: unregarded
+14:33:49.902 WARNING jsgfGrammar       Can't find pronunciation for unregarded
+14:33:49.902 WARNING dictionary        Missing word: unrepresentable
+14:33:49.902 WARNING jsgfGrammar       Can't find pronunciation for unrepresentable
+14:33:49.902 WARNING dictionary        Missing word: unselfconscious
+14:33:49.902 WARNING jsgfGrammar       Can't find pronunciation for unselfconscious
+14:33:49.902 WARNING dictionary        Missing word: unselfreflective
+14:33:49.902 WARNING jsgfGrammar       Can't find pronunciation for unselfreflective
+14:33:49.903 WARNING dictionary        Missing word: unstoppably
+14:33:49.903 WARNING jsgfGrammar       Can't find pronunciation for unstoppably
+14:33:49.903 WARNING dictionary        Missing word: unsystematic
+14:33:49.903 WARNING jsgfGrammar       Can't find pronunciation for unsystematic
+14:33:49.903 WARNING dictionary        Missing word: untangled
+14:33:49.903 WARNING jsgfGrammar       Can't find pronunciation for untangled
+14:33:49.903 WARNING dictionary        Missing word: upload
+14:33:49.903 WARNING jsgfGrammar       Can't find pronunciation for upload
+14:33:49.903 WARNING dictionary        Missing word: uproots
+14:33:49.903 WARNING jsgfGrammar       Can't find pronunciation for uproots
+14:33:49.903 WARNING dictionary        Missing word: urinals
+14:33:49.903 WARNING jsgfGrammar       Can't find pronunciation for urinals
+14:33:49.903 WARNING dictionary        Missing word: uselessness
+14:33:49.903 WARNING jsgfGrammar       Can't find pronunciation for uselessness
+14:33:49.903 WARNING dictionary        Missing word: vacillations
+14:33:49.903 WARNING jsgfGrammar       Can't find pronunciation for vacillations
+14:33:49.903 WARNING dictionary        Missing word: valie
+14:33:49.903 WARNING jsgfGrammar       Can't find pronunciation for valie
+14:33:49.903 WARNING dictionary        Missing word: valorize
+14:33:49.903 WARNING jsgfGrammar       Can't find pronunciation for valorize
+14:33:49.903 WARNING dictionary        Missing word: vane's
+14:33:49.904 WARNING jsgfGrammar       Can't find pronunciation for vane's
+14:33:49.904 WARNING dictionary        Missing word: vanouse
+14:33:49.904 WARNING jsgfGrammar       Can't find pronunciation for vanouse
+14:33:49.904 WARNING dictionary        Missing word: varthers
+14:33:49.904 WARNING jsgfGrammar       Can't find pronunciation for varthers
+14:33:49.904 WARNING dictionary        Missing word: vectoral
+14:33:49.904 WARNING jsgfGrammar       Can't find pronunciation for vectoral
+14:33:49.904 WARNING dictionary        Missing word: veined
+14:33:49.904 WARNING jsgfGrammar       Can't find pronunciation for veined
+14:33:49.904 WARNING dictionary        Missing word: ventriloquising
+14:33:49.904 WARNING jsgfGrammar       Can't find pronunciation for ventriloquising
+14:33:49.904 WARNING dictionary        Missing word: vergegenwartigung
+14:33:49.904 WARNING jsgfGrammar       Can't find pronunciation for vergegenwartigung
+14:33:49.904 WARNING dictionary        Missing word: verso
+14:33:49.904 WARNING jsgfGrammar       Can't find pronunciation for verso
+14:33:49.904 WARNING dictionary        Missing word: vertov
+14:33:49.904 WARNING jsgfGrammar       Can't find pronunciation for vertov
+14:33:49.904 WARNING dictionary        Missing word: videogames
+14:33:49.904 WARNING jsgfGrammar       Can't find pronunciation for videogames
+14:33:49.904 WARNING dictionary        Missing word: viii
+14:33:49.904 WARNING jsgfGrammar       Can't find pronunciation for viii
+14:33:49.904 WARNING dictionary        Missing word: vinland
+14:33:49.904 WARNING jsgfGrammar       Can't find pronunciation for vinland
+14:33:49.904 WARNING dictionary        Missing word: virtualization
+14:33:49.904 WARNING jsgfGrammar       Can't find pronunciation for virtualization
+14:33:49.904 WARNING dictionary        Missing word: visuality
+14:33:49.904 WARNING jsgfGrammar       Can't find pronunciation for visuality
+14:33:49.905 WARNING dictionary        Missing word: viwer
+14:33:49.905 WARNING jsgfGrammar       Can't find pronunciation for viwer
+14:33:49.905 WARNING dictionary        Missing word: vocabularies
+14:33:49.905 WARNING jsgfGrammar       Can't find pronunciation for vocabularies
+14:33:49.905 WARNING dictionary        Missing word: vocabulary'
+14:33:49.905 WARNING jsgfGrammar       Can't find pronunciation for vocabulary'
+14:33:49.905 WARNING dictionary        Missing word: vrs
+14:33:49.905 WARNING jsgfGrammar       Can't find pronunciation for vrs
+14:33:49.905 WARNING dictionary        Missing word: wakefulness
+14:33:49.905 WARNING jsgfGrammar       Can't find pronunciation for wakefulness
+14:33:49.905 WARNING dictionary        Missing word: walt's
+14:33:49.905 WARNING jsgfGrammar       Can't find pronunciation for walt's
+14:33:49.905 WARNING dictionary        Missing word: warders
+14:33:49.905 WARNING jsgfGrammar       Can't find pronunciation for warders
+14:33:49.905 WARNING dictionary        Missing word: wardip
+14:33:49.905 WARNING jsgfGrammar       Can't find pronunciation for wardip
+14:33:49.905 WARNING dictionary        Missing word: warhols
+14:33:49.905 WARNING jsgfGrammar       Can't find pronunciation for warhols
+14:33:49.905 WARNING dictionary        Missing word: wassily
+14:33:49.905 WARNING jsgfGrammar       Can't find pronunciation for wassily
+14:33:49.905 WARNING dictionary        Missing word: weakness'
+14:33:49.905 WARNING jsgfGrammar       Can't find pronunciation for weakness'
+14:33:49.905 WARNING dictionary        Missing word: weave'
+14:33:49.905 WARNING jsgfGrammar       Can't find pronunciation for weave'
+14:33:49.905 WARNING dictionary        Missing word: whanging
+14:33:49.905 WARNING jsgfGrammar       Can't find pronunciation for whanging
+14:33:49.906 WARNING dictionary        Missing word: whiteboards
+14:33:49.906 WARNING jsgfGrammar       Can't find pronunciation for whiteboards
+14:33:49.906 WARNING dictionary        Missing word: whitmans
+14:33:49.906 WARNING jsgfGrammar       Can't find pronunciation for whitmans
+14:33:49.906 WARNING dictionary        Missing word: whorf
+14:33:49.906 WARNING jsgfGrammar       Can't find pronunciation for whorf
+14:33:49.906 WARNING dictionary        Missing word: wildenstein
+14:33:49.906 WARNING jsgfGrammar       Can't find pronunciation for wildenstein
+14:33:49.906 WARNING dictionary        Missing word: wilhelm's
+14:33:49.906 WARNING jsgfGrammar       Can't find pronunciation for wilhelm's
+14:33:49.906 WARNING dictionary        Missing word: wilke's
+14:33:49.906 WARNING jsgfGrammar       Can't find pronunciation for wilke's
+14:33:49.906 WARNING dictionary        Missing word: winnicott
+14:33:49.906 WARNING jsgfGrammar       Can't find pronunciation for winnicott
+14:33:49.906 WARNING dictionary        Missing word: wolfram's
+14:33:49.906 WARNING jsgfGrammar       Can't find pronunciation for wolfram's
+14:33:49.906 WARNING dictionary        Missing word: woolf's
+14:33:49.906 WARNING jsgfGrammar       Can't find pronunciation for woolf's
+14:33:49.906 WARNING dictionary        Missing word: work'
+14:33:49.906 WARNING jsgfGrammar       Can't find pronunciation for work'
+14:33:49.906 WARNING dictionary        Missing word: workarounds
+14:33:49.906 WARNING jsgfGrammar       Can't find pronunciation for workarounds
+14:33:49.906 WARNING dictionary        Missing word: worker'
+14:33:49.906 WARNING jsgfGrammar       Can't find pronunciation for worker'
+14:33:49.906 WARNING dictionary        Missing word: worklike
+14:33:49.906 WARNING jsgfGrammar       Can't find pronunciation for worklike
+14:33:49.907 WARNING dictionary        Missing word: worldviews
+14:33:49.907 WARNING jsgfGrammar       Can't find pronunciation for worldviews
+14:33:49.907 WARNING dictionary        Missing word: wth
+14:33:49.907 WARNING jsgfGrammar       Can't find pronunciation for wth
+14:33:49.907 WARNING dictionary        Missing word: wtv
+14:33:49.907 WARNING jsgfGrammar       Can't find pronunciation for wtv
+14:33:49.907 WARNING dictionary        Missing word: wylbur
+14:33:49.907 WARNING jsgfGrammar       Can't find pronunciation for wylbur
+14:33:49.907 WARNING dictionary        Missing word: xanadu
+14:33:49.907 WARNING jsgfGrammar       Can't find pronunciation for xanadu
+14:33:49.907 WARNING dictionary        Missing word: xiv
+14:33:49.907 WARNING jsgfGrammar       Can't find pronunciation for xiv
+14:33:49.907 WARNING dictionary        Missing word: xix
+14:33:49.907 WARNING jsgfGrammar       Can't find pronunciation for xix
+14:33:49.907 WARNING dictionary        Missing word: xvi
+14:33:49.913 WARNING jsgfGrammar       Can't find pronunciation for xvi
+14:33:49.913 WARNING dictionary        Missing word: xxii
+14:33:49.913 WARNING jsgfGrammar       Can't find pronunciation for xxii
+14:33:49.913 WARNING dictionary        Missing word: xxiii
+14:33:49.913 WARNING jsgfGrammar       Can't find pronunciation for xxiii
+14:33:49.913 WARNING dictionary        Missing word: xxiv
+14:33:49.913 WARNING jsgfGrammar       Can't find pronunciation for xxiv
+14:33:49.913 WARNING dictionary        Missing word: xxv
+14:33:49.913 WARNING jsgfGrammar       Can't find pronunciation for xxv
+14:33:49.913 WARNING dictionary        Missing word: xxvi
+14:33:49.913 WARNING jsgfGrammar       Can't find pronunciation for xxvi
+14:33:49.913 WARNING dictionary        Missing word: xxviii
+14:33:49.913 WARNING jsgfGrammar       Can't find pronunciation for xxviii
+14:33:49.913 WARNING dictionary        Missing word: xxx
+14:33:49.913 WARNING jsgfGrammar       Can't find pronunciation for xxx
+14:33:49.913 WARNING dictionary        Missing word: xxxix
+14:33:49.913 WARNING jsgfGrammar       Can't find pronunciation for xxxix
+14:33:49.913 WARNING dictionary        Missing word: yba
+14:33:49.913 WARNING jsgfGrammar       Can't find pronunciation for yba
+14:33:49.913 WARNING dictionary        Missing word: ybas
+14:33:49.913 WARNING jsgfGrammar       Can't find pronunciation for ybas
+14:33:49.914 WARNING dictionary        Missing word: yippies
+14:33:49.914 WARNING jsgfGrammar       Can't find pronunciation for yippies
+14:33:49.914 WARNING dictionary        Missing word: zannis
+14:33:49.914 WARNING jsgfGrammar       Can't find pronunciation for zannis
+14:33:49.914 WARNING dictionary        Missing word: zittau
+14:33:49.914 WARNING jsgfGrammar       Can't find pronunciation for zittau
+14:33:49.914 WARNING dictionary        Missing word: zucca
+14:33:49.914 WARNING jsgfGrammar       Can't find pronunciation for zucca
+14:33:49.914 WARNING dictionary        Missing word: zx
+14:33:49.914 WARNING jsgfGrammar       Can't find pronunciation for zx

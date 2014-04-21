@@ -16,7 +16,7 @@ boolean FULLSCREEN = true;
 int numDots;
 int minDist = 0;
 int maxDist = 130;
-float distMod = 150;
+float distMod = 180;
 float connectionMod = 0;
 float modifier = .3;
 int border = 0;
@@ -75,17 +75,17 @@ void draw()
     if (AUDIO_REACTIVE) {
       beat.detect(input.left);
 
-      float beatKick = beat.isKick() ? 22 : 0;
+      float beatKick = beat.isKick() ? 40 : 0;
       if (beat.isKick())
       {
         //DrawDot();
       }
       float inputMod = abs(input.mix.get(100)* 160);
-      distMod = displayWidth*displayHeight*0.000025 + inputMod + beatKick;
+      distMod = displayWidth*displayHeight*0.00003 + inputMod + beatKick;
 
-      strokeWeight(map(inputMod, 0, 100, 0.2, 1.6));
-      velocity = map(inputMod, 0, 100, 1, 15.0);
-      acceleration = map(inputMod, 0, 100, .1, 2.4);
+      strokeWeight(map(inputMod, 0, 100, 0.4, 2));
+      velocity = map(inputMod, 0, 100, 1, 18.0);
+      acceleration = map(inputMod, 0, 100, .1, 3);
     }
 
     for (int i = 0; i < dots.size()-1; i++) {
