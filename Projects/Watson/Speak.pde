@@ -58,3 +58,16 @@ void Interrupt()
   String interruption = (String)interruptions.get(index);
   Say(interruption);
 }
+
+String timeOfDay()
+{
+  String daytime = "";
+  if (hour() <= 11) {
+  daytime = "morning";
+  } else if (hour() > 11 && hour() <= 17) {
+    daytime = "afternoon";
+  } else {
+    daytime = "evening";
+  }
+  return daytime;
+}

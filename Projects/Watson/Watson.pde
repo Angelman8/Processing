@@ -22,16 +22,8 @@ ArrayList<Command> commands = new ArrayList<Command>();
 
 //Threads
 
-boolean counter(int max) {
-  if (count >= max) {
-    count = 0;
-    return true;
-  } else {
-    count++;
-    return false;
-  }
-  
-}
+Counter notificationCounter = new Counter(240);
+Counter autoRecordCounter = new Counter(1800);
 
 void setup ()
 {
@@ -52,12 +44,13 @@ void setup ()
   displayedResult = "Say something!";
   CreateCommands();
 
-  DisplayNotification(name, "Launched");
+  //DisplayNotification(name, "I've Launched");
 
   if (isHeadsetConnected("Sony Headset")) {
     ChangeSoundOutput("Headphones");
     ChangeSoundInput("Wireless Headset");
-  } else {
+  } 
+  else {
     ChangeSoundInput("Internal Microphone");
   }
 }
@@ -66,10 +59,14 @@ void draw ()
 {
   background(0);
   text(displayedResult, 20, 20);
-  if (counter(240)) {
-      
+
+  //Check Counters
+  if (notificationCounter.countReached()) {
     CheckForNotifications();
-    
+  }
+  if (autoRecordCounter.countReached()) {
+    stt.disableAutoRecord();
+    stt.enableAutoRecord();
   }
 }
 
@@ -94,7 +91,11 @@ void ListenForName(String phrase)
   }
   else if (phrase.contains("thank you") || phrase.contains("thanks"))
   {
-    Say ("You\'re welcome.");
+    Say("You\'re welcome.");
+  }
+  else if (phrase.contains("hello") || phrase.contains("hi") || phrase.contains("hey"))
+  {
+    Say("Good " + timeOfDay());
   }
   else if (phrase.contains("volume") && phrase.contains("up"))
   {
@@ -159,7 +160,7 @@ void ListenForName(String phrase)
     shellExec("osascript -e \"tell application \\\"MusicVisualizer\\\" to activate\"");
     //exit();
   }
-    else if (phrase.contains("open") && phrase.contains("plex"))
+  else if (phrase.contains("open") && phrase.contains("plex"))
   {
     Affirm();
     shellExec("osascript -e \"tell application \\\"Plex Home Theater\\\" to run\"");

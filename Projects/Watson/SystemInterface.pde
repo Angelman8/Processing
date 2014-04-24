@@ -45,7 +45,7 @@ void CheckForNotifications()
     String[] notification = split((String)notifications.get(i), ",");
     if (!notification[0].equals("")) {
       Interrupt();
-      Say("there's a nodeification from " + notification[0] + ", that says, \"" + notification[1] + "\"");
+      Say("there's a notification from " + notification[0] + ", saying, \"" + notification[1] + "\"");
     }
   }
   notifications.clear();
