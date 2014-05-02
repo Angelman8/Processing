@@ -5,15 +5,21 @@ import java.io.*;
 
 //Create STT object
 STT stt;
-String result, displayedResult;
+String result, inputResult, displayedResult;
+
+//Create Minim objects
+Minim minim;
+Mixer mixer;
+Mixer.Info[] mixerInfo;
 
 //Environment Variables
 boolean speaking = false;
-String voice = "Daniel";
+String voice = "";
 
 String name = "John";
 
 int maxConnectWait = 300;
+int relativeVolume = 35;
 int connectionCounter = 0;
 boolean headsetConnected = false;
 int count = 0;
@@ -23,7 +29,10 @@ ArrayList<Command> commands = new ArrayList<Command>();
 //Threads
 
 Counter notificationCounter = new Counter(240);
+Counter headestConnectionCounter = new Counter(600);
 Counter autoRecordCounter = new Counter(1800);
+
+
 
 void setup ()
 {
@@ -41,10 +50,11 @@ void setup ()
 
   // Some text to display the result
   textFont(createFont("Arial", 14));
-  displayedResult = "Say something!";
+  displayedResult = "";
+  inputResult = "";
   CreateCommands();
 
-  //DisplayNotification(name, "I've Launched");
+  DisplayNotification(name, "I've Launched");
 
   if (isHeadsetConnected("Sony Headset")) {
     ChangeSoundOutput("Headphones");
@@ -55,20 +65,29 @@ void setup ()
   }
 }
 
+
+
+
 void draw ()
 {
   background(0);
   text(displayedResult, 20, 20);
+  text(inputResult, 20, 60);
 
-  //Check Counters
+  ////CHECK COUNTERS
+  //Check for notifications
   if (notificationCounter.countReached()) {
     CheckForNotifications();
   }
+  //Make sure STT doesn't crap out
   if (autoRecordCounter.countReached()) {
     stt.disableAutoRecord();
     stt.enableAutoRecord();
   }
 }
+
+
+
 
 // Method is called if transcription was successfull 
 void transcribe (String utterance, float confidence) 
@@ -77,13 +96,20 @@ void transcribe (String utterance, float confidence)
   if (!utterance.equals(""))
   {
     result = utterance;
-    ListenForName(result);
+    ListenForKeywords(result);
     println(result);
+    inputResult = result;
     result = "";
+    
+    //CheckCommandValidity(result);
+    
   }
 }
 
-void ListenForName(String phrase)
+
+
+
+void ListenForKeywords(String phrase)
 {
   if (phrase.equals(name))
   {
@@ -93,23 +119,25 @@ void ListenForName(String phrase)
   {
     Say("You\'re welcome.");
   }
-  else if (phrase.contains("hello") || phrase.contains("hi") || phrase.contains("hey"))
+  else if (phrase.contains("hello") || phrase.contains(" hi ") || phrase.contains("hey"))
   {
     Say("Good " + timeOfDay());
   }
-  else if (phrase.contains("volume") && phrase.contains("up"))
+  else if (phrase.contains("volume") && phrase.contains("up") || phrase.contains("volume") && phrase.contains("increase"))
   {
-    ArrayList tempSongVolume = shellExec("osascript -e \"tell application \\\"iTunes\\\" to set currentVolume to sound volume\"");
+    Affirm();
+    ArrayList tempSongVolume = shellExec("osascript -e \"output volume of (get volume settings)\"");
     int volume = 10 + Integer.parseInt((String)tempSongVolume.get(0));
-    shellExec("osascript -e \"tell application \\\"iTunes\\\" to set sound volume to " + volume + "\"");
-    Affirm();
+    println((String)tempSongVolume.get(0) + " : " + volume);
+    shellExec("osascript -e \"set volume output volume " + volume + "\"");
   }
-  else if (phrase.contains("volume") && phrase.contains("down"))
+  else if (phrase.contains("volume") && phrase.contains("down") || phrase.contains("volume") && phrase.contains("decrease"))
   {
-    ArrayList tempSongVolume = shellExec("osascript -e \"tell application \\\"iTunes\\\" to set currentVolume to sound volume\"");
-    int volume = Integer.parseInt((String)tempSongVolume.get(0)) - 10;
-    shellExec("osascript -e \"tell application \\\"iTunes\\\" to set sound volume to " + volume + "\"");
     Affirm();
+    ArrayList tempSongVolume = shellExec("osascript -e \"output volume of (get volume settings)\"");
+    int volume = Integer.parseInt((String)tempSongVolume.get(0)) - 10;
+    println((String)tempSongVolume.get(0) + " : " + volume);
+    shellExec("osascript -e \"set volume output volume " + volume + "\"");
   }
   else if (phrase.contains("what song is this"))
   {
@@ -156,6 +184,7 @@ void ListenForName(String phrase)
   }
   else if (phrase.contains("goodbye") || phrase.contains("good bye") || phrase.contains("goodnight") || phrase.contains("visualizer"))
   {
+    Say("Good bye for now, sir.");
     shellExec("osascript -e \"tell application \\\"MusicVisualizer\\\" to run\"");
     shellExec("osascript -e \"tell application \\\"MusicVisualizer\\\" to activate\"");
     //exit();
@@ -172,6 +201,9 @@ void ListenForName(String phrase)
     shellExec("osascript -e \"tell application \\\"Plex Home Theater\\\" to quit\"");
   }
 }
+
+
+
 
 String Parse(String string) {
   string = string.replace(" ", "\\ ");

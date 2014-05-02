@@ -1,13 +1,35 @@
 void ChangeSoundOutput(String output) {
-
+  //Make sure the audio is properly channelled from Watson
   shellExec("osascript " + Parse(dataPath("ChangeAudioOutput.scpt")) + " \"" + output + "\"");
   println("Audio output set to " + output);
 }
-void ChangeSoundInput(String input) {
 
+
+
+void ChangeSoundInput(String input) {
+  //Connect/Reconnect STT Library to default input
   shellExec("osascript " + Parse(dataPath("ChangeAudioInput.scpt")) + " \"" + input + "\"");
   println("Audio input set to " + input);
+  //Connect/Reconnect STT Library to default input
+  ReconfigureSTT();
 }
+
+
+void ReconfigureSTT() {
+  mixerInfo = AudioSystem.getMixerInfo();
+  mixer = AudioSystem.getMixer(mixerInfo[0]);
+  minim = stt.getMinimInstance();
+  minim.setInputMixer(mixer);
+  println("### Source set to: " + mixerInfo[0]);
+  stt.enableDebug();
+  stt.disableAutoRecord();
+  stt.enableAutoRecord();
+  stt.disableAutoThreshold();
+  stt.setThreshold(3.0);
+}
+
+
+
 
 boolean isHeadsetConnected(String headsetName)
 {
@@ -33,10 +55,16 @@ boolean isHeadsetConnected(String headsetName)
   return false;
 }
 
+
+
+
 void DisplayNotification(String title, String content)
 {
   shellExec("osascript -e \"display notification \\\"" + content + "\\\" with title \\\"" + title + "\\\"\"");
 }
+
+
+
 
 void CheckForNotifications()
 {

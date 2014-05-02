@@ -60,7 +60,9 @@
 
     <key>JVMOptions</key>
     <array>
-      
+            <string>-Xms64m</string>
+      <string>-Xmx512m</string>
+
       <string>-Xdock:icon=Contents/Resources/sketch.icns</string>
       <string>-Dapple.laf.useScreenMenuBar=true</string>
       <string>-Dcom.apple.macos.use-file-dialog-packages=true</string>

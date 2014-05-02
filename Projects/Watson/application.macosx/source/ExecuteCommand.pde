@@ -3,6 +3,9 @@ ArrayList shellExec ( String command )
   return shellExec ( new String[]{ "/bin/bash", "-c", command } );
 }
 
+
+
+
 ArrayList shellExec ( String[] command )
 {
   ArrayList lines = new ArrayList();

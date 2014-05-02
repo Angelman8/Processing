@@ -4,21 +4,27 @@ void Say(String phrase)
 
   speaking = true;
   ArrayList tempSongVolume = shellExec("osascript -e \"tell application \\\"iTunes\\\" to set currentVolume to sound volume\"");
-  if (Integer.parseInt((String)tempSongVolume.get(0)) > 60) {
+  if (Integer.parseInt((String)tempSongVolume.get(0)) > 60)
     shellExec("osascript -e \"tell application \\\"iTunes\\\" to set sound volume to 60\"");
-  }
-  shellExec("say -v \"" + voice + "\" " + Parse(phrase));
+  ArrayList systemVolume = shellExec("osascript -e \"output volume of (get volume settings)\"");
+  if (Integer.parseInt((String)systemVolume.get(0)) > relativeVolume)
+    shellExec("osascript -e \"set volume output volume " + relativeVolume + "\"");
+    String customVoice = "";
+    if(!voice.equals("")) { customVoice = "-v"; } else { customVoice = ""; }
+  shellExec("say " + customVoice + " \"" + voice + "\" " + Parse(phrase));
   shellExec("osascript -e \"tell application \\\"iTunes\\\" to set sound volume to " + (String)tempSongVolume.get(0) + "\"");
+  shellExec("osascript -e \"set volume output volume " + (String)systemVolume.get(0) + "\"");
   speaking = false;
 }
+
+
+
 
 void Affirm()
 {
   ArrayList affirmations = new ArrayList() {
     { 
-      add("Alright."); 
-      add("Sure."); 
-      add("Of course."); 
+      add("Alright,");
       add("Right away."); 
       add("On it."); 
       add("Okay."); 
@@ -33,6 +39,9 @@ void Affirm()
   Say(affirm);
 }
 
+
+
+
 void Greet()
 {
   ArrayList greetings = new ArrayList();
@@ -46,6 +55,9 @@ void Greet()
   Say(greet);
 }
 
+
+
+
 void Interrupt()
 {
   ArrayList interruptions = new ArrayList();
@@ -58,6 +70,9 @@ void Interrupt()
   String interruption = (String)interruptions.get(index);
   Say(interruption);
 }
+
+
+
 
 String timeOfDay()
 {
