@@ -3,6 +3,15 @@ int personCount = 200;
 int firstNamesCount = 10000;
 int lastNamesCount = 200;
 
+//Average Attributes
+int averageAge = 30;
+float averageHeightM = 5.9;
+float averageHeightW = 5.4;
+float averageWeightM = 180;
+float averageWeightW = 140;
+
+
+
 ArrayList <String>firstNames = new ArrayList<String>();
 ArrayList <String>lastNames = new ArrayList<String>();
 
@@ -16,28 +25,22 @@ void setup() {
   background(0);
 
   InitializeNames();
-  CreatePerson();
+  person = new Person();
 }
 
 void draw() {
   background(0);
-  text("Name: " + person.firstName + " " + person.middleName.charAt(0) + ". " + person.lastName, 10, 20);
+  text("Name: " + person.firstName + " " + person.middleName + " " + person.lastName, 10, 20);
   text("Age: " + person.age, 10, 40);
-  text("Height: " + person.height, 10, 60);
-  text("Weight: " + person.weight, 10, 80);
+  if (person.gender == 0) {
+    text("Gender: Female", 10, 60);
+  } else {
+    text("Gender: Male", 10, 60);
+  }
+  text("Height: " + person.formattedHeight(), 10, 80);
+  text("Weight: " + person.formattedWeight(), 10, 100);
 }
 
 void keyPressed() {
-  CreatePerson();
-}
-
-void CreatePerson() {
-  person = new Person(
-  firstNames.get((int)random(0, firstNames.size()-1)), 
-  firstNames.get((int)random(0, firstNames.size()-1)), 
-  lastNames.get((int)random(0, lastNames.size()-1)), 
-  (int)Math.abs((30 + randomGaussian()*10 + random(-5,20))), 
-  5.7 + randomGaussian()*.28, 
-  190 + randomGaussian()*30
-    );
+  person = new Person();
 }
