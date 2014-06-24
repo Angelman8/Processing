@@ -11,7 +11,8 @@ float averageWeightM = 180;
 float averageWeightW = 140;
 
 
-
+ArrayList <String>femaleNames = new ArrayList<String>();
+ArrayList <String>maleNames = new ArrayList<String>();
 ArrayList <String>firstNames = new ArrayList<String>();
 ArrayList <String>lastNames = new ArrayList<String>();
 
@@ -30,7 +31,7 @@ void setup() {
 
 void draw() {
   background(0);
-  text("Name: " + person.firstName + " " + person.middleName + " " + person.lastName, 10, 20);
+  text("Name: " + person.firstName + " " + person.middleName.charAt(0) + ". " + person.lastName, 10, 20);
   text("Age: " + person.age, 10, 40);
   if (person.gender == 0) {
     text("Gender: Female", 10, 60);
