@@ -1,6 +1,6 @@
 void InitializeNames() {
   Table firstNamesTable;
-  firstNamesTable = loadTable("GenderizedNames.csv", "header");
+  firstNamesTable = loadTable("randomGenderizedNames.csv", "header");
   for (TableRow row : firstNamesTable.rows()) {
     if(Integer.parseInt(row.getString("female")) == 1) {
       femaleNames.add(row.getString("name"));
@@ -10,9 +10,9 @@ void InitializeNames() {
     }
   }
   Table lastNamesTable;
-  lastNamesTable = loadTable("LastNames.csv", "header");
+  lastNamesTable = loadTable("randomNames.csv", "header");
   for (TableRow row : lastNamesTable.rows()) {
-      lastNames.add(row.getString("lastname"));
+      lastNames.add(row.getString("lastName"));
   }
 }
 
