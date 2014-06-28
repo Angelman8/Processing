@@ -1,6 +1,7 @@
 void InitializeNames() {
   Table firstNamesTable;
   firstNamesTable = loadTable("randomGenderizedNames.csv", "header");
+  
   for (TableRow row : firstNamesTable.rows()) {
     if(Integer.parseInt(row.getString("female")) == 1) {
       femaleNames.add(row.getString("name"));
