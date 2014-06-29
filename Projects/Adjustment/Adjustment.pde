@@ -1,6 +1,6 @@
 import java.util.Map;
 
-int personCount = 200;
+int personCount = 2000;
 
 String seed = "";
 
