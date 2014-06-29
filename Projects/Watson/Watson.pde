@@ -37,11 +37,11 @@ Counter autoRecordCounter = new Counter(1800);
 void setup ()
 {
   size(600, 200);
-  frameRate(60);
+  frameRate(20);
 
   // Initialize STT
   stt = new STT(this);
-  stt.enableDebug();
+  //stt.enableDebug();
   stt.setLanguage("en"); 
   stt.enableAutoRecord();
   stt.disableAutoThreshold();
@@ -54,7 +54,7 @@ void setup ()
   inputResult = "";
   CreateCommands();
 
-  DisplayNotification(name, "I've Launched");
+  //DisplayNotification(name, "I've Launched");
 
   if (isHeadsetConnected("Sony Headset")) {
     ChangeSoundOutput("Headphones");
@@ -79,11 +79,11 @@ void draw ()
   if (notificationCounter.countReached()) {
     CheckForNotifications();
   }
-  //Make sure STT doesn't crap out
-  if (autoRecordCounter.countReached()) {
-    stt.disableAutoRecord();
-    stt.enableAutoRecord();
-  }
+//  //Make sure STT doesn't crap out
+//  if (autoRecordCounter.countReached()) {
+//    stt.disableAutoRecord();
+//    stt.enableAutoRecord();
+//  }
 }
 
 

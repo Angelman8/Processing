@@ -25,7 +25,6 @@ HashMap<String, Moment> timeline = new HashMap<String, Moment>();
 
 ArrayList <Person>people = new ArrayList<Person>();
 
-Person person;
 
 //INTERFACE VARIABLES
 int focusIndex = 0;
@@ -38,23 +37,23 @@ void setup() {
   if (!seed.equals("")) {
     randomSeed(seed.hashCode());
   }
-  
-  
+
+
   InitializeNames();
-  person = new Person();
   for (int i = 0; i < personCount; i++) {
     people.add(new Person());
   }
-  
+
   println("---------------------------");
-  
-  byte[] personByte = compressPerson(people.get(0));
-  println(personByte);
-  Person newPerson = decompressPerson(personByte);
+  for (int i = 0; i < personCount; i++) {
+    Person person = people.get(i);
+    person.checkForFamily(people, i);
+  }
 }
 
 void draw() {
   background(0);
+  text("Person: " + (focusIndex + 1) + "/" + people.size(), 200, 20);
   
   Person person = people.get(focusIndex);
   text("Name: " + person.firstName + " " + person.lastName, 10, 20);
@@ -73,14 +72,27 @@ void draw() {
   text("Energy: " + person.energy + "/" + person.extraversion + " Extraversion", 10, 180);
   text("Empathy: " + person.empathy + "/" + person.agreeableness + " Agreeableness", 10, 200);
   text("Happiness: " + person.happiness + "/" + person.rationality + " Rationality", 10, 220);
-  
+  text("FAMILY MEMBERS: ", 10, 260);
+  for (int i = 0; i < person.family.size(); i++) {
+    Person familyMember = people.get(person.family.get(i).personIndex);
+    text(familyMember.firstName + " " + familyMember.lastName + " (" + person.family.get(i).name + ", " + familyMember.age + ")", 10, 280 + (20*i));
+  }
   //drawGraph();
 }
 
 void keyPressed() {
-  focusIndex++;
+  if (key == CODED) {
+    if (keyCode == LEFT) {
+      focusIndex--;
+    } else if (keyCode == RIGHT) {
+      focusIndex++;
+    }
+  }
   if (focusIndex > people.size()-1) {
     focusIndex = 0;
+  } 
+  else if (focusIndex < 0) {
+    focusIndex = people.size()-1;
   }
 }
 

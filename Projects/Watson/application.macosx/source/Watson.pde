@@ -37,11 +37,11 @@ Counter autoRecordCounter = new Counter(1800);
 void setup ()
 {
   size(600, 200);
-  frameRate(60);
+  frameRate(20);
 
   // Initialize STT
   stt = new STT(this);
-  stt.enableDebug();
+  //stt.enableDebug();
   stt.setLanguage("en"); 
   stt.enableAutoRecord();
   stt.disableAutoThreshold();
@@ -79,11 +79,11 @@ void draw ()
   if (notificationCounter.countReached()) {
     CheckForNotifications();
   }
-  //Make sure STT doesn't crap out
-  if (autoRecordCounter.countReached()) {
-    stt.disableAutoRecord();
-    stt.enableAutoRecord();
-  }
+//  //Make sure STT doesn't crap out
+//  if (autoRecordCounter.countReached()) {
+//    stt.disableAutoRecord();
+//    stt.enableAutoRecord();
+//  }
 }
 
 
@@ -184,6 +184,7 @@ void ListenForKeywords(String phrase)
   }
   else if (phrase.contains("goodbye") || phrase.contains("good bye") || phrase.contains("goodnight") || phrase.contains("visualizer"))
   {
+    Say("Good bye for now, sir.");
     shellExec("osascript -e \"tell application \\\"MusicVisualizer\\\" to run\"");
     shellExec("osascript -e \"tell application \\\"MusicVisualizer\\\" to activate\"");
     //exit();
