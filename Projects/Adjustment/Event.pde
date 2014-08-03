@@ -1,31 +1,28 @@
 class Event {
-  Person[] participants;
-  String action;
-  int[] affectedstats;
-  
-  Event(Person[] participants, String action, int[] affectedstats) {
-    
+  int[] participants;
+  String message;
+
+  Event(int[] _participants, String _message) {
+    participants = _participants;
+    message = _message;
   }
 }
 
-/*
-CAUSE AND EFFECT
-Events (Interactions) and Actions
-Must cause People to interact with each other.
+ArrayList<Person> Interact(ArrayList<Person> tempPeople) {
+  for (Person person : tempPeople) {
+    person.energy--;
+  }
+  return tempPeople;
+}
 
-EVENTS
-May be caused by a person (Internal) or the world (External)
+void Normalize(ArrayList<Person> people) {
+  for (Person person : people) {
+    if (person.energy > person.extraversion) {
+      person.energy--;
+    } 
+    else if (person.energy < person.extraversion) {
+      person.energy++;
+    }
+  }
+}
 
-Internal:
-are caused by increase or decrease in certain stats
-
-eg. INCREASE EXTRAVERSION
-result: Joe chats with Sally.
-Participants = Joe, Sally
-description = "chats with"
-action = Joe.extraversion(7) - Sally.agreeableness(4) = 3
-if action >= 0, then Joe and Sally ++happiness
-else, then Joe and Sally --happiness
-
-
-*/

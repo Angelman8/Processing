@@ -1,8 +1,10 @@
 import java.util.Map;
 
-int personCount = 2000;
+String SEED = "Galen";
 
-String seed = "";
+int MAXPEOPLE = 20;
+int DAYS = 120;
+int timelineScale = 10;
 
 int firstNamesCount = 10000;
 int maxNameLength = 11;
@@ -21,31 +23,33 @@ ArrayList <String>maleNames = new ArrayList<String>();
 ArrayList <String>firstNames = new ArrayList<String>();
 ArrayList <String>lastNames = new ArrayList<String>();
 
-HashMap<String, Moment> timeline = new HashMap<String, Moment>();
-
-ArrayList <Person>people = new ArrayList<Person>();
+ArrayList <Person> people = new ArrayList<Person>();
+ArrayList <Relationship> relationships = new ArrayList <Relationship>();
 
 
 //INTERFACE VARIABLES
 int focusIndex = 0;
 
+Timeline timeline;
+
 void setup() {
-  size(600, 600);
+  size(1300, 800);
   frameRate(30);
   background(0);
-  println("Seed: " + seed.hashCode());
-  if (!seed.equals("")) {
-    randomSeed(seed.hashCode());
+  println("SEED: " + SEED.hashCode());
+  if (!SEED.equals("")) {
+    randomSeed(SEED.hashCode());
   }
 
+  timeline = new Timeline(DAYS);
 
-  InitializeNames();
-  for (int i = 0; i < personCount; i++) {
+  getNames();
+  for (int i = 0; i < MAXPEOPLE; i++) {
     people.add(new Person());
   }
 
   println("---------------------------");
-  for (int i = 0; i < personCount; i++) {
+  for (int i = 0; i < MAXPEOPLE; i++) {
     Person person = people.get(i);
     person.checkForFamily(people, i);
   }
@@ -53,41 +57,94 @@ void setup() {
 
 void draw() {
   background(0);
-  text("Person: " + (focusIndex + 1) + "/" + people.size(), 200, 20);
-  
+  stroke(255);
+  fill(255);
+  int lineCount = 1;
+
+  text("PEOPLE:", 10, 20 * lineCount);
+  lineCount++;
+  text("Person: " + (focusIndex + 1) + "/" + people.size(), 200, 20 * lineCount);
+
   Person person = people.get(focusIndex);
-  text("Name: " + person.firstName + " " + person.lastName, 10, 20);
-  text("Age: " + person.age, 10, 40);
+  text("Name: " + person.firstName + " " + person.lastName, 10, 20 * lineCount);
+  lineCount++;
+  text("Age: " + person.age, 10, 20 * lineCount);
+  lineCount++;
   if (person.gender == 0) {
-    text("Gender: Female", 10, 60);
+    text("Gender: Female", 10, 20 * lineCount);
+    lineCount++;
   } 
   else {
-    text("Gender: Male", 10, 60);
+    text("Gender: Male", 10, 20 * lineCount);
+    lineCount++;
   }
-  text("Height: " + person.formattedHeight(), 10, 80);
-  text("Weight: " + person.formattedWeight(), 10, 100);
+  text("Height: " + person.formattedHeight(), 10, 20 * lineCount);
+  lineCount++;
+  text("Weight: " + person.formattedWeight(), 10, 20 * lineCount);
+  lineCount += 2;
 
-  text("Curiousity: " + person.curiousity + "/" + person.openness + " Openness", 10, 140);
-  text("Attention: " + person.attention + "/" + person.conscientiousness + " Conscientiousness", 10, 160);
-  text("Energy: " + person.energy + "/" + person.extraversion + " Extraversion", 10, 180);
-  text("Empathy: " + person.empathy + "/" + person.agreeableness + " Agreeableness", 10, 200);
-  text("Happiness: " + person.happiness + "/" + person.rationality + " Rationality", 10, 220);
-  text("FAMILY MEMBERS: ", 10, 260);
-  for (int i = 0; i < person.family.size(); i++) {
-    Person familyMember = people.get(person.family.get(i).personIndex);
-    text(familyMember.firstName + " " + familyMember.lastName + " (" + person.family.get(i).name + ", " + familyMember.age + ")", 10, 280 + (20*i));
+  text("Location: " + person.location, 10, 20 * lineCount);
+  lineCount++;
+
+  text("Curiousity: " + person.curiousity + "/" + person.openness + " Openness", 10, 20 * lineCount);
+  lineCount++;
+  text("Attention: " + person.attention + "/" + person.conscientiousness + " Conscientiousness", 10, 20 * lineCount);
+  lineCount++;
+  text("Energy: " + person.energy + "/" + person.extraversion + " Extraversion", 10, 20 * lineCount);
+  lineCount++;
+  text("Empathy: " + person.empathy + "/" + person.agreeableness + " Agreeableness", 10, 20 * lineCount);
+  lineCount++;
+  text("Happiness: " + person.happiness + "/" + person.rationality + " Rationality", 10, 20 * lineCount);
+  lineCount += 2;
+  text("FAMILY MEMBERS: ", 10, 20 * lineCount);
+  lineCount++;
+
+  for (int i = 0; i < relationships.size(); i++) {
+    Relationship relationship = relationships.get(i);
+    if (relationship.person1 == focusIndex) {
+      Person familyMember = people.get(relationship.person2);
+      text(familyMember.firstName + " " + familyMember.lastName + " (" + (relationship.name.equals("Sibling") && familyMember.gender == 0 ? "Sister" : "Brother") + ", " + familyMember.age + ")", 10, 20 * lineCount);
+      lineCount++;
+    } 
+    else if (relationship.person2 == focusIndex) {
+      Person familyMember = people.get(relationship.person1);
+      text(familyMember.firstName + " " + familyMember.lastName + " (" + (relationship.name.equals("Sibling") && familyMember.gender == 0 ? "Sister" : "Brother") + ", " + familyMember.age + ")", 10, 20 * lineCount);
+      lineCount++;
+    }
   }
-  //drawGraph();
+
+  timeline.draw(10, 500);
 }
 
 void keyPressed() {
   if (key == CODED) {
     if (keyCode == LEFT) {
       focusIndex--;
-    } else if (keyCode == RIGHT) {
+    } 
+    else if (keyCode == RIGHT) {
       focusIndex++;
     }
   }
+
+  if (key == 'q') {
+    timeline.propagate(0, people);
+  }
+  if (key == 'w') {
+    timeline.propagate(10, people);
+  }
+  if (key == 'e') {
+    timeline.propagate(20, people);
+  }
+  if (key == 'r') {
+    timeline.propagate(30, people);
+  }
+  if (key == 't') {
+    timeline.propagate(40, people);
+  }
+  if (key == 'y') {
+    timeline.propagate(50, people);
+  }
+
   if (focusIndex > people.size()-1) {
     focusIndex = 0;
   } 

@@ -59,6 +59,8 @@ byte[] compressPerson(Person person) {
   
   //Is Alive
   result = append(result, byte(person.isAlive));
+  //Location
+  result = append(result, byte(person.location));
   
   
   return result;
@@ -97,8 +99,10 @@ Person decompressPerson(byte[] byteArray) {
   
   boolean isAlive = byteArray[50] == 1 ? true : false;
   
+  int location = byteArray[51];
+  
   Person result = new Person(firstName, middleName, lastName, gender, sexuality, 
   age, height, weight, openness, curiousity, conscientiousness, attention, 
-  extraversion, energy, agreeableness, empathy, rationality, happiness, isAlive);
+  extraversion, energy, agreeableness, empathy, rationality, happiness, isAlive, location);
   return result;
 }  
