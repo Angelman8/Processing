@@ -19,7 +19,7 @@ class Person {
     middleName = (gender == 0 ? femaleNames.get((int)random(0, femaleNames.size()-1)) : maleNames.get((int)random(0, maleNames.size()-1)));
     lastName = lastNames.get((int)random(0, lastNames.size()-1));
     sexuality = (int)random(0, 100);
-    age = (int)Math.abs((averageAge + randomGaussian()*5 + random(-10, 40)));
+    age = (int)Math.abs((averageAge + randomGaussian()*5 + random(-10, 35)));
     height = (gender == 0 ? averageHeightW : averageHeightM) + randomGaussian()*.25;
     weight = (gender == 0 ? averageWeightW : averageWeightM) + randomGaussian()*10 + random(-10, 30);
     location = (int)random(0, 10);

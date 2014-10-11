@@ -1,5 +1,5 @@
 int numstars = 500;
-float spring = 0.0000001;
+float spring = 0.0000002;
 float border = 0;
 float gravity = 0.0;
 float gravityWell = 200;

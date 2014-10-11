@@ -11,7 +11,7 @@ int maxNameLength = 11;
 int lastNamesCount = 200;
 
 //Average Attributes
-int averageAge = 30;
+int averageAge = 28;
 float averageHeightM = 5.9;
 float averageHeightW = 5.4;
 float averageWeightM = 180;
