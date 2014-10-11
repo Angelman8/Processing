@@ -14,17 +14,18 @@ boolean FULLSCREEN = true;
 
 //ENVIRONMENT
 int numDots;
+float numDotsModifier = 0.0001;
 int minDist = 0;
-int maxDist = 130;
-float distMod = 180;
-float connectionMod = 0;
-float modifier = .3;
+int maxDist = 150;
+float distMod = 230;
+float connectionMod = 2;
+float modifier = .5;
 int border = 0;
 
 //SPEED
-float maxAcceleration = 0.15;
+float maxAcceleration = 0.30;
 float acceleration = maxAcceleration;
-float maxVelocity = 1.5;
+float maxVelocity = 2.5;
 float velocity = maxVelocity;
 ArrayList<Dot> dots;
 
@@ -34,7 +35,7 @@ boolean sketchFullScreen() {
 
 void setup() 
 {
-  numDots = (int)(displayWidth*displayHeight*.00008);
+  numDots = (int)(displayWidth*displayHeight * numDotsModifier);
   boolean paused = false;
   if (FULLSCREEN) {
     size(displayWidth, displayHeight);
@@ -81,7 +82,7 @@ void draw()
         //DrawDot();
       }
       float inputMod = abs(input.mix.get(100)* 160);
-      distMod = displayWidth*displayHeight*0.00003 + inputMod + beatKick;
+      distMod = displayWidth*displayHeight*0.00005 + inputMod + beatKick;
 
       strokeWeight(map(inputMod, 0, 100, 0.4, 2));
       velocity = map(inputMod, 0, 100, 1, 18.0);
