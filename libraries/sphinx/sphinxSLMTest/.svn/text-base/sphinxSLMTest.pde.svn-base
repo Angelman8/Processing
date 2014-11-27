@@ -1,0 +1,57 @@
+//
+// sphinxSLMTest
+//
+// simple example program of sphinx4 automatic speech recognizer using 
+// a statistical language model (SLM) rather than a grammar.  
+//
+// Grammars can be generated online using the lmtool:
+//     http://www.speech.cs.cmu.edu/tools/lmtool-new.html
+//
+// rtwomey@u.washington.edu
+//
+
+Sphinx listener;
+String s = ""; // variable for sphinx results
+
+int lastevent = 0;
+
+void setup() {
+  size(400, 400);
+  background(0);
+
+  // setup speech recognition
+  listener = new Sphinx(this,"/sphinx.config.xml");
+  lastevent = 0; // for intra-utterance timing
+}
+
+void dispose() {
+  // clean up listener threads
+  listener.dispose();
+}
+
+void draw() { 
+  stroke(255);
+
+  // check how long it has been silent
+  // doquit();
+}
+
+void SphinxEvent(Sphinx _l) {
+  int now = millis();
+
+  s = _l.readString(); // returns the recognized string
+
+    // echo to screen 
+//  System.out.print("["+now+"] sphinx heard: "+s);
+  System.out.print("["+now+"] "+s);
+
+  // intra-utterance timing
+  System.out.println("  ("+(now-lastevent)+" since last utterance)");
+  lastevent=now;
+
+  // check for stop command
+  if((s.indexOf("quit") >= 0) || (s.indexOf("exit") >= 0) || ((s.indexOf("stop") >= 0) && (s.indexOf("dystopian") < 0))) {
+    exit();
+  }
+}
+

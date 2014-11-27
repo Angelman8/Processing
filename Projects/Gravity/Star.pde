@@ -29,8 +29,8 @@ class Star {
         float angle = atan2(dy, dx);
         float targetX = x + cos(angle) * minDist;
         float targetY = y + sin(angle) * minDist;
-        float ax = (targetX - others[i].x) * spring * gravityWell * .01;
-        float ay = (targetY - others[i].y) * spring * gravityWell * .01;
+        float ax = (targetX - others[i].x) * spring * .01;
+        float ay = (targetY - others[i].y) * spring * .01;
         vx -= ax;
         vy -= ay;
         others[i].vx += ax;

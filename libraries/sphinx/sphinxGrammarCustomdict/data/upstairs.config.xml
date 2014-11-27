@@ -95,7 +95,7 @@
     <component name="jsgfGrammar" type="edu.cmu.sphinx.jsgf.JSGFGrammar">
         <property name="dictionary" value="dictionary"/>
         <property name="grammarLocation"
-             value="file:/Users/rtwomey/processing/sphinx/sphinxGrammarCustomDict/data"/>
+             value="file:/Users/galen/Documents/Creative Projects/Processing/libraries/sphinx/sphinxGrammarCustomdict/data"/>
         <property name="grammarName" value="upstairs"/>
 	<property name="logMath" value="logMath"/>
     </component>
@@ -108,11 +108,11 @@
     <component name="dictionary"
         type="edu.cmu.sphinx.linguist.dictionary.FastDictionary">
 		<property name="addenda"
-	 value="file:///Users/rtwomey/processing/libraries/sphinx/additions.dict"/>		
+	 value="file:///Users/galen/Documents/Creative Projects/Processing/libraries/sphinx/additions.dict"/>		
         <!--property name="dictionaryPath"
 	 value="resource:/WSJ_8gau_13dCep_16k_40mel_130Hz_6800Hz/dict/cmudict.0.6d"/-->
 	<property name="dictionaryPath"
-	 value="file:/Users/rtwomey/processing/sphinx/sphinxGrammarCustomdict/data/upstairs.dict"/>
+	 value="file:/Users/galen/Documents/Creative Projects/Processing/libraries/sphinx/sphinxGrammarCustomdict/data/upstairs.dict"/>
         <property name="fillerPath"
 	 value="resource:/WSJ_8gau_13dCep_16k_40mel_130Hz_6800Hz/dict/fillerdict"/>
         <property name="addSilEndingPronunciation" value="false"/>

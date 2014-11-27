@@ -1,7 +1,8 @@
-int numstars = 500;
-float spring = 0.0000002;
-float border = 0;
+int numstars = 700;
+float spring = 0.0000014;
+float border = 100;
 float gravity = 0.0;
+float maxVelocity = 200;
 float gravityWell = 200;
 float friction = -0.00005;
 Star[] stars = new Star[numstars];
@@ -23,10 +24,10 @@ void setup() {
     size(1000, 800);
   }
   for (int i = 0; i < numstars; i++) {
-    stars[i] = new Star(random(width), random(height), random(1, 2), i, stars);
+    stars[i] = new Star(random(width), random(height), random(1, 1), i, stars);
   }
-  for (int i = 0; i < 1; i++) {
-    blackholes.add(new Star(random(width/2 - border, width/2 + border), random(height/2 - border, height/2 + border), 10, i, stars));
+  for (int i = 0; i < 10; i++) {
+    blackholes.add(new Star(random(0 + border, width - border), random(0 + border, height - border), 20, i, stars));
   }
   noStroke();
   fill(255, 204);
@@ -44,7 +45,7 @@ void draw() {
     
     for (int i = 0; i < blackholes.size(); i++) {
       Star blackhole = (Star)blackholes.get(i);
-      blackhole.collide();
+      //blackhole.collide();
       //blackhole.display(color(50));
     }
     

@@ -1,0 +1,9 @@
+#JSGF V10;
+
+/**
+ * JSGF Test Grammar file
+ */
+
+grammar Words;
+
+public <WORDS> = ( A | A | BACK | BUS | CLOSE | DOWN | GO | HELLO | HEY | HI | IT | JOHN | LIKE | ME | MUSIC | NEXT | OPEN | PAUSE | PLAY | PLEX | SHOW | SONG | STOP | THE | TIME | TIMES | TODAY | TURN | UP | VOLUME | WEATHER | WHAT | WHAT'S | WHEN ) *;
