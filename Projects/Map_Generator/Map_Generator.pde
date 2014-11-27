@@ -1,7 +1,7 @@
-float noiseScale = .020;
-float maxThreshold = 80;
-float dropoff = 2.9;
-int maxColours = 100;
+float noiseScale = .018;
+float maxThreshold = 60;
+float dropoff = 2.3;
+int maxColours = 20;
 int continentThreshold = 1000;
 
 boolean drawGrid = true;
