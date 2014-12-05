@@ -24,7 +24,7 @@ void draw() {
 
 void SphinxEvent(Sphinx _l) {
   s = _l.readString(); // returns the recognized string
-  println("Sphinx heard: "+s);
+  println("Sphinx heard: " + s);
   if((s.indexOf("quit") >= 0) || (s.indexOf("exit") >= 0) || (s.indexOf("stop") >= 0)) {
     exit();
   }

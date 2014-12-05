@@ -114,10 +114,8 @@ public class Sphinx implements Runnable {
           // got a result
           if (result != null) {
             resultText = result.getBestFinalResultNoFiller();
+            println();
             if(resultText.length()>0) {
-                //System.out.println("["+result.getStartFrame()+","+result.getEndFrame()+"]");
-                //System.out.println(result.getTimedBestResult(false, true));
-              //println("this is what I heard: "+resultText);
               makeEvent();
             }
           }
