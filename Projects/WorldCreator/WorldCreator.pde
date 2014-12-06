@@ -1,16 +1,21 @@
-float noiseScale = .014;
-float maxThreshold = 75;
-float dropoff = 4.5;
-int continentThreshold = 1000;
+//Default Values
+float noiseScale = .0115;
+float maxThreshold = 85;
+float xCompression = 0.6;
+float yCompression = 1.6;
+float dropoff = 5.0;
 
-boolean drawGrid = false;
-int gridSize = 10;
+Map map;
+
+boolean drawGrid = true;
+int gridSize = 80;
 color gridColour = color(255, 30);
 
 int i, j;
 int[][] landMap;
 int[][] heightMap;
 int[][] regionMap;
+int[][] oceanMap;
 int[][] checkedMap;
 int[][] currentMap;
 color[] currentColours;
@@ -19,9 +24,11 @@ int regionCount = 2;
 int fillCount = 0;
 
 void setup() {
+  println("Beginning Setup...");
   size(1200, 700);
   background(0);
   noStroke();
+  
   regionColours = new color[3];
   regionColours[0] = color(0);
   regionColours[1] = color(255);
@@ -33,6 +40,7 @@ void setup() {
   currentColours = regionColours;
   
   GenerateWorld();
+  println("Setup Complete.");
 }
 
 void keyPressed() {
@@ -56,16 +64,16 @@ void keyPressed() {
       currentColours[i] = color(c, c ,c);
     }
   }
+  if (key == '4') {
+    currentMap = oceanMap;
+    currentColours = regionColours;
+  }
   DrawMap(currentMap, currentColours);
 }
 
 void GenerateWorld() {
-  long rand = (long)random(0, 1000000);
-  landMap = GenerateMap(rand, heightMap);
-  regionMap = GetRegions(GenerateMap(rand, heightMap));
-  currentMap = regionMap;
-  currentColours = regionColours;
-  DrawMap(currentMap, currentColours);
+  map = new Map();
+  map.Draw(map.elevation);
 }
 
 void draw() {
