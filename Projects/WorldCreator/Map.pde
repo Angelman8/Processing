@@ -1,52 +1,23 @@
 class Map {
-  float noiseScale;
-  float maxThreshold;
-  float xCompression;
-  float yCompression;
-  float dropoff;
 
-  int[][] land;
-  int[][] water;
-  int[][] elevation;
-  int[][] continents;
-  
+  int[][] data;
   color[] colours;
+  float max = -9999;
+  float min = 99999;
 
   Map() {
-    elevation = Clamp(GetNoise(0.0007, 95, 0.9, 1.5, 3), 0, 255);
+    data = new int[width][height];
   }
 
-  int[][] GetNoise(float noiseScale, float maxThreshold, float xCompression, float yCompression, float dropoff) {
-    println("Creating Noise Map...");
-    int[][] newMap = new int[width][height];
-    for (int x = 0; x < width; x++) {
-      for (int y = 0; y < height; y++) {
-        float n = noise(x * noiseScale, y * noiseScale);
-        if (x == 200)
-          print(n + ", ");
-        newMap[x][y] = (int)(n * 255 - (abs(dist(x * xCompression, y * yCompression, width/2 * xCompression, height/2 * yCompression)) / dropoff));
-      }
-    }
-    println("Noise Map Complete.");
-    return newMap;
-  }
-
-  int[][] GetLand(int[][] inputMap) {
-    int[][] newMap = new int[width][height];
-    for (int x = 0; x < width; x++) {
-      for (int y = 0; y < height; y++) {
-        newMap[x][y] = (inputMap[x][y] > maxThreshold) ? 1 : 0;
-      }
-    }
-    return newMap;
-  }
-
-  void Draw(int[][] inputMap) {
-    println("Drawing Map...");
+  void Draw() {
     background(0);
+    println("Drawing Map...");
     for (int x = 0; x < width; x++) {
       for (int y = 0; y < height; y++) {
-        stroke(inputMap[x][y]);
+        
+        if (x == width/2)
+          println(data[x][y], min, max, map(data[x][y], min, max, 0, 255));
+        stroke(map(data[x][y], min, max, 0, 255));
         rect(x, y, 1, 1);
       }
     }
@@ -54,6 +25,25 @@ class Map {
       DrawGrid();
     }
     println("Drawing Complete.");
+  }
+
+  Map GetNoise(float noiseScale, float contrast, float xCompression, float yCompression, float dropoff) {
+    println("Creating Noise Map...");
+    noiseSeed((long)random(0, 1000000));
+    Map newMap = new Map();
+    for (int x = 0; x < width; x++) {
+      for (int y = 0; y < height; y++) {
+        float n = noise(x * noiseScale, y * noiseScale) * contrast;
+        newMap.data[x][y] = (int)(n * 255 - (abs(dist(x * xCompression, y * yCompression, width/2 * xCompression, height/2 * yCompression)) / dropoff));
+      }
+    }
+    println("Noise Map Complete.");
+    return newMap;
+  }
+
+  void SetMinMax(int n) {
+    this.max = (n > this.max) ? n : this.max;
+    this.min = (n < this.min) ? n : this.min;
   }
 }
 

@@ -1,43 +1,22 @@
 //Default Values
-float noiseScale = .0115;
-float maxThreshold = 85;
-float xCompression = 0.6;
-float yCompression = 1.6;
+float noiseScale = .0125;
+float contrast = 1.4;
+float maxThreshold = 110;
+float xCompression = 1.0;
+float yCompression = 2.1;
 float dropoff = 5.0;
 
-Map map;
+World world;
 
 boolean drawGrid = true;
 int gridSize = 80;
 color gridColour = color(255, 30);
-
-int i, j;
-int[][] landMap;
-int[][] heightMap;
-int[][] regionMap;
-int[][] oceanMap;
-int[][] checkedMap;
-int[][] currentMap;
-color[] currentColours;
-color[] regionColours;
-int regionCount = 2;
-int fillCount = 0;
 
 void setup() {
   println("Beginning Setup...");
   size(1200, 700);
   background(0);
   noStroke();
-  
-  regionColours = new color[3];
-  regionColours[0] = color(0);
-  regionColours[1] = color(255);
-  regionColours[2] = GetRandomColour();
-
-  heightMap = new int[width][height];
-  
-  currentMap = regionMap;
-  currentColours = regionColours;
   
   GenerateWorld();
   println("Setup Complete.");
@@ -48,32 +27,22 @@ void keyPressed() {
     GenerateWorld();
   }
   if (key == '1') {
-    currentMap = landMap;
-    currentColours = regionColours;
+    world.elevation.Draw();
   }
   if (key == '2') {
-    currentMap = regionMap;
-    currentColours = regionColours;
+    world.land.Draw();
   }
-  if (key == '3') {
-    currentMap = heightMap;
-    currentColours = new color[1000];
-    for(int i = 0; i < currentColours.length - 1; i++) {
-      int c = ((int)(i * 0.8) > 255) ? 255 : (int)(i * 0.8);
-      c = ((int)(i * 0.8) > 80) ? c + (c - 100) : c - (100 - c);
-      currentColours[i] = color(c, c ,c);
-    }
-  }
+//  if (key == '3') {
+//    world.continents.Draw();
+//  }
   if (key == '4') {
-    currentMap = oceanMap;
-    currentColours = regionColours;
+    world.water.Draw();
   }
-  DrawMap(currentMap, currentColours);
 }
 
 void GenerateWorld() {
-  map = new Map();
-  map.Draw(map.elevation);
+  world = new World(noiseScale, maxThreshold, contrast, xCompression, yCompression, dropoff);
+  world.land.Draw();
 }
 
 void draw() {

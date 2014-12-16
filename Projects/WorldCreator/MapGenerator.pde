@@ -18,33 +18,3 @@ int[][] GenerateMap(long seed, int[][] heightM) {
   }
   return map;
 }
-
-int[][] GetWater(int[][] map) {
-  int x = 0;
-  int y = 0;
-  int[][] newMap = new int[width][height];
-  while(y < height) {
-    while(x < width) {
-      newMap = Flood(x,y, 0, regionCount, map);
-      x++;
-    }
-    x = 0;
-    y++;
-  }
-  return newMap;
-}
-
-int[][] GetRegions(int[][] map) {
-  int x = 0;
-  int y = 0;
-  int[][] newMap = map;
-  while(y < height) {
-    while(x < width) {
-      newMap = Flood(x,y, 1, regionCount, map);
-      x++;
-    }
-    x = 0;
-    y++;
-  }
-  return newMap;
-}
