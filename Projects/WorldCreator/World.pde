@@ -9,11 +9,10 @@ class World {
   color[] colours;
 
   World(float noiseScale, float maxThreshold, float contrast, float xCompression, float yCompression, float dropoff) {
-    elevation = new Map();
-    elevation = GetElevation(noiseScale, maxThreshold, contrast, xCompression, yCompression, dropoff);
-    land = GetLand(elevation);
-    continents = GetContinents(land);
-    //water = GetWater(land);
+    elevation = GetNoise(noiseScale, maxThreshold, contrast, xCompression, yCompression, dropoff);
+    land = GetLand(elevation.Copy());
+    continents = GetContinents(land.Copy());
+    water = GetWater(land.Copy());
   }
 
   Map GetNoise(float noiseScale, float maxThreshold, float contrast, float xCompression, float yCompression, float dropoff) {
@@ -28,12 +27,6 @@ class World {
       }
     }
     println("Noise Map Complete.");
-    return newMap;
-  }
-
-  Map GetElevation(float noiseScale, float maxThreshold, float contrast, float xCompression, float yCompression, float dropoff) {
-    Map newMap = new Map();
-    newMap = GetNoise(noiseScale, maxThreshold, contrast, xCompression, yCompression, dropoff);
     return newMap;
   }
 
@@ -76,7 +69,7 @@ class World {
     int regionCount = 2;
     while (y < height) {
       while (x < width) {
-        newMap.data = Flood(x, y, 1, regionCount, inputMap.data);
+        newMap.data = Flood(x, y, 0, regionCount, inputMap.data);
         if (x == 500)
           println(newMap.data[x][y], newMap.min, newMap.max, regionCount);
         if (foundLandmass) {
@@ -93,7 +86,8 @@ class World {
   }
 
   int[][] Flood(int x, int y, int target, int replacement, int[][] map) {
-    int[][] newMap = map;
+    int[][] newMap;
+    newMap = map;
     if (newMap[x][y] != target) {
       foundLandmass = false;
       return newMap;

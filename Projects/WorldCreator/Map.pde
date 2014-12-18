@@ -7,8 +7,24 @@ class Map {
 
   Map() {
     data = new int[width][height];
+    colours = new color[0];
   }
-
+  
+  Map Copy() {
+    Map newMap = new Map();
+    for (int x = 0; x < width; x++) {
+      for (int y = 0; y < height; y++) {
+        newMap.data[x][y] = data[x][y];
+      }
+    }
+    for(int i = 0; i < colours.length; i++) {
+        newMap.colours[i] = colours[i];
+    }
+    newMap.max = max;
+    newMap.min = min;
+    return newMap;
+  }
+  
   void Draw() {
     background(0);
     println("Drawing Map...");

@@ -1,15 +1,16 @@
 //Default Values
-float noiseScale = .0125;
+float noiseScale = .011;
 float contrast = 1.4;
 float maxThreshold = 110;
-float xCompression = 1.0;
-float yCompression = 2.1;
+float xCompression = 0.9;
+float yCompression = 1.8;
 float dropoff = 5.0;
 
 World world;
 
-boolean drawGrid = true;
+float pixelSize = 1;
 int gridSize = 80;
+boolean drawGrid = true;
 color gridColour = color(255, 30);
 
 void setup() {
@@ -32,9 +33,9 @@ void keyPressed() {
   if (key == '2') {
     world.land.Draw();
   }
-//  if (key == '3') {
-//    world.continents.Draw();
-//  }
+  if (key == '3') {
+    world.continents.Draw();
+  }
   if (key == '4') {
     world.water.Draw();
   }
