@@ -85,17 +85,10 @@ class Dot {
         }
       } 
       else {
-        dotcolor = color(red-1, green-1, blue-1);
-        if (red < 0) {
-          dotcolor = color(0, green, blue);
-        }
-        if (green < 0) {
-          dotcolor = color(red, 0, blue);
-        }
-        if (blue < 0) {
-          dotcolor = color(red, green, 0);
-        }
-        dotcolor = color(red + connections.size()*connectionMod,green + connections.size()*connectionMod,blue + connections.size()*connectionMod);
+        float redDiff = abs(red - 255) > 1 ? red + abs(red - 255) * colorEasing : 255;
+        float greenDiff = abs(green - 255) > 1 ? green + abs(green - 255) * colorEasing : 255;
+        float blueDiff = abs(blue - 255) > 1 ? blue + abs(blue - 255) * colorEasing : 255;
+        dotcolor = color(redDiff, greenDiff, blueDiff);
       }
     } 
     else {
@@ -104,7 +97,10 @@ class Dot {
         dotcolor = color(random(255), random(255), random(255));
       } 
       else {
-        dotcolor = color(255, 255, 255);
+        float redDiff = abs(red - 255) > 1 ? red + abs(red - 255) * colorEasing : 255;
+        float greenDiff = abs(green - 255) > 1 ? green + abs(green - 255) * colorEasing : 255;
+        float blueDiff = abs(blue - 255) > 1 ? blue + abs(blue - 255) * colorEasing : 255;
+        dotcolor = color(redDiff, greenDiff, blueDiff);
       }
     }
   }

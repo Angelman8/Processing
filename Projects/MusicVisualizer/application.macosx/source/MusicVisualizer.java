@@ -33,17 +33,19 @@ boolean FULLSCREEN = true;
 
 //ENVIRONMENT
 int numDots;
+float numDotsModifier = 0.00009f;
 int minDist = 0;
-int maxDist = 130;
-float distMod = 150;
-float connectionMod = 0;
+int maxDist = 100;
+float distMod = 20;
+float connectionMod = 2;
 float modifier = .3f;
 int border = 0;
+float colorEasing = 0.5f;
 
 //SPEED
-float maxAcceleration = 0.15f;
+float maxAcceleration = 20.00f;
 float acceleration = maxAcceleration;
-float maxVelocity = 1.5f;
+float maxVelocity = 50.5f;
 float velocity = maxVelocity;
 ArrayList<Dot> dots;
 
@@ -51,9 +53,11 @@ public boolean sketchFullScreen() {
   return FULLSCREEN;
 }
 
+float beatKick = 0;
+
 public void setup() 
 {
-  numDots = (int)(displayWidth*displayHeight*.00008f);
+  numDots = (int)(displayWidth*displayHeight * numDotsModifier);
   boolean paused = false;
   if (FULLSCREEN) {
     size(displayWidth, displayHeight);
@@ -94,17 +98,17 @@ public void draw()
     if (AUDIO_REACTIVE) {
       beat.detect(input.left);
 
-      float beatKick = beat.isKick() ? 22 : 0;
-      if (beat.isKick())
-      {
-        //DrawDot();
+      if (beat.isKick()) {
+        beatKick = beatKick > 60 ? 60 : beatKick + 40;
+      } else {
+       beatKick = distMod < 0 ? distMod : beatKick - 2.2f;
       }
-      float inputMod = abs(input.mix.get(100)* 160);
-      distMod = displayWidth*displayHeight*0.000025f + inputMod + beatKick;
+      float inputMod = abs(input.mix.get(100)* 190);
+      distMod = displayWidth*displayHeight*0.00003f + inputMod + beatKick;
 
-      strokeWeight(map(inputMod, 0, 100, 0.2f, 1.6f));
-      velocity = map(inputMod, 0, 100, 1, 15.0f);
-      acceleration = map(inputMod, 0, 100, .1f, 2.4f);
+      strokeWeight(map(inputMod, 0, 100, 0.7f, 3));
+      velocity = map(inputMod, 0, 100, 1, 120.0f);
+      acceleration = map(inputMod, 0, 100, .1f, 50);
     }
 
     for (int i = 0; i < dots.size()-1; i++) {
@@ -226,17 +230,10 @@ class Dot {
         }
       } 
       else {
-        dotcolor = color(red-1, green-1, blue-1);
-        if (red < 0) {
-          dotcolor = color(0, green, blue);
-        }
-        if (green < 0) {
-          dotcolor = color(red, 0, blue);
-        }
-        if (blue < 0) {
-          dotcolor = color(red, green, 0);
-        }
-        dotcolor = color(red + connections.size()*connectionMod,green + connections.size()*connectionMod,blue + connections.size()*connectionMod);
+        float redDiff = abs(red - 255) > 1 ? red + abs(red - 255) * colorEasing : 255;
+        float greenDiff = abs(green - 255) > 1 ? green + abs(green - 255) * colorEasing : 255;
+        float blueDiff = abs(blue - 255) > 1 ? blue + abs(blue - 255) * colorEasing : 255;
+        dotcolor = color(redDiff, greenDiff, blueDiff);
       }
     } 
     else {
@@ -245,7 +242,10 @@ class Dot {
         dotcolor = color(random(255), random(255), random(255));
       } 
       else {
-        dotcolor = color(255, 255, 255);
+        float redDiff = abs(red - 255) > 1 ? red + abs(red - 255) * colorEasing : 255;
+        float greenDiff = abs(green - 255) > 1 ? green + abs(green - 255) * colorEasing : 255;
+        float blueDiff = abs(blue - 255) > 1 ? blue + abs(blue - 255) * colorEasing : 255;
+        dotcolor = color(redDiff, greenDiff, blueDiff);
       }
     }
   }
@@ -310,7 +310,7 @@ class BeatListener implements AudioListener
  }
 }
   static public void main(String[] passedArgs) {
-    String[] appletArgs = new String[] { "--full-screen", "--bgcolor=#666666", "--hide-stop", "MusicVisualizer" };
+    String[] appletArgs = new String[] { "MusicVisualizer" };
     if (passedArgs != null) {
       PApplet.main(concat(appletArgs, passedArgs));
     } else {

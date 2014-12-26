@@ -33,7 +33,7 @@
     <!-- End of the set that can be customized -->
 
     <key>JVMRuntime</key>
-    <string>jdk1.7.0_51.jdk</string>
+    <string>jdk1.7.0_55.jdk</string>
 
     <key>JVMMainClassName</key>
     <string>MusicVisualizer</string>
@@ -56,11 +56,14 @@
     </dict>
 
     <key>LSUIPresentationMode</key>
-    <integer>4</integer>
+    <integer>0</integer>
 
     <key>JVMOptions</key>
     <array>
-      
+      <string>-Xms64m</string>
+      <string>-Xmx512m</string>
+      <string>-Djna.nosys=true</string>
+
       <string>-Xdock:icon=Contents/Resources/sketch.icns</string>
       <string>-Dapple.laf.useScreenMenuBar=true</string>
       <string>-Dcom.apple.macos.use-file-dialog-packages=true</string>
