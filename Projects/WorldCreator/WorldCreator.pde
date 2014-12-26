@@ -1,21 +1,23 @@
+import java.util.Map;
+
 //Default Values
-float noiseScale = .011;
+float noiseScale = .013;
 float contrast = 1.4;
 float maxThreshold = 110;
-float xCompression = 0.9;
-float yCompression = 1.8;
+float xCompression = 0.5;
+float yCompression = 1.25;
 float dropoff = 5.0;
 
 World world;
 
 float pixelSize = 1;
-int gridSize = 80;
+int gridSize = 140;
 boolean drawGrid = true;
 color gridColour = color(255, 30);
 
 void setup() {
   println("Beginning Setup...");
-  size(1200, 700);
+  size(1400, 700);
   background(0);
   noStroke();
   
@@ -28,22 +30,26 @@ void keyPressed() {
     GenerateWorld();
   }
   if (key == '1') {
-    world.elevation.Draw();
+    world.result.Draw();
   }
   if (key == '2') {
     world.land.Draw();
   }
   if (key == '3') {
     world.continents.Draw();
+    world.PrintContinents();
   }
   if (key == '4') {
     world.water.Draw();
+  }
+  if (key == '5') {
+    world.elevation.Draw();
   }
 }
 
 void GenerateWorld() {
   world = new World(noiseScale, maxThreshold, contrast, xCompression, yCompression, dropoff);
-  world.land.Draw();
+  world.result.Draw();
 }
 
 void draw() {

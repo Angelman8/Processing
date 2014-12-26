@@ -25,14 +25,74 @@ class Map {
     return newMap;
   }
   
+  Map Apply(Map map, float strength) {
+    for (int x = 0; x < width; x++) {
+      for (int y = 0; y < height; y++) {
+        data[x][y] += map.data[x][y] * strength;
+        SetMinMax(data[x][y]);
+      }
+    }
+    return this;
+  }
+  
+  Map Mask(Map map, int keyValue) {
+    for (int x = 0; x < width; x++) {
+      for (int y = 0; y < height; y++) {
+        if (map.data[x][y] == keyValue) {
+          data[x][y] = (int)min;
+          SetMinMax(data[x][y]);
+        }
+      }
+    }
+    return this;
+  }
+  
+  Map Fade(int value) {
+    for (int x = 0; x < width; x++) {
+      for (int y = 0; y < height; y++) {
+        data[x][y] -= value;
+        SetMinMax(data[x][y]);
+      }
+    }
+    return this;
+  }
+  
+  Map Randomize(int min, int max) {
+    for (int x = 0; x < width; x++) {
+      for (int y = 0; y < height; y++) {
+        data[x][y] += (int)random(min, max);
+        SetMinMax(data[x][y]);
+      }
+    }
+    return this;
+  }
+  
+  Map Flip() {
+    for (int x = 0; x < width; x++) {
+      for (int y = 0; y < height; y++) {
+        data[x][y] = -data[x][y];
+        SetMinMax(data[x][y]);
+      }
+    }
+    return this;
+  }
+  
+  Map Amplify(float value) {
+    for (int x = 0; x < width; x++) {
+      for (int y = 0; y < height; y++) {
+        data[x][y] *= value;
+        SetMinMax(data[x][y]);
+      }
+    }
+    return this;
+  }
+  
   void Draw() {
     background(0);
     println("Drawing Map...");
     for (int x = 0; x < width; x++) {
       for (int y = 0; y < height; y++) {
         
-        if (x == width/2)
-          println(data[x][y], min, max, map(data[x][y], min, max, 0, 255));
         stroke(map(data[x][y], min, max, 0, 255));
         rect(x, y, 1, 1);
       }
@@ -41,20 +101,6 @@ class Map {
       DrawGrid();
     }
     println("Drawing Complete.");
-  }
-
-  Map GetNoise(float noiseScale, float contrast, float xCompression, float yCompression, float dropoff) {
-    println("Creating Noise Map...");
-    noiseSeed((long)random(0, 1000000));
-    Map newMap = new Map();
-    for (int x = 0; x < width; x++) {
-      for (int y = 0; y < height; y++) {
-        float n = noise(x * noiseScale, y * noiseScale) * contrast;
-        newMap.data[x][y] = (int)(n * 255 - (abs(dist(x * xCompression, y * yCompression, width/2 * xCompression, height/2 * yCompression)) / dropoff));
-      }
-    }
-    println("Noise Map Complete.");
-    return newMap;
   }
 
   void SetMinMax(int n) {

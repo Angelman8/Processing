@@ -1,18 +1,30 @@
 class World {
   boolean foundLandmass = false;
-
+  Map result;
   Map land;
   Map water;
   Map elevation;
+  Map gradient;
   Map continents;
+  
+  ArrayList<Continent> continentsList = new ArrayList<Continent>();
 
   color[] colours;
 
   World(float noiseScale, float maxThreshold, float contrast, float xCompression, float yCompression, float dropoff) {
     elevation = GetNoise(noiseScale, maxThreshold, contrast, xCompression, yCompression, dropoff);
-    land = GetLand(elevation.Copy());
+    elevation.Apply(GetGradient(7), 0.9);
+    land = GetLand(elevation.Copy(), (int)maxThreshold);
     continents = GetContinents(land.Copy());
     water = GetWater(land.Copy());
+    result = new Map();
+    result.Apply(land.Copy(), .5)s
+          .Apply(GetNoise(0.025, 80, 1.4, 1.0, 1.0, 5), 0.05)
+          .Apply(GetNoise(0.05, 100, 1.4, 1.0, 1.0, 8), 0)
+          .Apply(GetNoise(0.005, 80, 1.4, 1.0, 1.0, 8), 0)
+          .Apply(elevation.Copy(), 0.08)
+          .Randomize(0, 2)
+          .Mask(land.Copy(), 0);
   }
 
   Map GetNoise(float noiseScale, float maxThreshold, float contrast, float xCompression, float yCompression, float dropoff) {
@@ -29,12 +41,26 @@ class World {
     println("Noise Map Complete.");
     return newMap;
   }
-
-  Map GetLand(Map inputMap) {
+  
+  Map GetGradient(float falloff) {
+    println("Creating Gradient Map...");
     Map newMap = new Map();
     for (int x = 0; x < width; x++) {
       for (int y = 0; y < height; y++) {
-        newMap.data[x][y] = (inputMap.data[x][y] > maxThreshold) ? 1 : 0;
+        float n = dist(x, y, width/2, height/2) / falloff;
+        newMap.data[x][y] = (int) -n;
+        newMap.SetMinMax(newMap.data[x][y]);
+      }
+    }
+    println("Gradient Map Complete.");
+    return newMap;
+  }
+
+  Map GetLand(Map inputMap, int threshold) {
+    Map newMap = new Map();
+    for (int x = 0; x < width; x++) {
+      for (int y = 0; y < height; y++) {
+        newMap.data[x][y] = (inputMap.data[x][y] > threshold) ? 1 : 0;
         newMap.SetMinMax((int)newMap.data[x][y]);
       }
     }
@@ -51,6 +77,17 @@ class World {
         newMap.data = Flood(x, y, 1, regionCount, inputMap.data);
         newMap.SetMinMax((int)newMap.data[x][y]);
         if (foundLandmass) {
+          continentsList.add(new Continent());
+          Continent continent = continentsList.get(continentsList.size()-1);
+          continent.name = "Continent " + (continentsList.size()-1);
+          for (int i = 0; i < width; i++) {
+            for (int j = 0; j < height; j++) {
+              if (newMap.data[i][j] == regionCount) {
+                continent.AddData(i, j);
+              }
+            }
+          }
+          continent.AddData(x, y);
           regionCount++;
           foundLandmass = false;
         }
@@ -70,8 +107,6 @@ class World {
     while (y < height) {
       while (x < width) {
         newMap.data = Flood(x, y, 0, regionCount, inputMap.data);
-        if (x == 500)
-          println(newMap.data[x][y], newMap.min, newMap.max, regionCount);
         if (foundLandmass) {
           regionCount++;
           foundLandmass = false;
@@ -123,6 +158,13 @@ class World {
     }
     foundLandmass = true;
     return newMap;
+  }
+  
+  void PrintContinents() {
+    for(int i = 0; i < continentsList.size()-1; i++) {
+      Continent continent = continentsList.get(i);
+      println(continent.name, continent.data.size());
+    }
   }
 }
 
