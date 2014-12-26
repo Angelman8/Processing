@@ -18,7 +18,7 @@ class World {
     continents = GetContinents(land.Copy());
     water = GetWater(land.Copy());
     result = new Map();
-    result.Apply(land.Copy(), .5)s
+    result.Apply(land.Copy(), .5)
           .Apply(GetNoise(0.025, 80, 1.4, 1.0, 1.0, 5), 0.05)
           .Apply(GetNoise(0.05, 100, 1.4, 1.0, 1.0, 8), 0)
           .Apply(GetNoise(0.005, 80, 1.4, 1.0, 1.0, 8), 0)
