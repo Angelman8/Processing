@@ -87,9 +87,20 @@ class Map {
     return this;
   }
   
+  Map ContrastMountains(float threshold, float multiply) {
+    for (int x = 0; x < width; x++) {
+      for (int y = 0; y < height; y++) {
+        if (data[x][y] > threshold) {
+          data[x][y] = (int)(data[x][y] + (data[x][y] - threshold) * multiply);
+          SetMinMax(data[x][y]);
+        }
+      }
+    }
+    return this;
+  }
+  
   void Draw() {
     background(0);
-    println("Drawing Map...");
     for (int x = 0; x < width; x++) {
       for (int y = 0; y < height; y++) {
         
@@ -100,7 +111,6 @@ class Map {
     if (drawGrid) {
       DrawGrid();
     }
-    println("Drawing Complete.");
   }
 
   void SetMinMax(int n) {

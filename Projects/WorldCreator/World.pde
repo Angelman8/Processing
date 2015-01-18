@@ -6,7 +6,9 @@ class World {
   Map elevation;
   Map gradient;
   Map continents;
-  
+
+  ArrayList<Civilization> civilizations = new ArrayList<Civilization>();
+
   ArrayList<Continent> continentsList = new ArrayList<Continent>();
 
   color[] colours;
@@ -18,13 +20,38 @@ class World {
     continents = GetContinents(land.Copy());
     water = GetWater(land.Copy());
     result = new Map();
-    result.Apply(land.Copy(), .5)
-          .Apply(GetNoise(0.025, 80, 1.4, 1.0, 1.0, 5), 0.05)
-          .Apply(GetNoise(0.05, 100, 1.4, 1.0, 1.0, 8), 0)
-          .Apply(GetNoise(0.005, 80, 1.4, 1.0, 1.0, 8), 0)
-          .Apply(elevation.Copy(), 0.08)
-          .Randomize(0, 2)
-          .Mask(land.Copy(), 0);
+    result.Apply(land.Copy(), 1)
+      .Apply(GetNoise(0.025, 80, 1.4, 1.0, 1.0, 5), 0.08)
+        .Apply(GetNoise(0.08, 120, 1.4, 1.0, 1.0, 3), 0.03)
+          .Apply(GetNoise(0.004, 100, 1, 1, 1, 30), 0.1)
+            .Apply(elevation.Copy(), 0.05)
+              .Randomize(0, 1)
+                .ContrastMountains(35, 2)
+                  .Mask(land.Copy(), 0);
+    GetCivilizations(civNum);
+  }
+
+  void GetCivilizations(int amount) {
+    for (int i = 0; i < amount; i++) {
+civ:
+      for (int x = 0; x < width; x++) {
+        for (int y = 0; y < height; y++) {
+          int randX = (int)random(0, width);
+          int randY = (int)random(0, height);
+          float randVal = random(result.min, result.data[x][y]);
+          int value = (int)map(randVal, result.min, result.data[x][y], 0, 50);
+          if (result.data[x][y] > 0 && result.data[randX][randY] > 0) {
+            if (value <= 2) {
+              civilizations.add(new Civilization(randX, randY));
+              break civ;
+            } 
+            else {
+              println(randVal, value);
+            }
+          }
+        }
+      }
+    }
   }
 
   Map GetNoise(float noiseScale, float maxThreshold, float contrast, float xCompression, float yCompression, float dropoff) {
@@ -41,7 +68,9 @@ class World {
     println("Noise Map Complete.");
     return newMap;
   }
-  
+
+
+
   Map GetGradient(float falloff) {
     println("Creating Gradient Map...");
     Map newMap = new Map();
@@ -98,7 +127,7 @@ class World {
     }
     return newMap;
   }
-  
+
   Map GetWater(Map inputMap) {
     Map newMap = new Map();
     int x = 0;
@@ -159,9 +188,9 @@ class World {
     foundLandmass = true;
     return newMap;
   }
-  
+
   void PrintContinents() {
-    for(int i = 0; i < continentsList.size()-1; i++) {
+    for (int i = 0; i < continentsList.size()-1; i++) {
       Continent continent = continentsList.get(i);
       println(continent.name, continent.data.size());
     }

@@ -1,0 +1,31 @@
+<class>
+	<Name>Fighter</Name>
+	<HP>12</HP>
+	<HPGain>5</HPGain>
+	<Surges>7</Surges>
+	
+	<Bonuses>
+		<Bonus type="Fortitude">1</Bonus>
+		<Bonus type="Will">1</Bonus>
+	</Bonuses>
+	
+	<Proficiencies>
+	</Proficiencies>
+
+	<Skills max="3">
+		<Skill>Arcana</Skill>
+		<Skill>Athletics</Skill>
+		<Skill>Bluff</Skill>
+		<Skill>Diplomacy</Skill>
+		<Skill>Endurance</Skill>
+		<Skill>Heal</Skill>
+		<Skill>Insight</Skill>
+		<Skill>Intimidate</Skill>
+	</Skills>
+
+	<Feats>
+		<Feat>Psionic Augmentation</Feat>
+		<Feat>Psionic Augmentation</Feat>
+		<Feat>Psionic Augmentation</Feat>
+	</Feats>
+</class>

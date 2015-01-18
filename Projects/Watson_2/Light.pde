@@ -1,8 +1,3 @@
-import org.apache.http.HttpEntity;
-import org.apache.http.HttpResponse;
-import org.apache.http.client.methods.HttpPut;
-import org.apache.http.impl.client.DefaultHttpClient;
-
 class Light {
 
   String l;
@@ -31,8 +26,6 @@ class Light {
 
       HttpResponse response = httpClient.execute( httpPut );            // check to make sure it went well
       println( response.getStatusLine());
-
-      //      httpClient.getConnectionManager().shutdown();
     } 
     catch( Exception e ) { 
       e.printStackTrace();
