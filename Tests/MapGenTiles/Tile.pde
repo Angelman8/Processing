@@ -1,28 +1,40 @@
 class Tile {
   int x;
   int y;
-  float landHeight;
+  int landHeight;
+  float elevation;
+  
+  boolean isWater = false;
+
+  boolean isLand() {
+    if (landHeight > waterLevel) {
+      return true;
+    } 
+    else {
+      isWater = true;
+      return false;
+    }
+  }
 
   Tile(int _x, int _y) {
     x = _x;
     y = _y;
   }
 
-  void AddNoise(float strength, float noiseScale, float contrast, float xCompression, float yCompression, float dropoff) {
+  int AddNoise(float strength, float noiseScale, float contrast, float xCompression, float yCompression, float dropoff) {
     float n = noise(x * noiseScale, y * noiseScale) * contrast;
-    this.landHeight += (int)(n * 255 - (abs(dist(x * xCompression, y * yCompression, width/2 * xCompression, height/2 * yCompression)) / dropoff)) * strength;
+    int value = (int)((n * (abs(dist(x * xCompression, y * yCompression, width/2 * xCompression, height/2 * yCompression)) / dropoff)) * strength);
+    return value;
   }
-  
-  void AddGaussian(float strength) {
-    this.landHeight += abs(dist(x, y, width/2, height/2)) * strength;
+
+  int AddGaussian(float strength) {
+    int value = (int)(abs(dist(x, y, width/2, height/2)) * strength);
+    return value;
   }
-  
-  void RemoveGaussian(float strength) {
-    this.landHeight -= abs(dist(x, y, width/2, height/2)) * strength;
-  }
-  
+
   void Clear() {
     landHeight = 0;
+    elevation = 0;
   }
 }
 

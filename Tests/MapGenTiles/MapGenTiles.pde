@@ -1,12 +1,13 @@
 int tileSize = 1;
 
-//Noise
-float noiseScale = .013;
-float contrast = 1.4;
-float maxThreshold = 150;
-float xCompression = 0.5;
-float yCompression = 1.3;
-float dropoff = 20.0;
+int waterLevel = 150;
+float erosionFactor = 0.2;
+int rainDistance = 3;
+int rainSpread = 300;
+int rainCount = 5000000;
+
+float min = 9999999;
+float max = -9999999;
 
 Tile[][] map;
 
@@ -16,7 +17,7 @@ void setup() {
 
   InitializeMap();
   GenerateMap();
-  DrawLand();
+  DrawElevation();
 }
 
 void draw() {
@@ -25,14 +26,19 @@ void draw() {
 void keyPressed() {
   if (key == 'g') {
     GenerateMap();
-    DrawLand();
+    DrawElevation();
   }
+}
+
+void mousePressed() {
+  println("Land Elevation: " + map[mouseX][mouseY].elevation);
 }
 
 boolean Valid(int x, int y) {
   if ( x < 0 || x >= width/tileSize || y < 0 || y >= height/tileSize ) {
     return false;
-  } else {
+  } 
+  else {
     return true;
   }
 }

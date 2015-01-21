@@ -1,13 +1,17 @@
 void Parse(String input) {
   if (input.contains("light") && input.contains("off") && input.contains("turn")) {
     lastAction = "light off turn";
-    light1.on(false);
-    light2.on(false);
+    if (phoneDetected) {
+      light1.on(false);
+      light2.on(false);
+    }
   } 
   if (input.contains("light") && input.contains("on") && input.contains("turn")) {
     lastAction = "light on turn";
-    light1.on(true);
-    light2.on(true);
+    if (phoneDetected) {
+      light1.on(true);
+      light2.on(true);
+    }
   } 
   if (input.contains("reading") && input.contains("mode")) {
     lastAction = "reading mode";
