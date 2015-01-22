@@ -54,8 +54,8 @@ void GenerateMap() {
   for (int x = 0; x < width/tileSize; x++) {
     for (int y = 0; y < height/tileSize; y++) {
       map[x][y].elevation = map[x][y].landHeight;
-      map[x][y].elevation -= map[x][y].AddNoise(.3, .09, 20.4, 1.2, 1.2, 15.0);
-      map[x][y].elevation -= map[x][y].AddNoise(.5, .05, 20.9, 1.0, 1.0, 15.0);
+      map[x][y].elevation += map[x][y].AddNoise(.3, .09, 20.4, 1.2, 1.2, 15.0);
+      map[x][y].elevation += map[x][y].AddNoise(.5, .05, 20.9, 1.0, 1.0, 15.0);
       map[x][y].elevation += map[x][y].AddNoise(2.9, .02, 50.5, 1.5, 1.5, 10.0);
       map[x][y].elevation += map[x][y].AddNoise(3.2, .008, 1000.8, 1.2, 1.2, 8.0);
 

@@ -1,0 +1,9 @@
+#JSGF V10;
+
+/**
+ * JSGF Test Grammar file
+ */
+
+grammar Words;
+
+ public <WORDS> = ( HELLO | HI | TURN | OFF | ON | LIGHT | BRIGHTNESS | BRIGHT | FASTER | MORE | LIGHTS | DOWN | UP | PLEASE | READING | MODE | SLOWER | VOLUME | THE | HEY ) *;

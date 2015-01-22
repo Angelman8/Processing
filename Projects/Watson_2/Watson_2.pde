@@ -2,7 +2,7 @@ import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.methods.HttpPut;
 import org.apache.http.impl.client.DefaultHttpClient;
-import processing.net.*;
+import hypermedia.net.*;
 
 //HUE LIGHTS
 Light light1, light2;
@@ -19,9 +19,9 @@ String s = "";
 
 
 //Bluetooth Proximity
-Server server;
+UDP udp;
+int PORT = 5005;
 boolean phoneDetected = true;
-
 boolean useVoice = false;
 boolean useServer = true;
 
@@ -37,7 +37,8 @@ void setup() {
   light1 = new Light(bridge_ip, user, 1);
   light2 = new Light(bridge_ip, user, 2);
 
-  server = new Server(this, 5005);
+  udp = new UDP( this, PORT );
+  udp.listen( true );
 }
 
 void dispose() {
@@ -47,26 +48,6 @@ void dispose() {
 void draw() {
   background(0);
   if (useServer) {
-    Client thisClient = server.available();
-    if (thisClient !=null) {
-      String whatClientSaid = thisClient.readString();
-      if (whatClientSaid != null) {
-        if (whatClientSaid.equals("Galen: in") && !phoneDetected) {
-          phoneDetected = true;
-          light1.on(light1History);
-          light2.on(light2History);
-        } 
-        else if (whatClientSaid.equals("Galen: out") && phoneDetected) {
-          phoneDetected = false;
-          light1History = light1.on();
-          light2History = light2.on();
-          light1.on(false);
-          light2.on(false);
-        }
-        int val = 1;
-        server.write(val);
-      }
-    }
     if (phoneDetected) {
       fill(0, 255, 0);
     } 
@@ -74,6 +55,26 @@ void draw() {
       fill(255, 0, 0);
     }
     ellipse(width/2, height/2, 50, 50);
+  }
+}
+
+void receive( byte[] data, String ip, int port ) {
+  if (useServer) {
+    data = subset(data, 0, data.length-2);
+    String message = new String( data );
+    println( "received: \""+message+"\" from "+ip+" on port "+port );
+    if (message.equals("Galen.1") && !phoneDetected) {
+      phoneDetected = true;
+      light1.on(light1History);
+      light2.on(light2History);
+    } 
+    else if (message.equals("Galen.0") && phoneDetected) {
+      phoneDetected = false;
+      light1History = light1.on();
+      light2History = light2.on();
+      light1.on(false);
+      light2.on(false);
+    }
   }
 }
 

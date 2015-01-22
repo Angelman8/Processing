@@ -23,7 +23,7 @@ class Tile {
 
   int AddNoise(float strength, float noiseScale, float contrast, float xCompression, float yCompression, float dropoff) {
     float n = noise(x * noiseScale, y * noiseScale) * contrast;
-    int value = (int)((n * (abs(dist(x * xCompression, y * yCompression, width/2 * xCompression, height/2 * yCompression)) / dropoff)) * strength);
+    int value = (int)((n * 255 - (abs(dist(x * xCompression, y * yCompression, width/2 * xCompression, height/2 * yCompression)) / dropoff)) * strength);
     return value;
   }
 
