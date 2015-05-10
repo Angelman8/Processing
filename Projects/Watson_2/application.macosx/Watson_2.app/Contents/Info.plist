@@ -33,7 +33,7 @@
     <!-- End of the set that can be customized -->
 
     <key>JVMRuntime</key>
-    <string>jdk1.7.0_45.jdk</string>
+    <string>jdk1.7.0_55.jdk</string>
 
     <key>JVMMainClassName</key>
     <string>Watson_2</string>
@@ -60,8 +60,9 @@
 
     <key>JVMOptions</key>
     <array>
-            <string>-Xms64m</string>
-      <string>-Xmx2000m</string>
+      <string>-Xms64m</string>
+      <string>-Xmx1000m</string>
+      <string>-Djna.nosys=true</string>
 
       <string>-Xdock:icon=Contents/Resources/sketch.icns</string>
       <string>-Dapple.laf.useScreenMenuBar=true</string>

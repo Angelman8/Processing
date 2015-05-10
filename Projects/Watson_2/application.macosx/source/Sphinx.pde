@@ -141,3 +141,16 @@ public class Sphinx implements Runnable {
   }
 }
 
+//Voice Record Event
+void SphinxEvent(Sphinx _l) {
+  if (useVoice) {
+    s = _l.readString(); // returns the recognized string
+    println("Sphinx heard: " + s);
+    Parse(s);
+    if ((s.indexOf("quit") >= 0) || (s.indexOf("exit") >= 0) || (s.indexOf("stop") >= 0)) {
+      exit();
+    }
+  }
+}
+
+

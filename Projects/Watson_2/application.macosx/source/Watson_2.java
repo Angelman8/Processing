@@ -3,11 +3,11 @@ import processing.data.*;
 import processing.event.*; 
 import processing.opengl.*; 
 
+import SimpleOpenNI.*; 
 import org.apache.http.HttpEntity; 
 import org.apache.http.HttpResponse; 
 import org.apache.http.client.methods.HttpPut; 
 import org.apache.http.impl.client.DefaultHttpClient; 
-import hypermedia.net.*; 
 import processing.core.*; 
 import edu.cmu.sphinx.frontend.util.Utterance; 
 import edu.cmu.sphinx.frontend.util.Microphone; 
@@ -114,11 +114,18 @@ import java.io.IOException;
 
 public class Watson_2 extends PApplet {
 
+//Booleans
+boolean lightsTriggered = false;
+boolean phoneDetected = true;
+boolean useVoice = true;
+boolean useKinect = true;
+boolean useServer = true;
+boolean showControls = true;
+boolean showDepth = true;
 
+boolean alarm = true;
 
-
-
-
+int peopleActive = 0;
 
 //HUE LIGHTS
 Light light1, light2;
@@ -133,26 +140,38 @@ String lastAction = "";
 Sphinx listener;
 String s = "";
 
+//KINECT
+SimpleOpenNI  context;
+PImage img;
 
-//Bluetooth Proximity
+//BLUETOOTH PROXIMITY
 UDP udp;
+String udpBroadcast = "";
 int PORT = 5005;
-boolean phoneDetected = true;
-boolean useVoice = false;
-boolean useServer = true;
-
 
 public void setup() {
-  size(400, 400);
+  size(640, 480);
   background(0);
+
+  //Sphinx
   if (useVoice) {
     listener = new Sphinx(this, "upstairs.config.xml");
   }
-  String bridge_ip = ConfigureIP();
 
+  //Hue
+  String bridge_ip = GetBridgeIP();
   light1 = new Light(bridge_ip, user, 1);
   light2 = new Light(bridge_ip, user, 2);
 
+  //Kinect
+  context = new SimpleOpenNI(this);
+  context.enableDepth();  
+  context.enableUser();
+  context.setMirror(true);
+  img = createImage(640, 480, RGB);
+  img.loadPixels();
+
+  //Server
   udp = new UDP( this, PORT );
   udp.listen( true );
 }
@@ -163,78 +182,152 @@ public void dispose() {
 
 public void draw() {
   background(0);
+
+  if (useKinect) {
+    drawDepth();
+  }
+
   if (useServer) {
     if (phoneDetected) {
       fill(0, 255, 0);
-    } 
-    else {
+    } else {
       fill(255, 0, 0);
     }
-    ellipse(width/2, height/2, 50, 50);
+    ellipse(width/2, height/10, 20, 20);
+  }
+
+  if (!lightsTriggered && !phoneDetected && peopleActive <= 0) {
+    light1History = light1.on();
+    light2History = light2.on();
+    light1.on(false);
+    light2.on(false);
+    lightsTriggered = true;
+  } else if (lightsTriggered && (phoneDetected || peopleActive > 0)) {
+    lightsTriggered = false;
+    light1.on(light1History);
+    light2.on(light2History);
   }
 }
 
 public void receive( byte[] data, String ip, int port ) {
-
   if (useServer) {
     data = subset(data, 0, data.length-2);
     String message = new String( data );
-    println( "received: \""+message+"\" from "+ip+" on port "+port );
-    if (message.equals("Galen.1") && !phoneDetected) {
+    if (message.equals("Galen.1")) {
       phoneDetected = true;
-      light1.on(light1History);
-      light2.on(light2History);
-    } 
-    else if (message.equals("Galen.0") && phoneDetected) {
+    } else {
       phoneDetected = false;
-      light1History = light1.on();
-      light2History = light2.on();
-      light1.on(false);
-      light2.on(false);
+    }
+    println( "UDP Broadcast: \""+message+"\" from "+ip+" on port "+port );
+  }
+}
+
+
+//import hypermedia.net.*;
+ 
+
+public void drawDepth() {
+  context.update();
+  if (showDepth) {
+    PImage depthImage = context.depthImage();
+    depthImage.loadPixels();
+
+    int[] upix = context.userMap();
+    for (int i = 0; i < upix.length; i++) {
+      if (upix[i] > 0) {
+        img.pixels[i] = color(0, 0, 255);
+      } else {
+        img.pixels[i] = depthImage.pixels[i];
+      }
+    }
+    img.updatePixels();
+    image(img, 0, 0);
+  }
+  int[] users = context.getUsers();
+  ellipseMode(CENTER);
+
+  for (int i = 0; i < users.length; i++) {
+    int uid = users[i];
+
+    PVector realCoM = new PVector();
+    context.getCoM(uid, realCoM);
+    PVector projCoM = new PVector();
+
+    context.convertRealWorldToProjective(realCoM, projCoM);
+    if (showDepth) {
+      fill(255, 0, 0);
+      ellipse(projCoM.x, projCoM.y, 10, 10);
+    }
+
+    if (context.isTrackingSkeleton(uid)) {
+      //HEAD
+      PVector realHead=new PVector();
+      context.getJointPositionSkeleton(uid, SimpleOpenNI.SKEL_HEAD, realHead);
+      PVector projHead=new PVector();
+      context.convertRealWorldToProjective(realHead, projHead);
+      if (showDepth) {
+        fill(0, 255, 0);
+        ellipse(projHead.x, projHead.y, 10, 10);
+      }
+      //LEFT HAND
+      PVector realLHand=new PVector();
+      context.getJointPositionSkeleton(uid, SimpleOpenNI.SKEL_LEFT_HAND, realLHand);
+      PVector projLHand=new PVector();
+      context.convertRealWorldToProjective(realLHand, projLHand);
+      if (showDepth) {
+        fill(255, 255, 0);
+        ellipse(projLHand.x, projLHand.y, 10, 10);
+      }
+
+      //LEFT FOOT
+      PVector realLFoot=new PVector();
+      context.getJointPositionSkeleton(uid, SimpleOpenNI.SKEL_LEFT_FOOT, realLFoot);
+      PVector projLFoot=new PVector();
+      context.convertRealWorldToProjective(realLFoot, projLFoot);
+      if (showDepth) {
+        fill(255, 255, 255);
+        ellipse(projLFoot.x, projLFoot.y, 10, 10);
+      }
+      
+      //RIGHT HAND
+      PVector realRHand=new PVector();
+      context.getJointPositionSkeleton(uid, SimpleOpenNI.SKEL_RIGHT_HAND, realRHand);
+      PVector projRHand=new PVector();
+      context.convertRealWorldToProjective(realRHand, projRHand);
+      if (showDepth) {
+        fill(255, 0, 255);
+        ellipse(projRHand.x, projRHand.y, 10, 10);
+      }
     }
   }
 }
 
-public void SphinxEvent(Sphinx _l) {
-  if (useVoice) {
-    s = _l.readString(); // returns the recognized string
-    println("Sphinx heard: " + s);
-    Parse(s);
-    if ((s.indexOf("quit") >= 0) || (s.indexOf("exit") >= 0) || (s.indexOf("stop") >= 0)) {
-      exit();
-    }
-  }
+public void onNewUser(SimpleOpenNI curContext, int userId)
+{
+  println("New User - userId: " + userId);
+  curContext.startTrackingSkeleton(userId);
+  peopleActive++;
+  println("People Active: " + peopleActive);
 }
 
-public String ConfigureIP() {
-  String url = "https://www.meethue.com/api/nupnp";
-  try
-  {
-    HttpGet httpGet = new HttpGet( url );                               
-    DefaultHttpClient httpClient = new DefaultHttpClient();
-
-    httpGet.addHeader("Accept", "application/json");                  
-    httpGet.addHeader("Content-Type", "application/json");
-
-    HttpResponse response = httpClient.execute( httpGet );
-    String body = EntityUtils.toString(response.getEntity());
-    body = "{\"source\":" + body + "}";
-    JSONObject parsed = JSONObject.parse(body);
-    JSONArray array = parsed.getJSONArray("source");
-    JSONObject result = array.getJSONObject(0);
-    //      JSONObject result = new JSONObject();
-    //      result = result.parse(body);
-    String ip = result.getString("internalipaddress");
-    return ip;
-  } 
-  catch( Exception e ) { 
-    e.printStackTrace();
-    return "";
+public void onLostUser(SimpleOpenNI curContext, int userId)
+{
+  println("Lost User - userId: " + userId);
+  peopleActive--;
+  if (peopleActive < 0) {
+    peopleActive = 0;
   }
+  println("People Active: " + peopleActive);
 }
+
+
+
+
+
+
+int test = 0;
 
 class Light {
-
   String l;
   int id;
   int brightness;
@@ -265,10 +358,6 @@ class Light {
     catch( Exception e ) { 
       e.printStackTrace();
     }
-  }
-  
-  public void toggle() {
-    
   }
   
   public int brightness() {
@@ -318,6 +407,36 @@ class Light {
   
 }
 
+public String GetBridgeIP() {
+  String url = "https://www.meethue.com/api/nupnp";
+  print("Searching for Hue bridge........... ");
+  try
+  {
+    HttpGet httpGet = new HttpGet(url);                               
+    DefaultHttpClient httpClient = new DefaultHttpClient();
+    httpGet.addHeader("Accept", "application/json");                  
+    httpGet.addHeader("Content-Type", "application/json");
+    HttpResponse response = httpClient.execute(httpGet);
+    
+    String body = EntityUtils.toString(response.getEntity());
+    body = "{\"source\":" + body + "}";
+    JSONObject parsed = JSONObject.parse(body);
+    JSONArray array = parsed.getJSONArray("source");
+    JSONObject result = array.getJSONObject(0);
+    String ip = result.getString("internalipaddress");
+    
+    print("SUCCESS.\n");
+    println("Found Hue bridge on IP: " + ip);
+    
+    return ip;
+  } 
+  catch( Exception e ) {
+    print("FAILED.\n");
+    println("Unable to find Hue Bridge on local network.");
+    e.printStackTrace();
+    return "";
+  }
+}
 public void Parse(String input) {
   if (input.contains("light") && input.contains("off") && input.contains("turn")) {
     lastAction = "light off turn";
@@ -513,6 +632,19 @@ public class Sphinx implements Runnable {
     recognizer.deallocate();
   }
 }
+
+//Voice Record Event
+public void SphinxEvent(Sphinx _l) {
+  if (useVoice) {
+    s = _l.readString(); // returns the recognized string
+    println("Sphinx heard: " + s);
+    Parse(s);
+    if ((s.indexOf("quit") >= 0) || (s.indexOf("exit") >= 0) || (s.indexOf("stop") >= 0)) {
+      exit();
+    }
+  }
+}
+
 
   static public void main(String[] passedArgs) {
     String[] appletArgs = new String[] { "Watson_2" };

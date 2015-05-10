@@ -1,8 +1,16 @@
-import org.apache.http.HttpEntity;
-import org.apache.http.HttpResponse;
-import org.apache.http.client.methods.HttpPut;
-import org.apache.http.impl.client.DefaultHttpClient;
-import hypermedia.net.*;
+
+//Booleans
+boolean lightsTriggered = false;
+boolean phoneDetected = true;
+boolean useVoice = false;
+boolean useKinect = true;
+boolean useServer = true;
+boolean showControls = true;
+boolean showDepth = false;
+
+boolean alarm = true;
+
+int peopleActive = 0;
 
 //HUE LIGHTS
 Light light1, light2;
@@ -13,106 +21,142 @@ int transitionSpeed = 2;
 
 String lastAction = "";
 
+//SPEECH
+Voice voice;
+
 //SPHINX
 Sphinx listener;
 String s = "";
 
+//KINECT
+SimpleOpenNI  context;
+PImage img;
 
-//Bluetooth Proximity
+//BLUETOOTH PROXIMITY
 UDP udp;
+String udpBroadcast = "";
 int PORT = 5005;
-boolean phoneDetected = true;
-boolean useVoice = false;
-boolean useServer = true;
-
 
 void setup() {
-  size(400, 400);
+  size(300, 300);
   background(0);
+
+  //Sphinx
   if (useVoice) {
     listener = new Sphinx(this, "upstairs.config.xml");
   }
-  String bridge_ip = ConfigureIP();
 
+  //Hue
+  String bridge_ip = GetBridgeIP();
   light1 = new Light(bridge_ip, user, 1);
   light2 = new Light(bridge_ip, user, 2);
 
+  //Kinect
+  context = new SimpleOpenNI(this);
+  context.enableDepth();  
+  context.enableUser();
+  context.setMirror(true);
+  img = createImage(640, 480, RGB);
+  img.loadPixels();
+
+  //Server
   udp = new UDP( this, PORT );
   udp.listen( true );
-}
 
-void dispose() {
-  listener.dispose();
+  //Test Vocal chords
+  minim = new Minim(this);
+  SetAudioSource(5);
+  voice = new Voice("Serena");
+  println("Testing vocal chords...");
+  print("SUCCESS!");
 }
 
 void draw() {
   background(0);
+
+  if (useKinect) {
+    drawDepth();
+  }
+
   if (useServer) {
     if (phoneDetected) {
       fill(0, 255, 0);
-    } 
-    else {
+    } else {
       fill(255, 0, 0);
     }
-    ellipse(width/2, height/2, 50, 50);
+    rect(width - 15, 3, 10, 10);
+
+    if (peopleActive > 0) {
+      fill(0, 0, 255);
+    } else {
+      fill(255, 0, 0);
+    }
+    rect(width - 30, 3, 10, 10);
   }
+
+  if (!lightsTriggered && !phoneDetected && peopleActive <= 0) {
+    light1History = light1.on();
+    light2History = light2.on();
+    light1.on(false);
+    light2.on(false);
+    lightsTriggered = true;
+  } else if (lightsTriggered && (phoneDetected || peopleActive > 0)) {
+    lightsTriggered = false;
+    light1.on(light1History);
+    light2.on(light2History);
+  }
+  
+  voice.Render();
 }
 
 void receive( byte[] data, String ip, int port ) {
   if (useServer) {
     data = subset(data, 0, data.length-2);
     String message = new String( data );
-    println( "received: \""+message+"\" from "+ip+" on port "+port );
-    if (message.equals("Galen.1") && !phoneDetected) {
+    if (message.equals("Galen.1")) {
       phoneDetected = true;
-      light1.on(light1History);
-      light2.on(light2History);
-    } 
-    else if (message.equals("Galen.0") && phoneDetected) {
+    } else {
       phoneDetected = false;
-      light1History = light1.on();
-      light2History = light2.on();
-      light1.on(false);
-      light2.on(false);
     }
+    println( "UDP Broadcast: \""+message+"\" from "+ip+" on port "+port );
   }
 }
 
-void SphinxEvent(Sphinx _l) {
-  if (useVoice) {
-    s = _l.readString(); // returns the recognized string
-    println("Sphinx heard: " + s);
-    Parse(s);
-    if ((s.indexOf("quit") >= 0) || (s.indexOf("exit") >= 0) || (s.indexOf("stop") >= 0)) {
-      exit();
-    }
-  }
-}
-
-String ConfigureIP() {
-  String url = "https://www.meethue.com/api/nupnp";
-  try
-  {
-    HttpGet httpGet = new HttpGet( url );                               
-    DefaultHttpClient httpClient = new DefaultHttpClient();
-
-    httpGet.addHeader("Accept", "application/json");                  
-    httpGet.addHeader("Content-Type", "application/json");
-
-    HttpResponse response = httpClient.execute( httpGet );
-    String body = EntityUtils.toString(response.getEntity());
-    body = "{\"source\":" + body + "}";
-    JSONObject parsed = JSONObject.parse(body);
-    JSONArray array = parsed.getJSONArray("source");
-    JSONObject result = array.getJSONObject(0);
-    //      JSONObject result = new JSONObject();
-    //      result = result.parse(body);
-    String ip = result.getString("internalipaddress");
-    return ip;
-  } 
-  catch( Exception e ) { 
-    e.printStackTrace();
-    return "";
+void keyPressed() {
+  int random = (int)random(1, 11);
+  switch (random) {
+    case 1:
+      voice.Speak("Hello, sir.");
+      break;
+    case 2:
+      voice.Speak("Hello there.");
+      break;
+    case 3:
+      voice.Speak("Hi.");
+      break;
+    case 4:
+      voice.Speak("Greetings sir.");
+      break;
+    case 5:
+      voice.Speak("Well hi, sir.");
+      break;
+    case 6:
+      voice.Speak("Good to see you.");
+      break;
+    case 7:
+      voice.Speak("Sir?");
+      break;
+    case 8:
+      voice.Speak("Good day.");
+      break;
+    case 9:
+      voice.Speak("Charmed.");
+      break;
+    case 10:
+      voice.Speak("Hey there, sir.");
+      break;
+    default:
+      break;
   }
 }
 
