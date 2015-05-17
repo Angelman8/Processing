@@ -37,7 +37,6 @@ class Voice {
     execute("say -a 58 " + voiceCmd + phrase);
   }
   
-  float count = 0;
   void Render() {
     stroke(255);
     for (int i = 0; i < (detailSize); i++) {

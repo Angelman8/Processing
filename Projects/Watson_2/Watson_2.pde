@@ -2,7 +2,7 @@
 //Booleans
 boolean lightsTriggered = false;
 boolean phoneDetected = true;
-boolean useVoice = false;
+boolean useVoice = true;
 boolean useKinect = true;
 boolean useServer = true;
 boolean showControls = true;
@@ -65,10 +65,12 @@ void setup() {
 
   //Test Vocal chords
   minim = new Minim(this);
-  SetAudioSource(5);
+  SetAudioSource(7);
   voice = new Voice("Serena");
   println("Testing vocal chords...");
   print("SUCCESS!");
+  
+  google("Who wrote The Great Gatsby?");
 }
 
 void draw() {
@@ -118,7 +120,7 @@ void receive( byte[] data, String ip, int port ) {
     } else {
       phoneDetected = false;
     }
-    println( "UDP Broadcast: \""+message+"\" from "+ip+" on port "+port );
+    //println( "UDP Broadcast: \""+message+"\" from "+ip+" on port "+port );
   }
 }
 
