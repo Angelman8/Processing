@@ -38,7 +38,7 @@ String udpBroadcast = "";
 int PORT = 5005;
 
 void setup() {
-  size(300, 300);
+  size(displayWidth, displayHeight);
   background(0);
 
   //Sphinx
@@ -65,12 +65,12 @@ void setup() {
 
   //Test Vocal chords
   minim = new Minim(this);
-  SetAudioSource(7);
+  SetAudioSource(5);
   voice = new Voice("Serena");
   println("Testing vocal chords...");
   print("SUCCESS!");
   
-  google("Who wrote The Great Gatsby?");
+  searchGoogle("How far away is the moon from the earth?");
 }
 
 void draw() {

@@ -1,6 +1,6 @@
 import java.net.URLEncoder;
 
-void google(String input) {
+void searchGoogle(String input) {
   String search = URLEncoder.encode(input);
   try
   {
@@ -8,7 +8,6 @@ void google(String input) {
     DefaultHttpClient httpClient = new DefaultHttpClient();
     HttpResponse response = httpClient.execute(httpGet);
     String body = EntityUtils.toString(response.getEntity());
-    //int answer = body.indexOf("httpclient", 3000);
 
     String[] save = new String[1];
     save[0] = body;
@@ -23,10 +22,12 @@ void google(String input) {
         additionalInfo += regTest[i];
       } 
       println(additionalInfo);
-      voice.Speak("You asked " + input + ", and the answer is " + answer);
+      voice.Speak(answer);
+    } else {
+      println("could not find an answer to: " + input);
     }
   } 
-  catch( Exception e ) { 
+  catch( Exception e ) {
     e.printStackTrace();
   }
 }
