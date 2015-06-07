@@ -63,7 +63,7 @@ void drawDepth() {
         fill(255, 255, 255);
         ellipse(projLFoot.x, projLFoot.y, 10, 10);
       }
-      
+
       //RIGHT HAND
       PVector realRHand=new PVector();
       context.getJointPositionSkeleton(uid, SimpleOpenNI.SKEL_RIGHT_HAND, realRHand);

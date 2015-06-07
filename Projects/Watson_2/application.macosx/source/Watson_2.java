@@ -3,11 +3,16 @@ import processing.data.*;
 import processing.event.*; 
 import processing.opengl.*; 
 
-import SimpleOpenNI.*; 
+import java.util.Date; 
 import org.apache.http.HttpEntity; 
 import org.apache.http.HttpResponse; 
 import org.apache.http.client.methods.HttpPut; 
 import org.apache.http.impl.client.DefaultHttpClient; 
+import java.io.*; 
+import java.io.BufferedReader; 
+import java.io.IOException; 
+import java.io.InputStream; 
+import java.io.InputStreamReader; 
 import processing.core.*; 
 import edu.cmu.sphinx.frontend.util.Utterance; 
 import edu.cmu.sphinx.frontend.util.Microphone; 
@@ -18,6 +23,10 @@ import edu.cmu.sphinx.util.props.PropertyException;
 import java.io.IOException; 
 import java.net.URL; 
 import java.lang.reflect.*; 
+import java.net.URLEncoder; 
+import ddf.minim.*; 
+import javax.sound.sampled.*; 
+import SimpleOpenNI.*; 
 
 import org.apache.http.auth.params.*; 
 import org.apache.http.pool.*; 
@@ -84,6 +93,7 @@ import edu.cmu.sphinx.frontend.endpoint.*;
 import edu.cmu.sphinx.decoder.pruner.*; 
 import edu.cmu.sphinx.decoder.scorer.*; 
 import org.apache.http.impl.*; 
+import prohtml.*; 
 import edu.cmu.sphinx.linguist.flat.*; 
 import org.apache.http.concurrent.*; 
 import org.apache.http.impl.pool.*; 
@@ -114,6 +124,7 @@ import java.io.IOException;
 
 public class Watson_2 extends PApplet {
 
+
 //Booleans
 boolean lightsTriggered = false;
 boolean phoneDetected = true;
@@ -121,7 +132,8 @@ boolean useVoice = true;
 boolean useKinect = true;
 boolean useServer = true;
 boolean showControls = true;
-boolean showDepth = true;
+boolean showDepth = false;
+boolean showVoice = true;
 
 boolean alarm = true;
 
@@ -135,6 +147,9 @@ int brightnessScale = 30;
 int transitionSpeed = 2;
 
 String lastAction = "";
+
+//SPEECH
+Voice voice;
 
 //SPHINX
 Sphinx listener;
@@ -150,7 +165,7 @@ String udpBroadcast = "";
 int PORT = 5005;
 
 public void setup() {
-  size(640, 480);
+  size(300, 300);
   background(0);
 
   //Sphinx
@@ -174,10 +189,15 @@ public void setup() {
   //Server
   udp = new UDP( this, PORT );
   udp.listen( true );
-}
 
-public void dispose() {
-  listener.dispose();
+  //Test Vocal chords
+  minim = new Minim(this);
+  SetAudioSource(5);
+  voice = new Voice("Oliver");
+  println("Testing vocal chords...");
+  print("SUCCESS!");
+
+  searchGoogle("Who wrote I am Pilgrim?");
 }
 
 public void draw() {
@@ -193,7 +213,14 @@ public void draw() {
     } else {
       fill(255, 0, 0);
     }
-    ellipse(width/2, height/10, 20, 20);
+    rect(width - 15, 3, 10, 10);
+
+    if (peopleActive > 0) {
+      fill(0, 0, 255);
+    } else {
+      fill(255, 0, 0);
+    }
+    rect(width - 30, 3, 10, 10);
   }
 
   if (!lightsTriggered && !phoneDetected && peopleActive <= 0) {
@@ -207,6 +234,10 @@ public void draw() {
     light1.on(light1History);
     light2.on(light2History);
   }
+
+  if (showVoice) {
+    voice.Render();
+  }
 }
 
 public void receive( byte[] data, String ip, int port ) {
@@ -218,108 +249,57 @@ public void receive( byte[] data, String ip, int port ) {
     } else {
       phoneDetected = false;
     }
-    println( "UDP Broadcast: \""+message+"\" from "+ip+" on port "+port );
+    //println( "UDP Broadcast: \""+message+"\" from "+ip+" on port "+port );
+  }
+}
+
+public void keyPressed() {
+  if (key == 'v') {
+    showVoice = !showVoice;
+  }
+  int random = (int)random(1, 11);
+  switch (random) {
+  case 1:
+    voice.Speak("Hello, sir.");
+    break;
+  case 2:
+    voice.Speak("Hello there.");
+    break;
+  case 3:
+    voice.Speak("Hi.");
+    break;
+  case 4:
+    voice.Speak("Greetings sir.");
+    break;
+  case 5:
+    voice.Speak("Well hi, sir.");
+    break;
+  case 6:
+    voice.Speak("Good to see you.");
+    break;
+  case 7:
+    voice.Speak("Sir?");
+    break;
+  case 8:
+    voice.Speak("Good day.");
+    break;
+  case 9:
+    voice.Speak("Charmed.");
+    break;
+  case 10:
+    voice.Speak("Hey there, sir.");
+    break;
+  default:
+    break;
   }
 }
 
 
-//import hypermedia.net.*;
- 
 
-public void drawDepth() {
-  context.update();
-  if (showDepth) {
-    PImage depthImage = context.depthImage();
-    depthImage.loadPixels();
-
-    int[] upix = context.userMap();
-    for (int i = 0; i < upix.length; i++) {
-      if (upix[i] > 0) {
-        img.pixels[i] = color(0, 0, 255);
-      } else {
-        img.pixels[i] = depthImage.pixels[i];
-      }
-    }
-    img.updatePixels();
-    image(img, 0, 0);
-  }
-  int[] users = context.getUsers();
-  ellipseMode(CENTER);
-
-  for (int i = 0; i < users.length; i++) {
-    int uid = users[i];
-
-    PVector realCoM = new PVector();
-    context.getCoM(uid, realCoM);
-    PVector projCoM = new PVector();
-
-    context.convertRealWorldToProjective(realCoM, projCoM);
-    if (showDepth) {
-      fill(255, 0, 0);
-      ellipse(projCoM.x, projCoM.y, 10, 10);
-    }
-
-    if (context.isTrackingSkeleton(uid)) {
-      //HEAD
-      PVector realHead=new PVector();
-      context.getJointPositionSkeleton(uid, SimpleOpenNI.SKEL_HEAD, realHead);
-      PVector projHead=new PVector();
-      context.convertRealWorldToProjective(realHead, projHead);
-      if (showDepth) {
-        fill(0, 255, 0);
-        ellipse(projHead.x, projHead.y, 10, 10);
-      }
-      //LEFT HAND
-      PVector realLHand=new PVector();
-      context.getJointPositionSkeleton(uid, SimpleOpenNI.SKEL_LEFT_HAND, realLHand);
-      PVector projLHand=new PVector();
-      context.convertRealWorldToProjective(realLHand, projLHand);
-      if (showDepth) {
-        fill(255, 255, 0);
-        ellipse(projLHand.x, projLHand.y, 10, 10);
-      }
-
-      //LEFT FOOT
-      PVector realLFoot=new PVector();
-      context.getJointPositionSkeleton(uid, SimpleOpenNI.SKEL_LEFT_FOOT, realLFoot);
-      PVector projLFoot=new PVector();
-      context.convertRealWorldToProjective(realLFoot, projLFoot);
-      if (showDepth) {
-        fill(255, 255, 255);
-        ellipse(projLFoot.x, projLFoot.y, 10, 10);
-      }
-      
-      //RIGHT HAND
-      PVector realRHand=new PVector();
-      context.getJointPositionSkeleton(uid, SimpleOpenNI.SKEL_RIGHT_HAND, realRHand);
-      PVector projRHand=new PVector();
-      context.convertRealWorldToProjective(realRHand, projRHand);
-      if (showDepth) {
-        fill(255, 0, 255);
-        ellipse(projRHand.x, projRHand.y, 10, 10);
-      }
-    }
-  }
+public void currentTime() {
+  java.util.Date d = new java.util.Date();
+  println(d.toString());
 }
-
-public void onNewUser(SimpleOpenNI curContext, int userId)
-{
-  println("New User - userId: " + userId);
-  curContext.startTrackingSkeleton(userId);
-  peopleActive++;
-  println("People Active: " + peopleActive);
-}
-
-public void onLostUser(SimpleOpenNI curContext, int userId)
-{
-  println("Lost User - userId: " + userId);
-  peopleActive--;
-  if (peopleActive < 0) {
-    peopleActive = 0;
-  }
-  println("People Active: " + peopleActive);
-}
-
 
 
 
@@ -437,59 +417,54 @@ public String GetBridgeIP() {
     return "";
   }
 }
-public void Parse(String input) {
-  if (input.contains("light") && input.contains("off") && input.contains("turn")) {
-    lastAction = "light off turn";
-    if (phoneDetected) {
-      light1.on(false);
-      light2.on(false);
-    }
-  } 
-  if (input.contains("light") && input.contains("on") && input.contains("turn")) {
-    lastAction = "light on turn";
-    if (phoneDetected) {
-      light1.on(true);
-      light2.on(true);
-    }
-  } 
-  if (input.contains("reading") && input.contains("mode")) {
-    lastAction = "reading mode";
-    if (!light1.on())
-      light1.on(true);
-    light1.brightness(00);
-    light2.on(false);
-  } 
-  if (input.contains("brightness")) {
-    if (input.contains("up") || input.contains("on")) {
-      lastAction = "brightness up";
-      if (light1.on())
-        light1.brightness(light1.brightness() + brightnessScale);
-      if (light2.on())
-        light2.brightness(light2.brightness() + brightnessScale);
-    } 
-    else if (input.contains("down")) {
-      lastAction = "brightness down";
-      if (light1.on())
-        light1.brightness(light1.brightness() - brightnessScale);
-      if (light2.on())
-        light2.brightness(light2.brightness() - brightnessScale);
-    }
-  } 
-  if (input.contains("more")) {
-    println(lastAction);
-    if (lastAction.contains("brightness"))
-      Parse(lastAction);
+
+
+
+
+
+
+public StreamWrapper getStreamWrapper(InputStream is, String type) {
+  return new StreamWrapper(is, type);
+}
+class StreamWrapper extends Thread {
+  InputStream is = null;
+  String type = null;          
+  String message = null;
+
+  public String getMessage() {
+    return message;
   }
-  if (input.contains("faster")) {
-    brightnessScale += 20; 
-    Parse(lastAction);
-  } 
-  else if (input.contains("slower")) {
-    brightnessScale -= 20; 
-    Parse(lastAction);
+
+  StreamWrapper(InputStream is, String type) {
+    this.is = is;
+    this.type = type;
+  }
+
+  public void run() {
+    try {
+      BufferedReader br = new BufferedReader(new InputStreamReader(is));
+      StringBuffer buffer = new StringBuffer();
+      String line = null;
+      while ( (line = br.readLine ()) != null) {
+        buffer.append(line);//.append("\n");
+      }
+      message = buffer.toString();
+    } 
+    catch (IOException ioe) {
+      ioe.printStackTrace();
+    }
   }
 }
 
+public void execute(String command) {
+  Runtime rt = Runtime.getRuntime();
+  try {
+    Process proc = rt.exec(command);
+  } 
+  catch (IOException e) {
+    e.printStackTrace();
+  }
+}
 
 
 // sphinx stuff
@@ -645,9 +620,295 @@ public void SphinxEvent(Sphinx _l) {
   }
 }
 
+//// PARSING
+
+public void Parse(String input) {
+  if (input.contains("light") && input.contains("off") && input.contains("turn")) {
+    lastAction = "light off turn";
+    if (phoneDetected) {
+      light1.on(false);
+      light2.on(false);
+    }
+  } 
+  if (input.contains("light") && input.contains("on") && input.contains("turn")) {
+    lastAction = "light on turn";
+    if (phoneDetected) {
+      light1.on(true);
+      light2.on(true);
+    }
+  } 
+  if (input.contains("reading") && input.contains("mode")) {
+    lastAction = "reading mode";
+    if (!light1.on())
+      light1.on(true);
+    light1.brightness(00);
+    light2.on(false);
+  } 
+  if (input.contains("brightness")) {
+    if (input.contains("up") || input.contains("on")) {
+      lastAction = "brightness up";
+      if (light1.on())
+        light1.brightness(light1.brightness() + brightnessScale);
+      if (light2.on())
+        light2.brightness(light2.brightness() + brightnessScale);
+    } 
+    else if (input.contains("down")) {
+      lastAction = "brightness down";
+      if (light1.on())
+        light1.brightness(light1.brightness() - brightnessScale);
+      if (light2.on())
+        light2.brightness(light2.brightness() - brightnessScale);
+    }
+  } 
+  if (input.contains("more")) {
+    println(lastAction);
+    if (lastAction.contains("brightness"))
+      Parse(lastAction);
+  }
+  if (input.contains("faster")) {
+    brightnessScale += 20; 
+    Parse(lastAction);
+  } 
+  else if (input.contains("slower")) {
+    brightnessScale -= 20; 
+    Parse(lastAction);
+  }
+}
+
+
+
+
+
+public void searchGoogle(String input) {
+  String search = URLEncoder.encode(input);
+  try
+  {
+    HttpGet httpGet = new HttpGet("https://www.google.com/search?q=" + search);
+    DefaultHttpClient httpClient = new DefaultHttpClient();
+    HttpResponse response = httpClient.execute(httpGet);
+    String body = EntityUtils.toString(response.getEntity());
+
+    String[] save = new String[1];
+    save[0] = body;
+    saveStrings("test.html", save);
+
+    println("------");
+    String[] regTest = match(body, "<div id=\"search\"><div id=\"(?:.*?)\"><span class=\"(?:.*?)\">(.[^(]*)(.*?)</span><div class=\"(?:.*?)\">(.*?)</div>");
+    if (regTest.length > 0) {
+      String answer = regTest[1];
+      String additionalInfo = "";
+      for (int i = 2; i < regTest.length; i++) {
+        additionalInfo += regTest[i];
+      } 
+      println(additionalInfo);
+      voice.Speak("You asked " + input + ", and I think the answer is: " + answer);
+    } else {
+      println("could not find an answer to: " + input);
+    }
+  } 
+  catch( Exception e ) {
+    e.printStackTrace();
+  }
+}
+
+
+
+
+Minim minim;
+AudioPlayer player;
+AudioInput input;
+
+class Voice {
+  String voice = "";
+  int detailSize = 100;
+  int irisRadius = 150;
+  int gravityWell = 500;
+  float speed = 0.008f;
+  float lineStrength = 25;
+  PVector[] points;
+
+  Voice(String _voice) {
+    voice = _voice;
+    points = new PVector[detailSize];
+    for (int i = 0; i < points.length-1; i++) {
+      float x = 0;
+      float y = 0;
+      while (dist (x, y, width/2, height/2) > irisRadius) {
+        x = random(width/2 - irisRadius, width/2 + irisRadius);
+        y = random(height/2 - irisRadius, height/2 + irisRadius);
+      }
+      points[i] = new PVector(x, y);
+    }
+  }
+
+  public void Speak(String phrase) {
+    String voiceCmd = "";
+    if ( ! voice.equals("")) {
+      voiceCmd = "-v " + voice + " ";
+    }
+    println("Watson says: " + phrase);
+    execute("say -a 58 " + voiceCmd + phrase);
+  }
+
+  public void Render() {
+    fill(225, 255, 245);
+    int strength = abs((int)(input.mix.get(0) * 200));
+    int mod = (strength <= 0) ? -1 : 1;
+    
+    for (int i = 0; i < points.length-1; i++) {
+      ellipse(points[i].x, points[i].y, 1, 1);
+      
+      for (int j = 0; j < points.length-1; j++) {
+        if (i == j)
+          continue;
+        float dx = points[j].x - points[i].x;
+        float dy = points[j].y - points[i].y;
+        float distance = sqrt(dx*dx + dy*dy);
+        
+        if (distance < gravityWell) {
+          
+          if (distance < lineStrength + strength / 1.2f * mod) {
+            stroke(225, 245, 255, 33);
+            line(points[i].x, points[i].y, points[j].x, points[j].y);
+          }
+          float angle = atan2(dy, dx);
+          float targetX = points[i].x + cos(angle) * (irisRadius);
+          float targetY = points[i].y + sin(angle) * (irisRadius);
+          PVector a = new PVector((targetX - points[j].x) * speed, (targetY - points[j].y) * speed);
+          points[i].sub(a);
+          points[j].add(a);
+        }
+      }
+    }
+  }
+}
+
+public void SetAudioSource(int source) {
+  Mixer.Info[] mixerInfo;
+  mixerInfo = AudioSystem.getMixerInfo();
+  println("======Checking Audio Devices======");
+  for (int i = 0; i < mixerInfo.length-1; i++) {
+    println("Audio Source " + i + ": " + mixerInfo[i].getName());
+  }
+  println("==================================");
+  println("Setting Audio Source to: " + mixerInfo[source].getName());
+  Mixer mixer = AudioSystem.getMixer(mixerInfo[source]);
+  if (input != null) {
+    input.close();
+  }
+  minim.setInputMixer(mixer);
+  input = minim.getLineIn(Minim.STEREO);
+  println("SUCCESS!");
+}
+
+public void stop()
+{
+  // always close Minim audio classes when you are done with them
+  input.close();
+  minim.stop();
+
+  super.stop();
+}
+
+//import hypermedia.net.*;
+ 
+
+public void drawDepth() {
+  context.update();
+  if (showDepth) {
+    PImage depthImage = context.depthImage();
+    depthImage.loadPixels();
+
+    int[] upix = context.userMap();
+    for (int i = 0; i < upix.length; i++) {
+      if (upix[i] > 0) {
+        img.pixels[i] = color(0, 0, 255);
+      } else {
+        img.pixels[i] = depthImage.pixels[i];
+      }
+    }
+    img.updatePixels();
+    image(img, 0, 0);
+  }
+  int[] users = context.getUsers();
+  ellipseMode(CENTER);
+
+  for (int i = 0; i < users.length; i++) {
+    int uid = users[i];
+
+    PVector realCoM = new PVector();
+    context.getCoM(uid, realCoM);
+    PVector projCoM = new PVector();
+
+    context.convertRealWorldToProjective(realCoM, projCoM);
+    if (showDepth) {
+      fill(255, 0, 0);
+      ellipse(projCoM.x, projCoM.y, 10, 10);
+    }
+
+    if (context.isTrackingSkeleton(uid)) {
+      //HEAD
+      PVector realHead=new PVector();
+      context.getJointPositionSkeleton(uid, SimpleOpenNI.SKEL_HEAD, realHead);
+      PVector projHead=new PVector();
+      context.convertRealWorldToProjective(realHead, projHead);
+      if (showDepth) {
+        fill(0, 255, 0);
+        ellipse(projHead.x, projHead.y, 10, 10);
+      }
+      //LEFT HAND
+      PVector realLHand=new PVector();
+      context.getJointPositionSkeleton(uid, SimpleOpenNI.SKEL_LEFT_HAND, realLHand);
+      PVector projLHand=new PVector();
+      context.convertRealWorldToProjective(realLHand, projLHand);
+      if (showDepth) {
+        fill(255, 255, 0);
+        ellipse(projLHand.x, projLHand.y, 10, 10);
+      }
+
+      //LEFT FOOT
+      PVector realLFoot=new PVector();
+      context.getJointPositionSkeleton(uid, SimpleOpenNI.SKEL_LEFT_FOOT, realLFoot);
+      PVector projLFoot=new PVector();
+      context.convertRealWorldToProjective(realLFoot, projLFoot);
+      if (showDepth) {
+        fill(255, 255, 255);
+        ellipse(projLFoot.x, projLFoot.y, 10, 10);
+      }
+
+      //RIGHT HAND
+      PVector realRHand=new PVector();
+      context.getJointPositionSkeleton(uid, SimpleOpenNI.SKEL_RIGHT_HAND, realRHand);
+      PVector projRHand=new PVector();
+      context.convertRealWorldToProjective(realRHand, projRHand);
+      if (showDepth) {
+        fill(255, 0, 255);
+        ellipse(projRHand.x, projRHand.y, 10, 10);
+      }
+    }
+  }
+}
+
+public void onNewUser(SimpleOpenNI curContext, int userId)
+{
+  println("New User - userId: " + userId);
+  curContext.startTrackingSkeleton(userId);
+  peopleActive++;
+  println("People Active: " + peopleActive);
+}
+
+public void onLostUser(SimpleOpenNI curContext, int userId)
+{
+  println("Lost User - userId: " + userId);
+  peopleActive--;
+  if (peopleActive < 0) {
+    peopleActive = 0;
+  }
+  println("People Active: " + peopleActive);
+}
 
   static public void main(String[] passedArgs) {
-    String[] appletArgs = new String[] { "Watson_2" };
+    String[] appletArgs = new String[] { "--full-screen", "--bgcolor=#666666", "--hide-stop", "Watson_2" };
     if (passedArgs != null) {
       PApplet.main(concat(appletArgs, passedArgs));
     } else {

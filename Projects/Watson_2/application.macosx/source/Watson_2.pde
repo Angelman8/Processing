@@ -1,3 +1,4 @@
+
 //Booleans
 boolean lightsTriggered = false;
 boolean phoneDetected = true;
@@ -5,7 +6,8 @@ boolean useVoice = true;
 boolean useKinect = true;
 boolean useServer = true;
 boolean showControls = true;
-boolean showDepth = true;
+boolean showDepth = false;
+boolean showVoice = true;
 
 boolean alarm = true;
 
@@ -19,6 +21,9 @@ int brightnessScale = 30;
 int transitionSpeed = 2;
 
 String lastAction = "";
+
+//SPEECH
+Voice voice;
 
 //SPHINX
 Sphinx listener;
@@ -34,7 +39,7 @@ String udpBroadcast = "";
 int PORT = 5005;
 
 void setup() {
-  size(640, 480);
+  size(300, 300);
   background(0);
 
   //Sphinx
@@ -58,10 +63,15 @@ void setup() {
   //Server
   udp = new UDP( this, PORT );
   udp.listen( true );
-}
 
-void dispose() {
-  listener.dispose();
+  //Test Vocal chords
+  minim = new Minim(this);
+  SetAudioSource(5);
+  voice = new Voice("Oliver");
+  println("Testing vocal chords...");
+  print("SUCCESS!");
+
+  searchGoogle("Who wrote I am Pilgrim?");
 }
 
 void draw() {
@@ -77,7 +87,14 @@ void draw() {
     } else {
       fill(255, 0, 0);
     }
-    ellipse(width/2, height/10, 20, 20);
+    rect(width - 15, 3, 10, 10);
+
+    if (peopleActive > 0) {
+      fill(0, 0, 255);
+    } else {
+      fill(255, 0, 0);
+    }
+    rect(width - 30, 3, 10, 10);
   }
 
   if (!lightsTriggered && !phoneDetected && peopleActive <= 0) {
@@ -91,6 +108,10 @@ void draw() {
     light1.on(light1History);
     light2.on(light2History);
   }
+
+  if (showVoice) {
+    voice.Render();
+  }
 }
 
 void receive( byte[] data, String ip, int port ) {
@@ -102,7 +123,48 @@ void receive( byte[] data, String ip, int port ) {
     } else {
       phoneDetected = false;
     }
-    println( "UDP Broadcast: \""+message+"\" from "+ip+" on port "+port );
+    //println( "UDP Broadcast: \""+message+"\" from "+ip+" on port "+port );
+  }
+}
+
+void keyPressed() {
+  if (key == 'v') {
+    showVoice = !showVoice;
+  }
+  int random = (int)random(1, 11);
+  switch (random) {
+  case 1:
+    voice.Speak("Hello, sir.");
+    break;
+  case 2:
+    voice.Speak("Hello there.");
+    break;
+  case 3:
+    voice.Speak("Hi.");
+    break;
+  case 4:
+    voice.Speak("Greetings sir.");
+    break;
+  case 5:
+    voice.Speak("Well hi, sir.");
+    break;
+  case 6:
+    voice.Speak("Good to see you.");
+    break;
+  case 7:
+    voice.Speak("Sir?");
+    break;
+  case 8:
+    voice.Speak("Good day.");
+    break;
+  case 9:
+    voice.Speak("Charmed.");
+    break;
+  case 10:
+    voice.Speak("Hey there, sir.");
+    break;
+  default:
+    break;
   }
 }
 
